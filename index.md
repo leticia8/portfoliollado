@@ -8,22 +8,22 @@ Se diferenciará el análisis de acuerdo al tipo de algoritmo utilizado en su an
 
 <blockquote>
 MÉTODOS SUPERVISADOS
-
+</blockquote>
 # De clasificación
 
 # De regresión
 
-</blockquote>
+
 <blockquote>
  MÉTODOS NO SUPERVISADOS
-```markdown
+</blockquote>
 
 # De clustering
 
 # De reudcción de dimensiones
 Syntax highlighted code block
 
-</blockquote>
+
 - Bulleted
 - List
 
