@@ -34,6 +34,9 @@ Se presentan a continuación los diferentes problemas a ser analizados y los mod
 
 ### Regresión Lineal
 -Breve descripción del algoritmo a utilizar
+Asume que existe una relación lineal entre la variable dependiente y la/s independientes
+El objetivo será encontrar los mejores 𝛽 de modo que la recta ajuste a los valores Y.
+
 -Presentación del problema y data set, CRISP-DM del problema
 
 # MÉTODOS NO SUPERVISADOS
