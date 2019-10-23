@@ -4,7 +4,7 @@ Los siguientes proyectos han sido seleccionados para ser estudiados aplicando al
 
 Posteriormente se realiza la preparación de los datos siguiendo las etapas identificando atributos, tipos de datos y rangos, estadísticos desciptivo para cada atributo. También se procederá a analizar la correlación de los atributos con la variable dependiente, así como  la identificación de valores faltantes, outliers y errores, así como su distribución.
 
-Se diferenciará el análisis de acuerdo al
+Se diferenciará el análisis de acuerdo al tipo de algoritmo utilizado en su análisis y las aplicaciones.
 
 
 MÉTODOS SUPERVISADOS
