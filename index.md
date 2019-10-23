@@ -16,27 +16,28 @@ Se presentan a continuación los diferentes problemas a ser analizados y los mod
 
 
 # MÉTODOS SUPERVISADOS
--Breve descripción de las características de estos métOdos
+-Breve descripción de las características de los algoritmos supervisados
 
 ## De clasificación
--Breve descripción de las características de estos métOdos
+-Breve descripción de las características de los algoritmos de clasificación
 
-###Regresión Logística 
+### Regresión Logística 
 -Breve descripción del algoritmo a utilizar
 -Presentación del problema, CRISP-DM del problema
 
-###Análisis del discriminante
-
+### Análisis del discriminante
 -Breve descripción del algoritmo a utilizar
 -Presentación del problema y data set, CRISP-DM del problema
 
 ## De regresión
-###Regresión Lineal
+-Breve descripción de las características de los algoritmos de regresión
+
+### Regresión Lineal
 -Breve descripción del algoritmo a utilizar
 -Presentación del problema y data set, CRISP-DM del problema
 
 # MÉTODOS NO SUPERVISADOS
--Breve descripción de las características de estos métOdos
+-Breve descripción de las características de los métodos no supervisados
 
 ## De clustering
 -Breve descripción del algoritmo a utilizar
@@ -44,8 +45,8 @@ Se presentan a continuación los diferentes problemas a ser analizados y los mod
 
 
 ## De reducción de dimensiones
-
-
+-Breve descripción del algoritmo a utilizar
+-Presentación del problema y data set, CRISP-DM del problema
 
 
 
