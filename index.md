@@ -1,17 +1,22 @@
 ## ANALISIS DE DATOS UTILIZANDO MACHINE LEARNING
 
-Los siguientes proyectos han sido seleccionados para ser estudiados aplicando algoritmos de machine learning, por cada proyecto la idea es identificar el contexto en el cual se insertan los datos así como el problema que se trata de explicar y su comprensión.
+Los siguientes proyectos han sido seleccionados para ser estudiados aplicando algoritmos de machine learning; por cada proyecto la idea es identificar el contexto en el cual se insertan los datos así como el problema que se trata de explicar y hacer un breve análisis que facilite su comprensión.
 
-Posteriormente se realiza la preparación de los datos siguiendo las etapas identificando atributos, tipos de datos y rangos, estadísticos desciptivo para cada atributo. También se procederá a analizar la correlación de los atributos con la variable dependiente, así como  la identificación de valores faltantes, outliers y errores, así como su distribución.
+Posteriormente se realiza la preparación de los datos:
+- identificaratributos 
+- identificar tipos de datos y rangos
+- calcular estadísticos desciptivos 
+- identificar correlación de los atributos entre sí 
+- identificación de valores faltantes, outliers y errores
+- identificación de forma de distribución de las variables
 
-Se diferenciará el análisis de acuerdo al tipo de algoritmo utilizado en su análisis y las aplicaciones.
+Se presentan a continuación los diferentes problemas a ser analizados y los modelos resultantes de los mismos, buscando abarcar el uso de diferentes clasificaciones y tipos de algoritmos de aprendizaje automático con el fin de cubrir un área más extensa de ejemplos.
 
 # MÉTODOS SUPERVISADOS
 
 ## De clasificación
 
 ## De regresión
-
 
 
 # MÉTODOS NO SUPERVISADOS
@@ -21,14 +26,9 @@ Se diferenciará el análisis de acuerdo al tipo de algoritmo utilizado en su an
 
 ## De reducción de dimensiones
 
-Syntax highlighted code block
 
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
 **Bold** and _Italic_ and `Code` text
 
