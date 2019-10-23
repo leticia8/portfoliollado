@@ -7,20 +7,20 @@ Posteriormente se realiza la preparación de los datos siguiendo las etapas iden
 Se diferenciará el análisis de acuerdo al tipo de algoritmo utilizado en su análisis y las aplicaciones.
 
 <blockquote>
-MÉTODOS SUPERVISADOS
+#MÉTODOS SUPERVISADOS
 </blockquote>
-# De clasificación
+## De clasificación
 
-# De regresión
+## De regresión
 
 
 <blockquote>
- MÉTODOS NO SUPERVISADOS
+# MÉTODOS NO SUPERVISADOS
 </blockquote>
 
-# De clustering
+## De clustering
 
-# De reudcción de dimensiones
+## De reudcción de dimensiones
 Syntax highlighted code block
 
 
