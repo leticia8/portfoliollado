@@ -7,7 +7,7 @@ Posteriormente se realiza la preparación de los datos siguiendo las etapas iden
 Se diferenciará el análisis de acuerdo al
 
 
-### MÉTODOS SUPERVISADOS
+MÉTODOS SUPERVISADOS
 ```markdown
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
@@ -16,7 +16,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 # De regresión
 
 
-### MÉTODOS NO SUPERVISADOS
+ MÉTODOS NO SUPERVISADOS
 ```markdown
 
 # De clustering
