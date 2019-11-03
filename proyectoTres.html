@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto análisis cardiológico </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"></a>
+									<ul class="icons">
+											<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+								</ul>
+								</header>
+								
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Predicción pacientes de India</h1>
+									</header>
+							<hr class="major" />										
+							<p style="font-size:30px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)"> data set pacientes</a>
+
+
+						<p style="font-size:40px">El presente data set consta de información de pacientes del noreste de Andhra Pradesh, India :</p>
+
+						<p style="font-size:30px">En primer lugar según CRISP - DM se procede a la comprensión del área de estudio, la misma refiere a mediciones de diferentes variables
+						de pacientes para determinar si tienen hígado o no.
+						<p style="font-size:30px">En segundo lugar se procede a la comprensión de los datos, observamos los atributos medidos y su significado:
+		
+						<p style="font-size:30px">es_paciente es la variable de predicción asume dos valores que representan si el paciente tiene hígado o negocio.</p>
+					<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         table, th, td {
+            border: 2px solid black;
+         }
+      </style>
+   </head>
+
+   <body>
+      <table>
+         	<tr>
+            <th><p style="font-size:22px">Atributo</th></p>
+			<th><p style="font-size:22px">Tipo de atributo</th>
+            <th><p style="font-size:22px">Rango</th>
+			<th><p style="font-size:22px">Distribución</th>
+         	</tr>
+			<tr>
+			<td><strong>age - Edad:</strong> Edad del paciente. Se categoriza como 90 cualquier persona mayor a 90.</td>
+			<td>Numérico</td>
+			<td>4-90</td>
+			<td> Normal</td>
+			</tr>
+			<td><p><strong>gender - Genero:</strong> Asume los valores femenino y masculino</p></td>
+			<td>Binominal</td>
+			<td>Femenino-Masculino</td>
+			<td> - </td>
+			</tr>
+			<td><p><strong>tot_bilirrubin - Bilirrubina total:</strong>Valores de bilirrubina total del paciente (combinación de directa e indirecta). </p></td>
+			<td>Continua</td>
+			<td>0,4-75</td>
+			<td> Exponencial </td>
+			</tr>
+			<td><p><strong>direct_bilirrubin - Bilirrubina directa:</strong>Valores de bilirrubina directa del paciente.</p></td>
+			<td>Continua</td>
+			<td>0,10-19,7</td>
+			<td> No tiene una forma de distribución conocida </td>
+			</tr>
+			<td><p><strong>tot_proteins - Proteínas totales: </strong> Cantidad de proteínas en sangre.</p></td>
+			<td>Continua</td>
+			<td>63-2210</td>
+			<td> Exponencial </td>
+			</tr>
+			<td><p><strong>albumin - Albuminas: </strong> Total de albuminas en sangre.</p></td>
+			<td>Continua</td>
+			<td>10-2000</td>
+			<td> Exponencial </td>
+			</tr>
+				<td><p><strong>ag_ratio - Ratio de albuminas y globulinas: </strong>Indica el ratio entre albuminas y globulinas.</p></td>
+			<td>Continua</td>
+			<td>10-4929</td>
+			<td> Exponencial </td>
+			</tr>
+				<td><p><strong>sgpt - Alanina aminotransferasa </strong> Valores de la enzima alanina aminotransferasa medidos en sangre.</p></td>
+			<td>Continua</td>
+			<td>2,7-9,6</td>
+			<td> Sesgada a la izquierda </td>
+			</tr>
+			<td><p><strong>sgot - Aspartato aminotransferasa:</strong> Valores de la enzima medidos en sangre. </p></td>
+			<td>Continua</td>
+			<td>0,9-5,5</td>
+			<td> Pareciera una forma normal con un leve sesgo a la izquierda. </td>
+			</tr>   
+			<td><p><strong>alkphos - Fosfatasa alcalina: </strong> Valores de la enzima medidos en sangre. </p></td>
+			<td>Continua</td>
+			<td>0,3-2,8</td>
+			<td> Sesgada a la derecha. </td>
+			</tr>  
+      </table>
+   </body>
+</html>
+		<p style="font-size:30px"> Analizados los atributos, los rangos y distribuciones de los mismos de acuerdo a la información brindada por rapid miner en sus resumen de resultados:  </p>
+		<span class="image main"><img src="images/p3_results.png"  alt="" /></span>
+		
+		<p style="font-size:30px"> Como se observa en esta imagen los 0 en la columna (missing) indican que sólo el atributo alkphos (Fosfatasa alcalina) tiene 4 datos faltantes. Depende del modelo a utilizar la repercusión que pueden tener los datos faltantes en el mismo.<br> 
+		Los rangos no denotan valores anormales (outliers).
+		Por otra parte este problema consta con datos etiquetados, por lo que utilizaremos un modelo supervisado de aprendizaje y la variable dependiente a explicar es categórica por tanto estamos ante un problema de clasificación.
+		Se decide utilizar dadas las características del pproblema un árbol de decisión para que sea fácilmente visualizable la solución y de baja complejidad.<br>
+		Para tal fin se vuelve discreta (binominal) la variable de salida y se vuelve discreta la variable genero tomando valores 1 (Hombre) 2(Mujer).<br>
+
+		Por otra parte se utilizará un proceso de optimización para averiguar qué parámetros del arbol de decisión resultan en un mejor nivel de precisión del modelo.<br>
+		En la siguiente imagen es posible observar que se miden las diferentes precisiones del modelo de acuerdo a diferentes ajustes en los parámetros<br>
+	 
+		<span class="image main"><img src="images/p3_optimize.png"  alt="" /></span>
+
+		Los mejores resultan ser los primeros 8 modelos, con una precisión del 73,4%, utilizando Gain Ratio, Gini Index y Accuracy como parámetros de ajuste del modelo,
+		Como muestra la siguiente imagen se obtiene como mejor resultado el modelo que utiliza Gini Index con una profundidad máxima de 2 y un valor mínimo en cada hoja también de dos,
+		obteniendo un 73.79% de precisión en la matriz de confusión<br>
+					<span class="image main"><img src="images/p3_resultsvector.png" style="width:40%;height:20%;" alt="" /></span>
+		<p style="font-size:30px"> Se pueden analizar estos valores considerando la performance obtenida del modelo, como se muestra en la siguiente imagen </p>
+					<span class="image main"><img src="images/p3_matrix.png"  alt="" /></span>
+		<p style="font-size:30px"> Aquí se observa que 289 casos cuya predicción fue Sí, efectivamente son pacientes con hígado mientras 105 cuya predicción fue no, también es una predicción acertada
+		ese decir, no tiene hígado.
+
+				
+	
+		</section>
+		</div>
+		</div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+	<div class="inner">
+
+		<!-- Search -->
+			<section id="search" class="alt">
+				<form method="post" action="#">
+					<input type="text" name="query" id="query" placeholder="Search" />
+				</form>
+			</section>
+		<!-- Menu -->
+		<nav id="menu">
+			<header class="major">
+				<h2>Menu</h2>
+			</header>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
+				<li>
+					<span class="opener" href="index.html">Marco teórico</span>
+					<ul>
+						<li><a  href="supervisados.html">Métodos Supervisados</a></li>
+						<ul>
+						<li><a href="deRegresion.html">De regresión</a></li>
+						<li><a href="deClasificacion.html">De clasificación</a></li>
+						</ul>
+						<li><a  href="noSupervisados.html">Métodos no supervisados</a></li>
+						<ul>
+						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						<li><a href="deClustering.html">De Clustering</a></li>
+						</ul>
+					</ul>
+				</li>
+			
+				<li>
+					<span class="opener">Proyectos Analizados</span>
+					<ul>
+						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
+						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
+						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
+						<li><a href="proyectoCuatro.html">Nombre 4</a></li>
+						
+						<li><a href="proyectoCinco.html">Nombre 5</a></li>
+						
+						<li><a href="proyectoSeis.html">Nombre 6</a></li>
+
+					</ul>
+				</li>
+				<li><a href="extra.html">Material Interesante</a></li>
+			
+			</ul>
+		</nav>
+			</div>
+			</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

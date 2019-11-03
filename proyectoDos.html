@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto análisis cardiológico </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"></a>
+									<ul class="icons">
+											<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+							</ul>
+								</header>
+								
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Predicción de segundo ataque cardíaco</h1>
+									</header>
+							<hr class="major" />										
+							<p style="font-size:30px"> Datos utilizados <a href=""> data set cardiológico</a>
+
+
+						<p style="font-size:40px">El presente data set consta de información de pacientes :</p>
+
+						<p style="font-size:30px">En primer lugar según CRISP - DM se procede a la comprensión del área de estudio, la misma refiere a mediciones de diferentes variables
+						de pacientes cardiológicos.
+						<p style="font-size:30px">En segundo lugar se procede a la comprensión de los datos, observamos los atributos medidos y su significado:
+		
+						<p style="font-size:30px">2do_Ataque_Corazon: Este atributo existe solamente en el dataset de entrenamiento. Es la variable objetivo o de predicción (“label” en RM). En el dataset de entrenamiento, este atributo contiene “SI” para aquellos individuos que han sufrido un segundo ataque al corazón, y “No” en caso contrario. </p>
+					<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         table, th, td {
+            border: 2px solid black;
+         }
+      </style>
+   </head>
+
+   <body>
+      <table>
+         	<tr>
+            <th><p style="font-size:22px">Atributo</th></p>
+			<th><p style="font-size:22px">Tipo de atributo</th>
+            <th><p style="font-size:22px">Rango</th>
+			<th><p style="font-size:22px">Distribución</th>
+         	</tr>
+			<tr>
+			<td><strong>Estado_civil:</strong> Asume los valores: 0 = soltero; 1 = casado, 2 = divorciado y 3 = viudo.</td>
+			<td>Polinominal</td>
+			<td>0-3</td>
+			<td> -</td>
+			</tr>
+			<td><p><strong>Sexo:</strong> Asume los valores 0 = femenino; 1= masculino.</p></td>
+			<td>Binominal</td>
+			<td>0-1</td>
+			<td> - </td>
+			</tr>
+			<td><p><strong>Categoria_Peso:</strong> Toma tres valores: 0 = normal; 1 = sobrepeso; 2 = obeso. </p></td>
+			<td>Categórica tomada como integer</td>
+			<td>0-2</td>
+			<td> - </td>
+			</tr>
+			<td><p><strong>Colesterol:</strong> nivel de colesterol de la persona, tal como se ha registrado en el momento del tratamiento indicado cuando su más reciente ataque al corazón.</p></td>
+			<td>Continua</td>
+			<td>122-239</td>
+			<td> No tiene una forma de distribución conocida </td>
+			</tr>
+			<td><p><strong>Manejo_stress: </strong> Indica si el paciente ha participado previamente de cursos de manejo del estrés: 0 = no; 1 = si.</p></td>
+			<td>Boniminal</td>
+			<td>0-1</td>
+			<td> - </td>
+			</tr>
+			<td><p><strong>Trat_ansiedad:</strong> Atributo que toma valores de tipo entero entre 0 y 100 indicativo del nivel natural de estrés de cada persona y de su habilidad para manejarlo. Poco tiempo después de que la persona se recuperara de su primer ataque, se le administró un test de ansiedad natural estándar. Los valores están tabulados en incrementos de 5. Un valor de 0 indicaría que la persona nunca siente ansiedad, presión o estrés en ninguna situación, mientras que un valor de 100 indicaría que la persona vive en un estado continuo de sobrecarga e incapaz de lidiar con su situación.</p></td>
+			<td>Categórica entendida como continua</td>
+			<td>35-80</td>
+			<td> No tiene una forma de distribución conocida - podría ser normal con sesgo a la derecha </td>
+			</tr>   
+      </table>
+   </body>
+</html>
+					<p style="font-size:30px"> Analizados los atributos se identifican los rangos de los mismos, 
+					<span class="image main"><img src="images/p2_pdatos.jpg"  alt="" /></span>
+					Como se observa en esta imagen los 0 indican que no hay atributos faltantes (missing), los rangos no denotan valores anormales (outliers)
+					<p style="font-size:30px"> Se observan los atributos y las posibles correlaciones que pueden existir entre los mismos. Por ejemplo podrían identificarse entre manejo del estrés y tratamiento de la ansiedad posibles correlaciones y también hay estudios que vinculan niveles de colesterol con factores de estrés así como con el sexo de la persona.</p>
+
+					<p style="font-size:30px"> A continuación se realiza la preparación de los datos: 
+					Se observa la matriz de correlación entre atributos: 
+					<span class="image main"><img src="images/p2_mcorr.jpg"  alt="" /></span>
+					Se observa que los atributos continuos más correlacionados podrían ser edad y tratamiento de la ansiedad pero su valor es bajo.
+					A su vez todos los atributos son importantes y aportan a la predicción de la variable dependiente, por tanto no se seleccionan atributos. </p>
+
+					<p style="font-size:30px">Algo importante a realizar es la normalización de los datos para que los rangos de variación de los mismos no sean muy disímiles. </p>
+								
+								
+					<p style="font-size:30px">Dado el problema que se aborda, y debido a que la variable dependiente toma los valores Sí y No (es categoríca - binominal) se considera que aplicar un método de regresión logística es adecuado para el modelo.		 </p>
+								
+					<span class="image main"><img src="images/p2_accuracy.jpg"  alt="" /></span>			
+								
+					<p style="font-size:30px">Con respecto a la evaluación del modelo, se divide el set de información rotulada en datos de entrenamiento y datos de validación para observar qué tan bien predice el modelo y obtener resultados de su performance.
+						En cuanto a esto se observa que tiene una precisión del 82,93%, observando que  18 casos predichos como sí eran efectivamente sí, mientras que 5 son falsos positivos. Por otra parte 16 casos fueron correctamente predichos como No mientras que 2 fueron falsos negativos.</p>
+						
+						5. Evaluación del modelo, se revisan los pasos seguidos para crearlo y cuánto se adapta al negocio.
+
+					<p style="font-size:30px">6. Implantación implica la organización de la información, su presentación y disposición para poder transmitir al cliente.	
+					
+					</section>
+					</div>
+					</div>
+
+	<!-- Sidebar -->
+<div id="sidebar">
+	<div class="inner">
+
+		<!-- Search -->
+			<section id="search" class="alt">
+				<form method="post" action="#">
+					<input type="text" name="query" id="query" placeholder="Search" />
+				</form>
+			</section>
+		<!-- Menu -->
+		<nav id="menu">
+			<header class="major">
+				<h2>Menu</h2>
+			</header>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
+				<li>
+					<span class="opener" href="index.html">Marco teórico</span>
+					<ul>
+						<li><a  href="supervisados.html">Métodos Supervisados</a></li>
+						<ul>
+						<li><a href="deRegresion.html">De regresión</a></li>
+						<li><a href="deClasificacion.html">De clasificación</a></li>
+						</ul>
+						<li><a  href="noSupervisados.html">Métodos no supervisados</a></li>
+						<ul>
+						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						<li><a href="deClustering.html">De Clustering</a></li>
+						</ul>
+					</ul>
+				</li>
+			
+				<li>
+					<span class="opener">Proyectos Analizados</span>
+					<ul>
+						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
+						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
+						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
+						<li><a href="proyectoCuatro.html">Nombre 4</a></li>
+						
+						<li><a href="proyectoCinco.html">Nombre 5</a></li>
+						
+						<li><a href="proyectoSeis.html">Nombre 6</a></li>
+
+					</ul>
+				</li>
+				<li><a href="extra.html">Material Interesante</a></li>
+			
+			</ul>
+		</nav>
+			</div>
+			</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

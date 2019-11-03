@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto predicción precios viviendas </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"></a>
+									<ul class="icons">
+											<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+							</ul>
+								</header>
+								
+							<!-- Content -->
+								<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Predicción de precios de viviendas en Boston</h1>
+									</header>
+							<hr class="major" />
+										<p style="font-size:30px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/housing/"> data set precios casas</a>
+									
+						<p style="font-size:30px">En primer lugar según CRISP - DM se procede a la comprensión del área de estudio, la misma refiere a mediciones de precios de casas
+						en los suburbios de la ciudad de Boston, Massachusetts, Estados Unidos. 
+						Como es de esperar los precios de las casas están condicionados por múltiples factores, muchas veces condicionados por la localidad de la cual se trate.
+						<p style="font-size:30px">En segundo lugar se procede a la comprensión de los datos, observamos los atributos medidos y su significado:<br>
+		
+					<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         table, th, td {
+            border: 1px solid black;
+         }
+      </style>
+   </head>
+
+   <body>
+      <table>
+         	<tr>
+<th><p style="font-size:22px">Nombre</th>
+<th><p style="font-size:22px">Significado</th>
+<th><p style="font-size:22px">Tipos de datos</th>
+<th><p style="font-size:22px">Rangos</th>
+<th><p style="font-size:22px">Distribuciones</th>
+</tr>
+<tr>
+<td>CRIM</td>
+<td>Tasa de crimen per cápita según ciudad</td>
+<td>Real- numérica</td>
+<td>0-9,967</td>
+<td>Distribución sesgada a la derecha</td>
+</tr>
+<td>ZN</td>
+<td>Proporción de zona residencial con lotes sobre 25 mil metros cuadrados</td>
+<td>Real- numérica</td>
+<td>0-100</td>
+<td>No tiene distribución conocida</td>
+</tr>
+<td>INDUS</td>
+<td>proporción de acres de negocios no minoristas por ciudad</td>
+<td>Real- numérica</td>
+<td>0-27,740</td>
+<td>No tiene distribución conocida</td>
+</tr>
+<td>CHAS</td>
+<td>Limita con el río Charles</td>
+<td>binomial</td>
+<td>0 y 1</td>
+<td>No tiene distribución conocida</td>
+</tr>
+<td>NOX</td>
+<td>Concentración de óxido nítrico (partes por 10 millones)</td>
+<td>Real- numérica</td>
+<td>0,385-0,871</td>
+<td>No tiene distribución conocida</td>
+</tr>
+<td>RM</td>
+<td>Número promedio de cuartos de la vivienda</td>
+<td>Real- numérica</td>
+<td>3,561-8,780</td>
+<td>No tiene distribución conocida</td>
+</tr>
+<td>AGE</td>
+<td>Proporción de unidades ocupadas por sus dueños ocupadas antes de 1940</td>
+<td>Real- numérica</td>
+<td>2,9-100</td>
+<td>Polinomial</td>
+</tr>
+<td>DIS</td>
+<td>Distancia ponderada a 5 centros de empleo de Boston</td>
+<td>Real- numérica</td>
+<td>1,130-12,127</td>
+<td>Binomial negativa</td>
+</tr>
+<td>RAD  </td>
+<td>Índice de accesibilidad a autopistas radiales</td>
+<td>Real- numérica</td>
+<td>45292</td>
+<td>No tiene distribución conocida</td>
+
+</tr>
+<td>TAX</td>
+<td>Valor de impuestos de la vivienda cada $10.000</td>
+<td>Real- numérica</td>
+<td>187-711</td>
+<td>No tiene distribución conocida</td>
+</tr>
+<td>PTRATIO</td>
+<td>Ratio alumno/maestro por ciudad</td>
+<td>Real- numérica</td>
+<td>12,6-22</td>
+<td>No tiene distribución conocida</td>
+</tr>
+<td>B</td>
+<td>1000(Bk - 0.63)^2 donde Bk es la proporción de negros por ciudad</td>
+<td>Real- numérica</td>
+<td>0,320-396,9</td>
+<td>Polinomial</td>
+</tr>
+<td>LSTAT</td>
+<td>% de población de clase baja</td>
+<td>Real- numérica</td>
+<td>1,73-34,410</td>
+<td>Similar a una distribución chi-cuadrado</td>
+</tr>
+<td>MEDV</td>
+<td>Valor medio de las viviendas ocupadas en miles de dólares</td>
+<td>Real- numérica</td>
+<td>6,3-50</td>
+<td>Sesgada a la derecha</td>
+</tr>   
+</table>
+</body>
+</html>
+<p style="font-size:30px"> La variable de salida es MEDV, el modelo busca predecir el valor promedio de las viviendas. <br>
+ En cuanto a la identificación de outliers valores 666 aparecen en la variable RAD, a su vez dichos valores se corresponden con
+ 54 valores missing en la variable a predecir (MEDV).<br>
+ Considerando que estamos ante modelos supervisados, el objetivo es contar con información de salida de la variable dependiente para poder corregir el modelo,
+ es por esto que se decide eliminar los valores con missing en la variable MEDV.</p>
+
+<p style="font-size:30px"> Como se trata de un problema en el cual contamos con datos etiquetados y a su vez queremos obtener un valor numérico de salida, 
+estamos ante un problema a ser abordado con métodos supervisados, de regresión. Para aplicar el modelo utilizaremos la regresión lineal.<br>
+Para ajustar la performance del modelo se utiliza una validación que divide el modelo en datos de test y de entrenamiento para poder estimar la performance
+de los parámetros.<br>
+Según recomiendan estos métodos se aleatoriza el orden de los datos, para evitar que estén ordenados a la hora de seleccionar partes del data set para validación, entrenamiento y test de forma de evitar trabajar con datos segmentados y no representativos de todo el universo de datos.<br>
+Mediante la optimización de parámetros podemos probar cuál es de la regresión lineal el feature selection (selección de atributos) que mejor aplica para el problema <br>
+Se obtiene el test T, levemente superior al ávido como se puede observar en la tabla siguiente:</p> 
+
+<span class="image main"><img title="tabla" src="images/p1_ttest.jpg" style="width:350px;height:320px;" alt="" /></span>
+
+<p style="font-size:30px"> Por lo tanto se decide aplicar dicha selección en la regresión lineal.<br>
+Se procede luego a aplicar el modelo de regresión lineal al set de entrenamiento y luego medir la performance del modelo,
+entre el 70% usado para entrenar y el 30% usado para test. <br>
+Se obtiene la salida de la regresión lineal considerando que sin dudas algunas de las variables analizadas son más significativas en cuanto al modelo y su predicción como es posible osbervar en la siguiente imagen: <br></p>
+<span class="image main"><img  src="images/p1_varrel.jpg" style="width:95%;height:20%%;" alt="" /></span>
+				
+<p style="font-size:30px"> De acuerdo a la imagen (cuantos más asteriscos es más significativa la variable para el modelo) se obtiene que <br>
+RM: Número promedio de cuartos de la vivienda<br>
+DIS: Distancia ponderada a 5 centros de empleo de Boston<br>
+PTRATIO: Ratio alumno/maestro por ciudad<br>
+LSTAT: % de población de clase baja<br>
+Son las variables más significativas para el modelo, seguidas de:<br>
+ZN:Proporción de zona residencial con lotes sobre 25 mil metros cuadrados<br>
+TAX: Valor de impuestos de la vivienda cada $10.000<br>
+B: 1000(Bk - 0.63)^2 donde Bk es la proporción de negros por ciudad<br></p>
+<span class="image main"><img title="tabla" src="images/p1_reglin.jpg" style="width:320px;height:420px;" alt="" /></span>
+
+<p style="font-size:30px">Se observa para el set de datos analizado que la correlación del modelo obtenida es de un 0,820 es decir, el 82% de la variación
+de la variable dependiente y (MEDV) puede ser explicada por la variación de las variables indpenedientes utilizadas en el modelo siendo más significativas las mencionadas
+anteriormente.<br></p>
+		
+<span class="image main"><img title="tabla" src="images/p1_sqcorr.jpg" style="width:25%;height:20%;" alt="" /></span>
+<p style="font-size:30px"> Por tanto se observa que el modelo y principalmente las variables más significativas explican en buena proporción la variación de la variable dependiente
+MEDV, precio de las viviendas</p>
+</section>
+</div>
+</div>
+<!-- Sidebar -->
+<div id="sidebar">
+	<div class="inner">
+
+		<!-- Search -->
+			<section id="search" class="alt">
+				<form method="post" action="#">
+					<input type="text" name="query" id="query" placeholder="Search" />
+				</form>
+			</section>
+		<!-- Menu -->
+		<nav id="menu">
+			<header class="major">
+				<h2>Menu</h2>
+			</header>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
+				<li>
+					<span class="opener" href="index.html">Marco teórico</span>
+					<ul>
+						<li><a  href="supervisados.html">Métodos Supervisados</a></li>
+						<ul>
+						<li><a href="deRegresion.html">De regresión</a></li>
+						<li><a href="deClasificacion.html">De clasificación</a></li>
+						</ul>
+						<li><a  href="noSupervisados.html">Métodos no supervisados</a></li>
+						<ul>
+						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						<li><a href="deClustering.html">De Clustering</a></li>
+						</ul>
+					</ul>
+				</li>
+			
+				<li>
+					<span class="opener">Proyectos Analizados</span>
+					<ul>
+						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
+						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
+						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
+						<li><a href="proyectoCuatro.html">Nombre 4</a></li>
+						
+						<li><a href="proyectoCinco.html">Nombre 5</a></li>
+						
+						<li><a href="proyectoSeis.html">Nombre 6</a></li>
+
+					</ul>
+				</li>
+				<li><a href="extra.html">Material Interesante</a></li>
+			
+			</ul>
+		</nav>
+
+			</div>
+			</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
