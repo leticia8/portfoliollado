@@ -28,34 +28,34 @@
 									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
 							</ul>
 								</header>
-								
-							<!-- Content -->
-								<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Predicción de precios de viviendas en Boston</h1>
-									</header>
-							<hr class="major" />
-										<p style="font-size:30px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/housing/"> data set precios casas</a>
-									
-						<p style="font-size:30px">En primer lugar según CRISP - DM se procede a la comprensión del área de estudio, la misma refiere a mediciones de precios de casas
-						en los suburbios de la ciudad de Boston, Massachusetts, Estados Unidos. 
-						Como es de esperar los precios de las casas están condicionados por múltiples factores, muchas veces condicionados por la localidad de la cual se trate.
-						<p style="font-size:30px">En segundo lugar se procede a la comprensión de los datos, observamos los atributos medidos y su significado:<br>
-		
-					<!DOCTYPE html>
-<html>
-   <head>
-      <style>
-         table, th, td {
-            border: 1px solid black;
-         }
-      </style>
-   </head>
+					
+				<!-- Content -->
+					<!-- Content -->
+					<section>
+						<header class="main">
+							<h1>Predicción de precios de viviendas en Boston</h1>
+						</header>
+			<!-- 	<hr class="major" />-->
+							<p style="font-size:25px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/housing/"> data set precios casas</a>
+						
+			<p style="font-size:25px">En primer lugar siguiendo el modelo CRISP - DM se procede a la comprensión del área de estudio, la misma refiere a establecer un modelo para predecir precios de casas
+			en los suburbios de la ciudad de Boston, Massachusetts, Estados Unidos. 
+			Como es de esperar los precios de las casas están condicionados por múltiples factores, la localidad de la cual se trate, así como superficie y cercanía (o lejanía) a diferentes puntos emblemáticos de una ciudad.
+			<p style="font-size:25px">Para tal fin utilizaremos el data set de UCI - housing. <br> para la comprensión de los datos, observamos las variables independientes del data set y su significado:<br>
 
-   <body>
-      <table>
-         	<tr>
+		<!DOCTYPE html>
+	<html>
+	<head>
+	<style>
+	table, th, td {
+	border: 1px solid black;
+	}
+	</style>
+	</head>
+
+				<body>
+					<table>
+							<tr>
 <th><p style="font-size:22px">Nombre</th>
 <th><p style="font-size:22px">Significado</th>
 <th><p style="font-size:22px">Tipos de datos</th>
@@ -76,13 +76,13 @@
 <td>No tiene distribución conocida</td>
 </tr>
 <td>INDUS</td>
-<td>proporción de acres de negocios no minoristas por ciudad</td>
+<td>Proporción de acres de negocios no minoristas por ciudad</td>
 <td>Real- numérica</td>
 <td>0-27,740</td>
 <td>No tiene distribución conocida</td>
 </tr>
 <td>CHAS</td>
-<td>Limita con el río Charles</td>
+<td>Limita con el río Charles (1 sí y 0 no)</td>
 <td>binomial</td>
 <td>0 y 1</td>
 <td>No tiene distribución conocida</td>
@@ -131,13 +131,13 @@
 <td>No tiene distribución conocida</td>
 </tr>
 <td>B</td>
-<td>1000(Bk - 0.63)^2 donde Bk es la proporción de negros por ciudad</td>
+<td>1000(Bk - 0.63)^2 donde Bk es la proporción de afrodescendientes por ciudad</td>
 <td>Real- numérica</td>
 <td>0,320-396,9</td>
 <td>Polinomial</td>
 </tr>
 <td>LSTAT</td>
-<td>% de población de clase baja</td>
+<td>Porcentaje de población de clase baja</td>
 <td>Real- numérica</td>
 <td>1,73-34,410</td>
 <td>Similar a una distribución chi-cuadrado</td>
@@ -151,18 +151,27 @@
 </table>
 </body>
 </html>
-<p style="font-size:30px"> La variable de salida es MEDV, el modelo busca predecir el valor promedio de las viviendas. <br>
- En cuanto a la identificación de outliers valores 666 aparecen en la variable RAD, a su vez dichos valores se corresponden con
- 54 valores missing en la variable a predecir (MEDV).<br>
- Considerando que estamos ante modelos supervisados, el objetivo es contar con información de salida de la variable dependiente para poder corregir el modelo,
- es por esto que se decide eliminar los valores con missing en la variable MEDV.</p>
-
-<p style="font-size:30px"> Como se trata de un problema en el cual contamos con datos etiquetados y a su vez queremos obtener un valor numérico de salida, 
-estamos ante un problema a ser abordado con métodos supervisados, de regresión. Para aplicar el modelo utilizaremos la regresión lineal.<br>
+<p style="font-size:25px"> La variable a predecir es MEDV, el valor promedio de las viviendas. <br>
+Considerando que estamos ante un problema en el cual la variable de salida es un valor continuo y contamos con datos etiquetados que permiten entrenar una respuesta correcta,
+utilizaremos modelos supervisados, dado que el objetivo es elaborar  un modelo para poder predecir nueva información de la variable dependiente cuando tengamos nuevos datos de variables
+independientes.<br>
+Al ser un problema de regresión utilizaremos la regresión lineal, partiendo de la base de que variables independientes y variable dependiente se vinculan linealmente.<br>
+<br>
+Para la preparación de los datos debemos tener en cuenta los siguientes puntos:<br>
+No se identifican valores missing ni outliers, por tanto eliminamos ese factor de posible ruido en el modelo.<br>
+A su vez se asume distribución normal de las variables.<br>
+Estandarización o normalización.<br>
+Remover colinealidad entre variables, removiendo atributos altamente relacionados unos con otros o que introduzcan ruido al modelo. Rapid miner se encarga de realizar esto con el operador de Linear Regression,
+cuando se habilita uno de sus parámetros (eliminate colinear features). También tiene operadores de feature selection como Backward Elimination, Forward selection y Algoritmo evolutivo, entre otros.<br>
+<br>
+<br>
 Para ajustar la performance del modelo se utiliza una validación que divide el modelo en datos de test y de entrenamiento para poder estimar la performance
 de los parámetros.<br>
-Según recomiendan estos métodos se aleatoriza el orden de los datos, para evitar que estén ordenados a la hora de seleccionar partes del data set para validación, entrenamiento y test de forma de evitar trabajar con datos segmentados y no representativos de todo el universo de datos.<br>
-Mediante la optimización de parámetros podemos probar cuál es de la regresión lineal el feature selection (selección de atributos) que mejor aplica para el problema <br>
+Se aleatoriza el orden de los datos de entrada, para evitar que estén ordenados a la hora de seleccionar partes del data set para validación, entrenamiento y test de forma de evitar trabajar con datos segmentados y no representativos de todo el universo.<br>
+Mediante la optimización de parámetros podemos probar cuál es de la regresión lineal el feature selection (selección de atributos) que mejor aplica para el problema y qué otros parámetros ajustan mejor<br>
+El mejor modelo obtenido no utiliza feature selection pero sí utiliza el sesgo, obtiene un error promedio de la diferencia de medias al cuadrado de 3,402.<br>
+ 
+
 Se obtiene el test T, levemente superior al ávido como se puede observar en la tabla siguiente:</p> 
 
 <span class="image main"><img title="tabla" src="images/p1_ttest.JPG" style="width:350px;height:320px;" alt="" /></span>
@@ -242,15 +251,17 @@ MEDV, precio de las viviendas</p>
 
 					</ul>
 				</li>
-				<li><a href="extra.html">Material Interesante</a></li>
+				<li><a href="TAS.html">TA's del curso</a></li>
 			
 			</ul>
 		</nav>
 
-			</div>
-			</div>
+		
+			
+		</div>
+	</div>
 
-			</div>
+</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
