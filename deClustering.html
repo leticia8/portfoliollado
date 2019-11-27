@@ -32,13 +32,89 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Métodos de clustering</h1>
+										<h1>Algoritmos de clustering</h1>
 									</header>
 
-									<span class="image main"><img src="images/clustering.jpg" style="width:50%;height:50%;" alt="" /></span>
+									<span class="image main"><img src="images/unsupClus.png" style="width:80%;height:60%;" alt="" /></span>
 
-									<p> Los problemas de clustering son aquellos en los que se quiere descubrir las agrupaciones de datos que mejor aplican al problema
+									<p style="font-size:20px ;text-align:justify" > Los problemas de clustering son aquellos en los que se quiere descubrir las agrupaciones de datos que mejor aplican al problema
 									que se desea resolver, como agrupar clientes por su comportamiento de compra</p>
+
+									<p style="font-size:20px ;text-align:justify" >	Entre las técnicas de clusterización se pueden clasificar en: <br>
+
+									<strong>Según pertenencia de los datos:</strong><br>
+									Exclusivos: cada instancia pertenece a un sólo cluster.<br>
+									Superpuestos: no son exclusivos y un dato puede pertenecer a más de uno.<br>
+									Jerárquicos: cada hijo puede ser unido para formar un cluster padre.<br>
+									Difuso o probabilístico: cada punto pertenece a todos los cluster con grados de pertenencia que van de 0 a 1.<br>
+
+									<strong>Según el algoritmo usando para hallar los cluster:</strong><br>
+									Basado en prototipo: cada cluster se representa por un objeto central (prototipo). Usualmente es el centro del cluster - centroide.<br>
+									Cluster de densidad: Un cluster puede definirse como una región densa donde se concentran objetos rodeados de un área de baja densidad. Las áreas de baja densidad pueden ser descartadas como ruido.<br>
+									Cluster jerárquico: Se generan en base a la distancia entre los puntos. La salida es un dendograma. Hay dos acercamientos bottom-up donde cada dato se considera un cluster y los cluster se unen y top-down
+									donde todo el data set es un cluster y ser divide recursivamente en subclusters. Es útil cuando el tamaño de la información es limitado.<br>
+									Cluster basado en modelo: Un cluster puede concebirse como un grupo en el cual los puntos tienen la misma probabilidad d edistrbución. Cada uno puede ser representado por un modelo de distribución donde el parámetro
+									de la distribución puede ser optimizado iterativamente.<br>
+
+									<p style="font-size:24px ;color:Tomato;" > K-MEANS CLUSTERING</p>
+									<span class="image main"><img src="images/k-means.png" style="width:50%;height:30%;" alt="" /></span>
+									<p style="font-size:20px ;text-align:justify" >	En este técnica el usuario/investigador especifica la cantidad de clusters k que deben ser agrupados en el data set. <br>
+									El objetivo de k-means es hallar un prototipo para cada cluster, todos los puntos son asignados entonces al prototipo(centroide) más cercano.<br>
+									En k-means es la media de los puntos, pero podría ser la información más representativa. <br>
+									El centroide no tiene por qué ser un punto real del data set, puede ser imaginario.<br>
+									Cada partición del data set se llaman también particiones Voronoi y cada prototipo es una semilla en la partición, los puntos asociados a la partición forman una única partición.<br>
+									K-Means clustering crea k particiones en un espacio n-dimensional donde n es la cantidad de atributos del data set. Para particionar el data set se debe usar una medida de proximidad, la distancia euclideana es la más usada.<br>
+									Puede tener el problema de encontrar óptimos locales en lugar de converger a la mejor solución global.<br><br>
+									<strong>PASOS DEL ALGORITMO:</strong><br>
+									1- Iniciar k centroides aleatoriamente. K debe ser especificado por el usuario.<br>
+									2- Todos los puntos son asignados al centroide más cercano para formar un cluster. La distancia más común es Euclideana pero se pueden usar otras como el coeficiente de Jaccard o distancia de Manhattan.<br>
+									3- Para cada cluster se calculan nuevos centroides. El centroide es el punto más representativo de todos los puntos en el cluster. 
+									Este paso se puede interpretar como minimizar la suma de errores al cuadrado (SSE) de todos los puntos en el cluster al centroide.<br>
+									4 - Se repite la asignación de puntos y cálculos de centroides hasta que todos los puntos son reasignados a nuevos centroides.<br>
+									5-Termina cuando no se identifican cambios a la asignación.</p>
+
+									<p style="font-size:24px ;color:Tomato;" >DBSCAN - Density Based Spatial Clustering of Applications with Noise</p>
+									<span class="image main"><img src="images/dbscan.png" style="width:50%;height:30%;" alt="" /></span>
+									<p style="font-size:20px ;text-align:justify" >	Un cluster también puede ser definido como un área de gran concentración (o densidad) de datos rodeado de áreas de baja concentración de datos.<br>
+									Un cluster basado en densidad identifica clusters en la información basado en la medida de distribución de densidad en el espacio n dimensional.<br>
+									No es necesario especificar la cantidad de cluster como parámetro. <br>
+									La densidad puede ser definida como la cantidad de puntos en una unidad del espacio n-dimensional.<br>
+									Dicho espacio n-dimensional está determinado por el número de atributos en el data set.En cualquier punto del data set<br>
+									donde haya un espacio de alta densdidad rodeado de otro de relativa baja densidad se identifica un cluster.<br>
+									Es preferible que los atributos sean numéricos porque se utiliza cálculo de distancia.<br>
+									El algoritmo puede ser reducido a tres pasos:<br>
+									1. Definir un umbral de densidad.<br>
+									2. Clasificar los puntos.<br>
+									3. Agurparlos en clusters.<br>
+									El algoritmo inicia con un cálculo de desnidad de todos los puntos del data set dado un radio Epsilon. Se define un umbral 
+									de puntos a partir del cual se considera "alta densidad".<br>
+									Los puntos son clasificados en tres:<br>
+									Puntos del núcleo (core): dentro de la región de alta densidad.<br>
+									Puntos del borde: situados en la circunferencia o radio a una distancia Epsilon. Soon considerados dentro del espacio de alta densidad.<br>
+									Puntos ruido: No se encuentra en ninguna de las dos clasificaciones anteriores.<br>
+									Los grupos de puntos core, forman clusters distintos. Si dos puntos considerados core están a una distancia Epsilon (o menor) uno de 
+									otro pertenecen al mismo cluster.<br></p>
+
+								<p style="font-size:24px ;color:Tomato;" >CLUSTERING JERÁRQUICO</p>
+								<span class="image main"><img src="images/dendogramas.jpg" style="width:50%;height:30%;" alt="" /></span>
+								<p style="font-size:20px ;text-align:justify" >	Es una alternativa al clustering k-means que no requiere especificar un número de K. Tiene un beneficio adicional y es que
+								resulta en un dendograma, representación de las observaciones con forma de árbol que faiclita su comprensibilidad.<br>
+								Existen los clustering de bottom-up que inicia de las hojas y combina los clusters hasta llegar al tronco y top-down que realiza el proceso inverso.<br>
+								Cuanto más pronto se dan las fusiones, más se parecen los grupos de observación entre sí. La altura (considerando el eje y)
+								en la cual dos grupos de observaciones se unen indica cuán diferentes son. En cambio no podemos hacer afirmaciones de cuán
+								parecidas son dos observaciones basándonos en su diistancia en el eje horizontal.<br>
+								El término jerárquico refiere al hecho de que los cluster se obtienen "cortando" el dendograma a cualquier altura.<br>
+								El algoritmo de clustering jerárquico es muy simple, comienza definiendo una medida de disimilitud entre cada para de observaciones.<br>
+								La distancia Euclideana es la más utilizada, procediendo luego el algoritmo iterativamente. Empezando por las hojas (en la estrategia bottom-up), cada observación
+								es definida como un cluster. Los dos cluster más parecidos se fusionan pasando a haber n-1 clusters. El algoritmo sigue procediendo de igual forma
+								hasta que haya un único cluster.<br>
+								Para aplicar el concepto de disimilitud a grupos de observaciones se utiliza el concepto de enlace. Existen cuatro tipos de enlace:<br>
+								Completo: La máxima disimilitud  entre los pares de puntos de los clusters.<br>
+								Simple: La mínima disimilitud entre los pares de puntos de los clusters.<br>
+								Promedio: el promedio de las diferencias entre pares de puntos de dos clusters.<br>
+								Centroide: disimilitud entre centroides de los clusters.<br>
+								Los más comunes son promedio, simple y completo. Siendo promedio y completo preferidos sobre simple dado que resultan en
+								dendogramas más balanceados.<br>
 
 									<hr class="major" />
 
@@ -57,7 +133,7 @@
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
 								</section>
-		<!-- Menu -->
+<!-- Menu -->
 		<nav id="menu">
 			<header class="major">
 				<h2>Menu</h2>
@@ -68,29 +144,29 @@
 				<li>
 					<span class="opener" href="index.html">Marco teórico</span>
 					<ul>
-						<li><a  href="supervisados.html">Métodos Supervisados</a></li>
+						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
 						<ul>
 						<li><a href="deRegresion.html">De regresión</a></li>
 						<li><a href="deClasificacion.html">De clasificación</a></li>
 						</ul>
-						<li><a  href="noSupervisados.html">Métodos no supervisados</a></li>
+						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
 						<ul>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
 						<li><a href="deClustering.html">De Clustering</a></li>
+						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						
 						</ul>
 					</ul>
 				</li>
-			
 				<li>
-					<span class="opener">Proyectos Analizados</span>
+					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
 					<ul>
 						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
 						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
 						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCuatro.html">Nombre 4</a></li>
+						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
 						
-						<li><a href="proyectoCinco.html">Nombre 5</a></li>
-						
+						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
+				
 						<li><a href="proyectoSeis.html">Nombre 6</a></li>
 
 					</ul>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto diagnóstico TEA </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"></a>
+									<ul class="icons">
+											<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+								</ul>
+								</header>
+								
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Predicción trastorno de espectro autista en adultos</h1>
+									</header>
+							<hr class="major" />										
+							<p style="font-size:30px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult"> data set adultos p/diag TEA</a>
+
+
+						<p style="font-size:30px">
+El trastorno del espectro autista (TEA) es una afección del desarrollo neurológico y se asocia en general con costos de atención médica altos, repercusiones profundas en la vida de la persona diagnosticada y su entorno. Hoy en día el diagnóstico lleva tiempo y tiene un impacto económico y social muy alto, el presente estudio considera de valor el diagnóstico temprano ayudando a reducir estas repercusiones significativamente. 
+Al constatar un aumento de los casos de TEA en los últimos tiempos a nivel mundial se considera relevante desarrollar métodos de diagnóstico eficaces que ayuden al profesional de la salud a realizar diagnósticos de forma temprana acortando procesos escabrosos para el paciente y su familia y reduciendo costos.
+En el siguiente estudio se utilizan 20 atributos: diez características de comportamiento (AQ-10-Child) más diez características de la persona que sucesivos estudios han demostrado son efectivas para detectar los casos de TEA en ciencias del comportamiento.
+La fuente del data set es Fadi Fayez Thabtah, del departamento de tecnología digital del Instituto de tecnología Manukau de Auckland, New Zealand.<br>
+Los atributos utilizados en el presente data set son:
+<TABLAAA>
+Class/ASD es la variable dependiente que determina una clasificación binaria en si es autista o no.
+Por tanto, nos enfrentamos a un problema de clasificación, supervisado dado que tenemos una salida que se evalúa “correcta”.
+Contamos con tres data set distintos, uno para datos de niños, otro para datos de adolescentes y otro de adultos.
+https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult
+Entendimiento de los datos
+En primer lugar, analizamos la información que tiene el data set, observamos que hay atributos deterministas en el modelo como ser las respuestas al test, el resultado del mismo y la clasificación de si tiene trastorno del espectro autista o no la persona estudiada. Por ende no tiene sentido que incluyamos dichas variables en el modelo dada su directa relación con la causa estudiada, son variables efímeras.
+Por tanto los atributos a incorporar para el análisis son:
+
+<TABLAAA>
+Preparación de datos:
+A la hora de trabajar con los datos se observa la existencia de atributos con escala continua, como edad, datos categóricos de dos tipos, variables como sexo, etnicidad, país de residencia y quién completa el test así como variables dummies (sí /no) que indagan acerca de si cumple una característica deseada o no tomando los valores 1 y 0.
+Se observan valores missing en las variables Edad, Origen étnico y relación con el encuestado de quién completa la encuesta.
+La cantidad de datos missing es de 294 
+
+				
+	
+		</section>
+		</div>
+		</div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+	<div class="inner">
+
+		<!-- Search -->
+			<section id="search" class="alt">
+				<form method="post" action="#">
+					<input type="text" name="query" id="query" placeholder="Search" />
+				</form>
+			</section>
+	<!-- Menu -->
+		<nav id="menu">
+			<header class="major">
+				<h2>Menu</h2>
+			</header>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
+				<li>
+					<span class="opener" href="index.html">Marco teórico</span>
+					<ul>
+						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
+						<ul>
+						<li><a href="deRegresion.html">De regresión</a></li>
+						<li><a href="deClasificacion.html">De clasificación</a></li>
+						</ul>
+						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
+						<ul>
+						<li><a href="deClustering.html">De Clustering</a></li>
+						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						
+						</ul>
+					</ul>
+				</li>
+				<li>
+					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
+					<ul>
+						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
+						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
+						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
+						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
+						
+						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
+				
+						<li><a href="proyectoSeis.html">Nombre 6</a></li>
+
+					</ul>
+				</li>
+				<li><a href="TAS.html">TA's del curso</a></li>
+			
+			</ul>
+		</nav>
+		
+			
+		</div>
+	</div>
+
+</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

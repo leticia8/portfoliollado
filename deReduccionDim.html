@@ -35,11 +35,62 @@
 										<h1>Métodos de reducción de dimensiones</h1>
 									</header>
 
-									<span class="image main"><img src="images/dr.png" style="width:40%;height:40%;" alt="" /></span>
+									<span class="image main"><img src="images/unsupDimRed.png" style="width:80%;height:60%;" alt="" /></span>
 
-									<p> Los problemas de asociacion o reducción de dimensiones buscan descubrir reglas que apliquen a una gran proporción de los datos,
+									<p style="font-size:20px ;text-align:justify" >Los problemas de asociacion o reducción de dimensiones buscan descubrir reglas que apliquen a una gran proporción de los datos,
 									como por ejemplo las personas que compran A suelen comprar B.</p>
 
+																		<span class="image main"><img src="images/featureSel.png" style="width:90%;height:90%;" alt="" /></span>
+
+									<p style="font-size:20px ;text-align:justify" >	Entre las técnicas de reducción de dimensiones se encuentran: <br>
+
+
+								<p style="font-size:24px ;color:Tomato;" > FEATURE SELECTION</p>	
+
+								<p style="font-size:20px ;text-align:justify" >	Hay dos tipos de selección de procesos de selección de atributos: <br>
+									De filtro y de "envoltura" (wrapper). Los de filtro seleccionan aquellos atributos que cumplen ciertos requisitos establecidos
+									mientras que los de wrapper seleccionan iterativamente sólo los atributos que mejoran la performance del algoritmo.<br>
+									Los algoritmos de filtro no requieren de ningún algoritmo de aprendizaje, mientras que los de "envoltura" se optimizan 
+									para un algoritmo en particular.<br>
+
+									Los algoritmos de filtro pueden ser considerados "No supervisados" y se utilizan cuando hay muchos atributos o el costo
+									computacional es muy elevado.<br> </p>
+
+								<p style="font-size:24px ;color:Tomato;" > 	ANÁLISIS DE COMPONENTES PRINCIPALES - PCA</p>	
+																										<span class="image main"><img src="images/pca.png" style="width:50%;height:50%;" alt="" /></span>
+
+								<p style="font-size:20px ;text-align:justify" >	PCA nos ayuda a responder la pregunta de cuántos de los atributos de mi data set explican una cantidad significativa de la variación 
+									contenida en el data set. En general aplica la regla 80/20, puede un 20% de los atributos explicar el 80% de la variación?. <br>
+									PCA captura los atributos que contienen la mayor cantidad de variabilidad en el data set, esto lo hace transformando las variables
+									existentes en un set de "componentes principales" o nuevas variables que tienen las siguientes propiedades:<br>
+									No están correlacionadas entre sí<br>
+									Explican una gran cantidad de la varianza de los datos.<br>
+									Puedenser relacionados con las variables originales por los coeficientes de ponderación. <br>
+									Las variables con bajos factores de coeficiente de ponderación en sus componentes principales son removidas del data set.<br>
+									Mediante una combinación lineal de las variables se crea un componente principal z.<br>
+							
+										<img src="http://latex.codecogs.com/gif.latex?zm =\sum(w_i * x_i)" border="0"/>. <br>
+
+									Se realiza un análisis de los "eigenvalues" (valores propios) de la matriz de covarianza de los atributos originales.<br>
+									El eigenvector (vector propio) asociado con el mayor eigenvalue es el primer componente principal, el vector asociado con el segundo
+									mayor valor de eigenvalues es el segundo componente principal y así sigue.<br>
+									La covarianza explica cómo dos variables varían con respecto a sus medias.<br>
+									PCA sólo trabaja con atributos numéricos. <br>
+									Antes de eliminar cualquier variable debe realizarse un análisis de evaluación de los datos en el contexto del problema,
+									si hay ruido PCA puede sugerir como variables relevantes aquellas que no lo son dado que considera la variación. <br>
+									No ayuda adicionar datos irrelevantes ni datos no correlacionados.<br>
+									PCA es un algoritmo sensible a los rangos de las variables, para minimizar esto se debe normalizar la información.<br></p>
+
+									<p style="font-size:24px ;color:Tomato;" >MÉTODOS ENVOLVEDORES - WRAPPER </p>
+								<p style="font-size:20px ;text-align:justify" >	Las aproximaciones "envolvedoras" iterativamente seleccionan aributos para añadir o remover del data set basados en si la nueva información
+									mejora la precisión del modelo.<br>
+									Una forma de realizar esto es empezar con una variable, y construir un modelo base. Luego añadir una segunda variable y comparar
+									con el modelo base anterior. Si la performance es mejor, hacemos de este modelo el nuevo modelo base, añadimos una tercer variable
+									y seguimos el mismo procedimiento. Si no se produce una mejora seleccionamos un nuevo atributo descartando el anterior y seguimos probando.<br>
+									Este algoritmo se denomina "forward selection".<br>
+									La forma inversa es iniciar con todos los atributos y remover una variable a la vez construyendo un nuevo modelo. En general
+									la variable a remover se selecciona considerando el valor del estadístico t , se deja fuera aquella con menor t valor. Este proceso
+									se llama "backward elimination".<br></p>
 									<hr class="major" />
 
 									
@@ -59,7 +110,7 @@
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
 								</section>
-	<!-- Menu -->
+<!-- Menu -->
 		<nav id="menu">
 			<header class="major">
 				<h2>Menu</h2>
@@ -70,29 +121,29 @@
 				<li>
 					<span class="opener" href="index.html">Marco teórico</span>
 					<ul>
-						<li><a  href="supervisados.html">Métodos Supervisados</a></li>
+						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
 						<ul>
 						<li><a href="deRegresion.html">De regresión</a></li>
 						<li><a href="deClasificacion.html">De clasificación</a></li>
 						</ul>
-						<li><a  href="noSupervisados.html">Métodos no supervisados</a></li>
+						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
 						<ul>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
 						<li><a href="deClustering.html">De Clustering</a></li>
+						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						
 						</ul>
 					</ul>
 				</li>
-			
 				<li>
-					<span class="opener">Proyectos Analizados</span>
+					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
 					<ul>
 						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
 						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
 						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCuatro.html">Nombre 4</a></li>
+						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
 						
-						<li><a href="proyectoCinco.html">Nombre 5</a></li>
-						
+						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
+				
 						<li><a href="proyectoSeis.html">Nombre 6</a></li>
 
 					</ul>
@@ -101,7 +152,6 @@
 			
 			</ul>
 		</nav>
-
 		
 			
 		</div>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto restos óseos </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"></a>
+									<ul class="icons">
+											<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+								</ul>
+								</header>
+								
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Predicción a partir de restos óseos</h1>
+									</header>
+							<hr class="major" />										
+							<p style="font-size:30px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)"> data set pacientes</a>
+
+
+			<p style="font-size:30px">		El data set utilizado es de Gråbrødre (monasterio franciscano) de la ciudad de Ribe  en el suroeste de Jutlandia, Dinamarca.<br>
+De los cuerpos excavados se utilizaron los datos de 114 adultos, 67 hombres y 47 mujeres.<br>
+El objetivo es predecir la edad de la persona a partir de restos óseos. El marco teórico forense afirma la relación entre el tamaño del fémur y la edad de la persona dependiendo del sexo, y otras variables.<br>
+La hipoplasia es el desarrollo incompleto del esmalte dental que se produce antes de que la pieza dental erupcione en la boca, esta característica no se modifica una vez conformada.<br>
+Según ADBOU la hipoplasia puede ser un indicador de problemas de crecimiento y/o pobre salud. Algunas están directamente relacionadas a problemas de salud mientras que otras pueden ser producto de una enfermedad pasajera que ocurrió en el momento de la niñez en el cual se estaba desarrollando el esmalte dental. Es importante considerar que toda enfermedad sufrida durante la niñez puede provocar un desarrollo en el crecimiento menor del esperado.<br>
+Grave Number: Todo esqueleto hallado en un tumba es etiquetado con la letra G seguido de un número<br>
+La altura se mide en esqueletos en posición supina extendida que se encuentran preservados y no han sido movidos. Se mide desde el punto craneal más alejado del cuerpo y el punto más lejano del astrágalo (hueso del tobillo).<br>
+La edad y el sexo se estiman por procedimientos forenses probados y descriptos  en   <br>
+El uso del método requiere entrenamiento básico en osteología y se basa en ambas observaciones hechas de esqueletos de muestras de referencia (material esquelético donde la edad de la muerte y el sexo es conocido) y métodos estadísticos (análisis de regresión logística y teorema de Bayes). Consideran huesos como: Limbus acetabula,  Proximal Tibia, Femur linea aspera, Femur fossa trochanteria, y Femur caput fóvea. La edad se determina con un margen superior e inferior.<br>
+Análogamente  el sexo se clasifica utilizando una variable ordinal de 7 categorías que van desde claramente masculino, predominantemente masculino, levemente masculino e indefinido a claramene femenino, considerando cráneo, pelvis y el esqueleto postcraneal. <br>
+El tamaño de los dientes se considera a la hora de estimar la edad, los cuatro incisivos forman un grupo, los dos los caninos forman un grupo y los cuatro molares caducifolios forman un grupo. Un grupo solo tiene que estar representado por un solo diente para obtener una puntuación positiva.  <br>
+
+Las variables relevadas, además del id que cumple una función únicamente identifcatoria son: <br>
+Location: en todos los casos es Ribe, salvo un caso que tiene en la variable locación el número de tumba, un error de registro. <br>
+
+Site_Number: El 'número de sitio' es el registro de las autoridades de la excavación. <br>
+Age_minumum: es la edad mínima estimada <br>
+Age_maximum: es la edad máxima estimada <br>
+Sex: es la estimación de sexo de acuerdo a los datos anteriormente mencionados <br>
+Grave Number: La numeración de las tumbas suele no ser consistente dado que se excavaron muchas tumbas en excavaciones independientes los números no guardan una estricta relación. <br>
+Canine number	: Número de hipoplasias visibles en el canino. <br>
+Canine largest age: edad en que se formó la hipoplasia más grande del canino. <br>
+Canine 2nd largest age	: edad en que se formó la 2da hipoplasia más grande del canino. <br>
+Incisor number: Número de hipoplasias visibles en el incisivo. <br>
+Incisor largest age: edad en que se formó la hipoplasia más grande del incisivo. <br>
+Incisor 2nd largest age: edad en que se formó la 2da hipoplasia más grande del incisivo. <br>
+Height in grave: altura medida del esqueleto (variable dependiente) <br>
+Notas de anomalías en las vértebras: cualquier observación sobre anomalías observadas que pueda influenciar la altura medida. Si hay anomalías que puedan afectar la altura no debería ser tenido en cuenta el dato. <br>
+Femur left: medida en cm del fémur izquierdo <br>
+Femur right: medida en cm del fémur derecho <br>
+Abnormalities Fémur: notas sobre anormalidades del fémur. <br>
+Notes: cualquier nota a considerar, cualquier enfermedad sufrida. <br>
+Date: fecha de registro del dato <br>
+Signature: Firma del investigador que colectó el dato <br>
+Teeth scorable: Indica si los dientes son puntuables o no. Se considera un diente no puntuable cuando más de un tercio del diente está desgastado. Cuando un diente está tan desgastado, <br>
+Hypoplpasia: Debe marcarse si se puntúan las hipoplasias. Las hipoplasias se puntúan en el canino superior izquierdo y el incisivo izquierdo. <br>
+Selección de atributos
+En esta oportunidad no se considerarán atributos nominativos considerados iguales para todas las bases analizadas, por ejemplo location, site_number porque son iguales para todo el modelo, grave_number es aclarado que no tiene ninguna significación por cómo fueron recolectados los datos, por ende tampoco parece ser de utilidad para la predicción del modelo.
+Las notas serán consideradas cualitativamente a la hora de proceder a descartar el dato si el mismo no reúne las condiciones para ser analizado.
+A su vez, fecha y firma tampoco son consideradas relevantes para el presente análisis.
+Se considera relevante realizar un promedio de la edad (mínima y máxima) y del tamaño del fémur (izquierdo y derecho).
+Se recodifica sexo hombre -0 y mujer - 1
+Se filtran los datos missing para sexo y para promedio de tamaño del fémur.
+Se observa una gran cantidad de missing en las variables número de hipoplasia en canino y en incisivo así como la edad de la más larga y la segunda más larga tanto para caninos como para incisivos.
+El problema con el presente data set es que contiene muchos datos missing de medidas de dientes, por lo que al incorporar dichas medidas al modelo disminuye sensiblemente el R2.
+Se utilizan diferentes técnicas de feature selection para ver el peso de los atributos
+El análisis de componentes principales arroja que los tres primeros componentes explican el 87,7% de la variación
+
+					<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         table, th, td {
+            border: 2px solid black;
+         }
+      </style>
+   </head>
+
+   <body>
+      <table>
+         	<tr>
+            <th><p style="font-size:22px">Atributo</th></p>
+			<th><p style="font-size:22px">Tipo de atributo</th>
+            <th><p style="font-size:22px">Rango</th>
+			<th><p style="font-size:22px">Distribución</th>
+         	</tr>
+			
+      </table>
+   </body>
+</html>
+			<span class="image main"><img src="images/p4_pca.PNG"  alt="" /></span>
+		<p style="font-size:30px">	El problema es que el primer componente tiene una repartición de los atributos muy variada a la interna donde cada elemento tiene de por sí poco peso, 
+Incisor 2nd largest age, Hyperplasia, Incisor largest age, Canine largest age, Canine number, Incisor number.
+Estos atributos tienen a su vez muchos valores missing.
+El segundo componente principal por otra parte presenta un peso considerable del tamaño del fémur y el sexo.
+
+					<span class="image main"><img src="images/p4_pca2.PNG"  alt="" /></span>
+					Por otra parte al observar la correlación de los atributos se observa que  como es de esperar todo atributo concerniente a los dientes, el número de hipoplasia, la edad a la que apareció, si existe hipoplasia y si es considerable la medida de los dientes están fuertemente correlacionadas entre sí.
+
+					<span class="image main"><img src="images/p4_mc.PNG"  alt="" /></span>
+				<p style="font-size:30px">	Al considerar únicamente sexo y tamaño promedio del fémur se obtiene una correlación R2 de 78,9%  lo que indica que el 78.9% de la altura del esqueleto puede ser respondida utilizando el sexo y la altura del fémur.
+Los errores promedio son 3,328 cm
+http://www.adbou.dk/fileadmin/adbou/projektopgaver/ADBOU_linear_regression_Mette_Wodx.pdf
+
+	
+		</section>
+		</div>
+		</div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+	<div class="inner">
+
+		<!-- Search -->
+			<section id="search" class="alt">
+				<form method="post" action="#">
+					<input type="text" name="query" id="query" placeholder="Search" />
+				</form>
+			</section>
+	<!-- Menu -->
+		<nav id="menu">
+			<header class="major">
+				<h2>Menu</h2>
+			</header>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
+				<li>
+					<span class="opener" href="index.html">Marco teórico</span>
+					<ul>
+						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
+						<ul>
+						<li><a href="deRegresion.html">De regresión</a></li>
+						<li><a href="deClasificacion.html">De clasificación</a></li>
+						</ul>
+						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
+						<ul>
+						<li><a href="deClustering.html">De Clustering</a></li>
+						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						
+						</ul>
+					</ul>
+				</li>
+				<li>
+					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
+					<ul>
+						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
+						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
+						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
+						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
+						
+						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
+				
+						<li><a href="proyectoSeis.html">Nombre 6</a></li>
+
+					</ul>
+				</li>
+				<li><a href="TAS.html">TA's del curso</a></li>
+			
+			</ul>
+		</nav>
+		</div>
+	</div>
+
+</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

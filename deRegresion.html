@@ -32,14 +32,64 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Métodos de regresión</h1>
+										<h1>Algoritmos de regresión</h1>
 									</header>
 
-									<span class="image main"><img src="images/regression.jpg" style="width:30%;height:50%;" alt="" /></span>
+									<span class="image main"><img src="images/supLearn.png" style="width:60%;height:80%;" alt="" /></span>
 
-									<p>Los problemas de regresión son aquellos en los que la variable de salida toma un valor continuo.</p>
+									<p style="font-size:20px ;text-align:justify" >Los problemas de regresión son aquellos en los que la variable de salida toma un valor continuo.<br>
+									Entre los algoritmos más utilizados de regresión se encuentran: <br>
+									
+									<p style="font-size:24px ;color:Tomato;" > REGRESIÓN LINEAL </p>
+									<p style="font-size:18px ;text-align:justify" >Es un modelo lineal, que asume una relación lineal entre las variables de entrada y la variable de salida (y).<br>
+									La ecuación de regresión lineal asigna un factor de escala a cada atributo de entrada, llamado coeficiente y generalmente representado por la letra β. Se agregar un coeficiente adicional, dando un grado mayor de libertad usualmente llamado ¨intercepto¨ o el coeficiente de sesgo. Es común hablar de la complejidad del modelo de regresión lineal refiriéndose a la cantidad de coeficientes.<br>
+									Aprender un modelo de regresión lineal aplica estimar los valores de los coeficientes usados en la representación de la información.<br><br>
+									<strong>PREPARACIÓN DATOS: </strong><br>
+									Asunción de relación lineal : podrá ser necesario transformar la información para hacer esa relación entre input y output lineal.<br>
+									Se debe remover ruido y colinealidad<br>
+									Distribución gaussiana: las predicciones serán más confiables si la distribución es Gaussiana (normal).<br>
+									Normalización: las predicciones serán más confiables si se usa normalización.<br>
+									</p>
 
+									<p style="font-size:24px ;color:Tomato;" > ÁRBOLES DE DECISIÓN - 	CART – Classification And Regression Trees </p>
+									<p style="font-size:18px ;text-align:justify" >Clásicamente se han referido como árboles de decisión aunque actualmente se los nombre como Classification and Regression Trees (CART)<br>
+								
+									La representación es un árbol binario donde cada nodo representa una variable de entrada x y un punto de corte en dicha variable. Las hojas del árbol contienen la variable de salida (y) que son usadas para hacer la predicción.<br>
+									Hacer predicciones es bastante directo. 
+									Se puede pensar a cada variable de entrada como una dimensión en un espacio p-dimensional. 
+									El árbol de decisión divide el espacio en dos rectángulos o hiper-rectángulos con más entradas.<br>
+									Se usa un método ávido dividir el espacio denominado división recursiva binaria. 
+									Es un procedimiento numérico donde todos los valores se alinean y diferentes puntos de división se prueban usando una función de costo. 
+									La división con mejor costo es seleccionada. <br>
+									Para problemas de regresión la función costo que es minimizada para seleccionar los puntos de corte es la suma de errores al cuadrado de todas las muestras de entrenamiento.<br>
+									El procedimiento de detención más común es usar la mínima cantidad de datos de entrenamiento usados para cada nodo hoja.<br>
+									Se puede podar el árbol luego del entrenamiento dado que árboles más sencillos son preferidos dado que son más fáciles de entender y menos probable de que sobreajusten la información.<br>
+									Los métodos de poda más rápidos y sencillos se llevan a cabo evaluando el efecto sobre el costo de remover dicho nodo del modelo.
+									Cuando no se logran mejoras se detiene el procedimiento.<br><br>
+									<strong>PREPARACIÓN DATOS: </strong><br>
+									No require preparación.<br>
 
+									<p style="font-size:24px ;color:Tomato;" >RANDOM FOREST</p>
+									<p style="font-size:18px ;text-align:justify"> Son una mejora sobre los árboles de decisión que utilizan el algoritmo Bagged (Bagging and Aggregation).
+									El problema es que es un algoritmo ávido, esto implica que en cada iteración busca el óptimo local que puede terminar no siendo el óptimo a nivel general.
+									En cada split se evalúa un número de atributos establecidos por parámetro que son seleccionados aleatoriamente de entre todos los atributos disponibles,
+									se recomienda para algoritmos de regresión que dicho número sea igual a p/3 siendo p el número de variables o atributos de entrada.<br>
+									Random Forest soluciona el problema de la correlación entre los modelos al incluir aleatoriedad en la elaboración de los mismos.
+									Para decidir la cantidad m de atributos a seleccionar es mejor iniciar con 5 valores entre 2 y p (cantidad de atributos o variables de entrada) e ir probando la performance, para la cantidad de modelos a ejecutar
+									se recomienda un aproximado a 1000 árboles aunque como en todos los casos depende del problema y el conocimiento del negocio. <br>
+									En random forest todos los árboles se crean independientemente para tener la profundidad deseada y contribuye de igual forma al modelo.<br>
+									
+									
+									<p style="font-size:24px ;color:Tomato;" >"GRADIENT BOOST" PARA ÁRBOLES DE REGRESIÓN 
+									<p style="font-size:18px ;text-align:justify">
+									Dada una función de medida de pérdida y un algoritmo de aprendizaje débil se halla un modelo aditivo que minimiza la función de pérdida.<br>
+									Se inicia con el promedio de las respuestas se calcula el gradiente y el modelo es adaptado a los residuos para minimizar la función de pérdida. 
+									El modelo se adiciona al anterior y el procedimiento continúa las veces estipuladas en el parámetro que es establecido por el investigador.<br>
+			
+								    Ventajas que presenta la utilización de árboles es que los mismos pueden volverse modelos débiles controlando la profundidad del árbol, a su vez, pueden ser separados, manteniendo la independencia y pueden ser generados rápidamente.<br>
+									
+						
+									<p style="font-size:18px ;text-align:justify" >
 									<hr class="major" />
 															<h2>Proyectos que utilizan métodos de regresión</h2>
 										<ul>
@@ -62,7 +112,7 @@
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
 								</section>
-	<!-- Menu -->
+<!-- Menu -->
 		<nav id="menu">
 			<header class="major">
 				<h2>Menu</h2>
@@ -73,29 +123,29 @@
 				<li>
 					<span class="opener" href="index.html">Marco teórico</span>
 					<ul>
-						<li><a  href="supervisados.html">Métodos Supervisados</a></li>
+						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
 						<ul>
 						<li><a href="deRegresion.html">De regresión</a></li>
 						<li><a href="deClasificacion.html">De clasificación</a></li>
 						</ul>
-						<li><a  href="noSupervisados.html">Métodos no supervisados</a></li>
+						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
 						<ul>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
 						<li><a href="deClustering.html">De Clustering</a></li>
+						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						
 						</ul>
 					</ul>
 				</li>
-			
 				<li>
-					<span class="opener">Proyectos Analizados</span>
+					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
 					<ul>
 						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
 						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
 						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCuatro.html">Nombre 4</a></li>
+						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
 						
-						<li><a href="proyectoCinco.html">Nombre 5</a></li>
-						
+						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
+				
 						<li><a href="proyectoSeis.html">Nombre 6</a></li>
 
 					</ul>
@@ -104,7 +154,6 @@
 			
 			</ul>
 		</nav>
-
 		
 			
 		</div>
