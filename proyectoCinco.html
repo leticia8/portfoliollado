@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Proyecto diagnóstico TEA </title>
@@ -32,23 +27,136 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Predicción trastorno de espectro autista en adultos</h1>
+										<h2>Predicción trastorno de espectro autista en adultos</h2>
 									</header>
-							<hr class="major" />										
-							<p style="font-size:30px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult"> data set adultos p/diag TEA</a>
+																	
+								<p style="font-size:18px">Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult"> data set adultos p/diag TEA</a>
+								<hr class="major" />
+								<p style="font-size:20px ;text-align:justify">
+							El trastorno del espectro autista (TEA) es una afección del desarrollo neurológico y se asocia en general con costos de atención médica altos, repercusiones profundas en la vida de la persona diagnosticada y su entorno. Hoy en día el diagnóstico lleva tiempo y tiene un impacto económico y social muy alto, el presente estudio considera de valor el diagnóstico temprano ayudando a reducir estas repercusiones significativamente. <br>
+							Al constatar un aumento de los casos de TEA en los últimos tiempos a nivel mundial se considera relevante desarrollar métodos de diagnóstico eficaces que ayuden al profesional de la salud a realizar diagnósticos de forma temprana acortando procesos escabrosos para el paciente y su familia y reduciendo costos.<br>
+							En el siguiente estudio se utilizan 20 atributos: diez características de comportamiento (AQ-10-Child) más diez características de la persona que sucesivos estudios han demostrado son efectivas para detectar los casos de TEA en ciencias del comportamiento.<br>
+							La fuente del data set es Fadi Fayez Thabtah, del departamento de tecnología digital del Instituto de tecnología Manukau de Auckland, New Zealand.<br>
+							Los atributos utilizados en el presente data set son:<br>
 
+	<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         table, th, td {
+            border: 2px solid black;
+         }
+      </style>
+   </head>
 
-						<p style="font-size:30px">
-El trastorno del espectro autista (TEA) es una afección del desarrollo neurológico y se asocia en general con costos de atención médica altos, repercusiones profundas en la vida de la persona diagnosticada y su entorno. Hoy en día el diagnóstico lleva tiempo y tiene un impacto económico y social muy alto, el presente estudio considera de valor el diagnóstico temprano ayudando a reducir estas repercusiones significativamente. 
-Al constatar un aumento de los casos de TEA en los últimos tiempos a nivel mundial se considera relevante desarrollar métodos de diagnóstico eficaces que ayuden al profesional de la salud a realizar diagnósticos de forma temprana acortando procesos escabrosos para el paciente y su familia y reduciendo costos.
-En el siguiente estudio se utilizan 20 atributos: diez características de comportamiento (AQ-10-Child) más diez características de la persona que sucesivos estudios han demostrado son efectivas para detectar los casos de TEA en ciencias del comportamiento.
-La fuente del data set es Fadi Fayez Thabtah, del departamento de tecnología digital del Instituto de tecnología Manukau de Auckland, New Zealand.<br>
-Los atributos utilizados en el presente data set son:
-<TABLAAA>
-Class/ASD es la variable dependiente que determina una clasificación binaria en si es autista o no.
-Por tanto, nos enfrentamos a un problema de clasificación, supervisado dado que tenemos una salida que se evalúa “correcta”.
-Contamos con tres data set distintos, uno para datos de niños, otro para datos de adolescentes y otro de adultos.
-https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult
+   <body>
+      <table>
+         	<tr>
+            <th><p style="font-size:18px">Atributo</th></p>
+			<th><p style="font-size:18px">Tipo de atributo</th>
+            <th><p style="font-size:18px">Rango</th>
+         	</tr>
+			<tr>
+			<td><strong> A1_Score </strong> Código de respuesta a la primer pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A2_Score </strong> Código de respuesta a la segunda pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A3_Score </strong> Código de respuesta a la tercer pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A4_Score </strong> Código de respuesta a la cuarta pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A5_Score </strong> Código de respuesta a la quinta pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A6_Score </strong> Código de respuesta a la sexta pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A7_Score </strong> Código de respuesta a la séptima pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A8_Score </strong> Código de respuesta a la octava pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A9_Score </strong> Código de respuesta a la novena pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+			<tr>
+			<td><strong> A10_Score </strong> Código de respuesta a la décima pregunta realizada en el test aplicado.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+
+			<td><p><strong>edad </strong>Edad de la persona.</p></td>
+			<td>continua</td>
+			<td> fffffff</td>
+			</tr>
+				<td><p><strong>Sexo: </strong> Sexo de la persona.</p></td>
+			<td>Continua</td>
+			<td>10-4929</td>
+			</tr>
+		
+			<td><p><strong>Etnicidad:</strong> Listado de orígenes étnicos. </p></td>
+			<td>Categórica</td>
+			<td>listado de orígenes étnicos</td>
+			</tr>   
+			<td><p><strong>Ictericia </strong>Indica si nació con ictericia o no. </p></td>
+			<td>Categórica</td>
+			<td>Sí-No</td>
+			</tr>  
+			<td><p><strong>Austim </strong>Indica si tiene un familiar autista.</p></td>
+			<td>Categórica</td>
+			<td>listado de países</td>
+			</tr>
+			<td><p><strong>Country_of_res </strong>País de residencia.</p></td>
+			<td>Categórica</td>
+			<td>f-m</td>
+			</tr>
+			<td><strong>used_app_before </strong> Utilizó una app de screening antes o no.</td>
+			<td>dummy</td>
+			<td>0 - 1</td>
+			</tr>
+		
+			<td><p><strong>age_desc </strong> Valores de la enzima alanina aminotransferasa medidos en sangre.</p></td>
+			<td>Categórica</td>
+			<td>'18 and more'</td>
+			</tr>
+			<td><p><strong>relation </strong> Quién completa el cuestionario.</p></td>
+			<td>Categórica</td>
+			<td>listado de vínculos</td>
+			</tr>
+		
+      </table>
+   </body>
+</html>
+<p style="font-size:20px ;text-align:justify">
+Class/ASD es la variable dependiente que determina una clasificación binaria en si el paciente es autista o no.<br>
+
+Por tanto, nos enfrentamos a un problema de clasificación, supervisado dado que tenemos una salida que se evalúa “correcta”.<br>
+Se analizaron tres data set distintos, uno para datos de niños, otro para datos de adolescentes y otro de adultos.<br>
+Pero se observó que el modelo funciona mejor cuando se separan los grupos etáreos para el análisis<br>
+
+Para este proyecto utilizaremos python y las librerías pandas y scikit para modelado de datos y 
 Entendimiento de los datos
 En primer lugar, analizamos la información que tiene el data set, observamos que hay atributos deterministas en el modelo como ser las respuestas al test, el resultado del mismo y la clasificación de si tiene trastorno del espectro autista o no la persona estudiada. Por ende no tiene sentido que incluyamos dichas variables en el modelo dada su directa relación con la causa estudiada, son variables efímeras.
 Por tanto los atributos a incorporar para el análisis son:
@@ -75,7 +183,7 @@ La cantidad de datos missing es de 294
 					<input type="text" name="query" id="query" placeholder="Search" />
 				</form>
 			</section>
-	<!-- Menu -->
+		<!-- Menu -->
 		<nav id="menu">
 			<header class="major">
 				<h2>Menu</h2>
@@ -104,12 +212,12 @@ La cantidad de datos missing es de 294
 					<ul>
 						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
 						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
-						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
+					
 						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
-						
+						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
 						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
 				
-						<li><a href="proyectoSeis.html">Nombre 6</a></li>
+			
 
 					</ul>
 				</li>
@@ -117,7 +225,6 @@ La cantidad de datos missing es de 294
 			
 			</ul>
 		</nav>
-		
 			
 		</div>
 	</div>
