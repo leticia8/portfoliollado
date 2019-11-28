@@ -1,51 +1,49 @@
 <!DOCTYPE HTML>
 <!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Editorial by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Proyecto análisis cardiológico </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<head>
+<title>Proyecto análisis cardiológico </title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!-- Wrapper -->
+<div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+<!-- Main -->
+<div id="main">
+	<div class="inner">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"></a>
-									<ul class="icons">
-											<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
-								</ul>
-								</header>
-								
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Predicción pacientes de India</h1>
-									</header>
-							<hr class="major" />										
-							<p style="font-size:30px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)"> data set pacientes</a>
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo"></a>
+				<ul class="icons">
+						<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
+				<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+			</ul>
+			</header>
+			
+		<!-- Content -->
+			<section>
+				<header class="main">
+					<h2>Predicción pacientes de India</h2>
+				</header>
+											
+		<p style="font-size:18px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)"> data set pacientes</a>
 
+	<hr class="major" />
+	<p style="font-size:20px ;text-align:justify">El presente data set consta de información sobre la tenencia de hígado o no 
+	de 583 pacientes del noreste de Andhra Pradesh, India. <br>
+	Por tanto se cuenta con datos etiquetados, lo que indica que se llevará a cabo un aprendizaje supervisado.<br>
+	Para lograr una mejor comprensión de los datos observamos los atributos medidos y su significado:<br>
 
-						<p style="font-size:30px">El presente data set consta de información de pacientes del noreste de Andhra Pradesh, India :<br>
-
-						En primer lugar según CRISP - DM se procede a la comprensión del área de estudio, la misma refiere a mediciones de diferentes variables<br>
-						de pacientes para determinar si tienen hígado o no.
-						En segundo lugar se procede a la comprensión de los datos, observamos los atributos medidos y su significado:<br>
-		
-						es_paciente es la variable de predicción asume dos valores que representan si el paciente tiene hígado o no.<br>
-					<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
    <head>
       <style>
@@ -58,88 +56,95 @@
    <body>
       <table>
          	<tr>
-            <th><p style="font-size:22px">Atributo</th></p>
-			<th><p style="font-size:22px">Tipo de atributo</th>
-            <th><p style="font-size:22px">Rango</th>
-			<th><p style="font-size:22px">Distribución</th>
+            <th><p style="font-size:18px">Atributo</th></p>
+			<th><p style="font-size:18px">Tipo de atributo</th>
+            <th><p style="font-size:18px">Rango</th>
          	</tr>
 			<tr>
 			<td><strong>age - Edad:</strong> Edad del paciente. Se categoriza como 90 cualquier persona mayor a 90.</td>
 			<td>Numérico</td>
 			<td>4-90</td>
-			<td> Normal</td>
 			</tr>
 			<td><p><strong>gender - Genero:</strong> Asume los valores femenino y masculino</p></td>
 			<td>Binominal</td>
 			<td>Femenino-Masculino</td>
-			<td> - </td>
 			</tr>
 			<td><p><strong>tot_bilirrubin - Bilirrubina total:</strong>Valores de bilirrubina total del paciente (combinación de directa e indirecta). </p></td>
 			<td>Continua</td>
 			<td>0,4-75</td>
-			<td> Exponencial </td>
 			</tr>
 			<td><p><strong>direct_bilirrubin - Bilirrubina directa:</strong>Valores de bilirrubina directa del paciente.</p></td>
 			<td>Continua</td>
 			<td>0,10-19,7</td>
-			<td> No tiene una forma de distribución conocida </td>
 			</tr>
 			<td><p><strong>tot_proteins - Proteínas totales: </strong> Cantidad de proteínas en sangre.</p></td>
 			<td>Continua</td>
 			<td>63-2210</td>
-			<td> Exponencial </td>
 			</tr>
 			<td><p><strong>albumin - Albuminas: </strong> Total de albuminas en sangre.</p></td>
 			<td>Continua</td>
 			<td>10-2000</td>
-			<td> Exponencial </td>
 			</tr>
 				<td><p><strong>ag_ratio - Ratio de albuminas y globulinas: </strong>Indica el ratio entre albuminas y globulinas.</p></td>
 			<td>Continua</td>
 			<td>10-4929</td>
-			<td> Exponencial </td>
 			</tr>
 				<td><p><strong>sgpt - Alanina aminotransferasa </strong> Valores de la enzima alanina aminotransferasa medidos en sangre.</p></td>
 			<td>Continua</td>
 			<td>2,7-9,6</td>
-			<td> Sesgada a la izquierda </td>
 			</tr>
 			<td><p><strong>sgot - Aspartato aminotransferasa:</strong> Valores de la enzima medidos en sangre. </p></td>
 			<td>Continua</td>
 			<td>0,9-5,5</td>
-			<td> Pareciera una forma normal con un leve sesgo a la izquierda. </td>
 			</tr>   
 			<td><p><strong>alkphos - Fosfatasa alcalina: </strong> Valores de la enzima medidos en sangre. </p></td>
 			<td>Continua</td>
 			<td>0,3-2,8</td>
-			<td> Sesgada a la derecha. </td>
 			</tr>  
       </table>
    </body>
 </html>
-		<p style="font-size:30px"> Analizados los atributos, los rangos y distribuciones de los mismos de acuerdo a la información brindada por rapid miner en sus resumen de resultados:  </p>
+
+		es_paciente es la variable de predicción asume dos valores que representan si el paciente tiene hígado o no.<br>
+
+
 		
 		<span class="image main"><img src="images/p3_results.PNG"  alt="" /></span>
 		
-		<p style="font-size:30px"> Como se observa en esta imagen los 0 en la columna (missing) indican que sólo el atributo alkphos (Fosfatasa alcalina) tiene 4 datos faltantes. Depende del modelo a utilizar la repercusión que pueden tener los datos faltantes en el mismo.<br> 
-		Los rangos no denotan valores anormales (outliers).
-		Por otra parte este problema consta con datos etiquetados, por lo que utilizaremos un modelo supervisado de aprendizaje y la variable dependiente a explicar es categórica por tanto estamos ante un problema de clasificación.
-		Se decide utilizar dadas las características del pproblema un árbol de decisión para que sea fácilmente visualizable la solución y de baja complejidad.<br>
-		Para tal fin se vuelve discreta (binominal) la variable de salida y se vuelve discreta la variable genero tomando valores 1 (Hombre) 2(Mujer).<br>
+	<p style="font-size:20px ;text-align:justify">	Como se observa en esta imagen los 0 en la columna (missing) indican que sólo el atributo alkphos (Fosfatasa alcalina) tiene 4 datos faltantes. Depende del modelo a utilizar la repercusión que pueden tener los datos faltantes en el mismo.<br> 
+	Los árboles en general ignoran los atributos faltantes, pero cualquier algoritmo de cálculo de distancia va a presentar una performance peor.<br>
+	Los rangos no denotan valores anormales (outliers) al menos se concentran alrededor de la media y los valores límites no son
+	de instancias únicas sino que en general se acompañan por grupos de datos.<br>
 
-		Por otra parte se utilizará un proceso de optimización para averiguar qué parámetros del arbol de decisión resultan en un mejor nivel de precisión del modelo.<br>
-		En la siguiente imagen es posible observar que se miden las diferentes precisiones del modelo de acuerdo a diferentes ajustes en los parámetros<br>
-	 
-		<span class="image main"><img src="images/p3_optimize.PNG"  alt="" /></span>
 
-		Los mejores resultan ser los primeros 8 modelos, con una precisión del 73,4%, utilizando Gain Ratio, Gini Index y Accuracy como parámetros de ajuste del modelo,
-		Como muestra la siguiente imagen se obtiene como mejor resultado el modelo que utiliza Gini Index con una profundidad máxima de 2 y un valor mínimo en cada hoja también de dos,
-		obteniendo un 73.79% de precisión en la matriz de confusión<br>
-					<span class="image main"><img src="images/p3_resultsvector.PNG" style="width:40%;height:20%;" alt="" /></span>
-		<p style="font-size:30px"> Se pueden analizar estos valores considerando la performance obtenida del modelo, como se muestra en la siguiente imagen </p>
-					<span class="image main"><img src="images/p3_matrix.PNG"  alt="" /></span>
-		<p style="font-size:30px"> Aquí se observa que 289 casos cuya predicción fue Sí, efectivamente son pacientes con hígado mientras 105 cuya predicción fue no, también es una predicción acertada
-		ese decir, no tiene hígado. El modelo indica ser un 73,79% efectivo para predicción.
+	Por otra parte este problema consta con datos etiquetados, por lo que utilizaremos un modelo supervisado de aprendizaje y la variable dependiente a explicar es categórica por tanto estamos ante un problema de clasificación.<br>
+
+	A su vez se transforma la variable sexo para que tome valores 0 (Hombre) 1(Mujer) y la variable de salida también tomará 
+	valores 0 y 1 en caso de no tener hígado y tener respecctivamente.<br>
+
+	Se decide visualizar con una gráfica de ROC - Curve los algoritmos de clasificación más utilizados para evaluar su performance obteniendo:<br>
+
+	
+		<img src="images/p3_rocCurve.PNG"  style="width:100%;height:80%;" alt="" /><br>
+
+	Por tanto es posible afirmar que el árbol de decisión demuestra una buena performance en comparación al resto de los modelos analizados.<br>
+	
+	Se obtienen los parámetros ideales para aplicar el proceso con diferentes métodos de optimización, 
+					<span class="image main"><img src="images/p3_accuracy.PNG" style="width:100%;height:80%;" alt="" />
+
+	El modelo obtiene una precisión del 73,24%, utilizando Gain Ratio como parámetro de ajuste,
+	con una profundidad máxima de 6 y un valor mínimo en cada hoja de 1<br>
+	
+	Aquí se observa que 411 casos cuya predicción fue Sí, efectivamente son pacientes con hígado mientras  
+	que hay 152 pacientes que se predijo que tienen hígado pero realmente no tienen, es por esto
+	que el recall de clase para esa predicción es muy bajo dado que toma como clase positiva la clase 0 y no halla en realidad
+	todos los casos que debiera.
+
+	El árbol resultante luego de aplicar el modelo es el siguiente:<br>
+
+				<img src="images/p3_treeFinal.PNG" style="width:80%;height:60%;" alt="" />
+
+
 
 				
 	
