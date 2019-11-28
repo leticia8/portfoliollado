@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Proyecto análisis cardiológico </title>
+		<title>Predicción de segundo ataque cardíaco </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -32,19 +32,26 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Predicción de segundo ataque cardíaco</h1>
+										<h2>Predicción de segundo ataque cardíaco</h2>
 									</header>
-							<hr class="major" />										
-							<p style="font-size:30px"> Datos utilizados <a href=""> data set cardiológico</a>
+								
+							<p style="font-size:18px"> Datos utilizados entrenamiento: <a href="files/cardiac-training"> data set cardiológico training</a>
+								
+							<p style="font-size:18px"> Datos utilizados test: <a href="files/cardiac-scoring"> data set cardiológico entrenamiento</a>
 
+	<hr class="major" />
+						<p style="font-size:20px ;text-align:justify"> El presente data set consta de información de pacientes :<br>
 
-						<p style="font-size:30px">El presente data set consta de información de pacientes :<br>
-
-						En primer lugar según CRISP - DM se procede a la comprensión del área de estudio, la misma refiere a mediciones de diferentes variables<br>
-						de pacientes cardiológicos.
-						En segundo lugar se procede a la comprensión de los datos, observamos los atributos medidos y su significado:<br>
+						En primer lugar siguiendo el modelo CRISP-DM se procede a la comprensión del área de estudio, la misma refiere a mediciones de diferentes variables<br>
+						de pacientes cardiológicos. El cardiólogo desea poder contar con un sistema que le permita inferir partiendo de datos observados del paciente si
+						hay riesgo de sufrir un nuevo infarto o no. Cuenta con datos históricos de pacientes y variables medidas que científicamente se utilizan como indicadores proxy para 
+						predecir enfermedades coronarias.<br>
+						El doctor cuenta en su registro con información histórica de pacientes que sufrieron un infarto  y por tanto hay datos que ya tiene etiquetados debido a que los pacientes fallecieron (ya confirmó la
+						posibilidad de sufrir un nuevo infarto o no). Por tanto nos encontramos frente a un problema supervisado.<br>
+						Por otro lado queremos determinar una clasificación de los pacientes en dos grupos, aquellos que sí tienen riesgo de sufrir un 2do infarto
+						y los que no, por lo que estamos ante un problema de clasificación.<br>
+						Procederemos primero a la comprensión de los datos, observamos los atributos medidos y su significado:<br>
 		
-						2do_Ataque_Corazon: Este atributo existe solamente en el dataset de entrenamiento. Es la variable objetivo o de predicción (“label” en RM). En el dataset de entrenamiento, este atributo contiene “SI” para aquellos individuos que han sufrido un segundo ataque al corazón, y “No” en caso contrario. </p>
 					<!DOCTYPE html>
 <html>
    <head>
@@ -58,71 +65,161 @@
    <body>
       <table>
          	<tr>
-            <th><p style="font-size:22px">Atributo</th></p>
-			<th><p style="font-size:22px">Tipo de atributo</th>
-            <th><p style="font-size:22px">Rango</th>
-			<th><p style="font-size:22px">Distribución</th>
+            <th><p style="font-size:18px">Atributo</th></p>
+			<th><p style="font-size:18px">Tipo de atributo</th>
+            <th><p style="font-size:18px">Rango</th>
          	</tr>
 			<tr>
 			<td><strong>Estado_civil:</strong> Asume los valores: 0 = soltero; 1 = casado, 2 = divorciado y 3 = viudo.</td>
-			<td>Polinominal</td>
+			<td>categórica más de 2 clases</td>
 			<td>0-3</td>
-			<td> -</td>
 			</tr>
 			<td><p><strong>Sexo:</strong> Asume los valores 0 = femenino; 1= masculino.</p></td>
-			<td>Binominal</td>
+			<td>categórica - dummy</td>
 			<td>0-1</td>
-			<td> - </td>
 			</tr>
 			<td><p><strong>Categoria_Peso:</strong> Toma tres valores: 0 = normal; 1 = sobrepeso; 2 = obeso. </p></td>
-			<td>Categórica tomada como integer</td>
+			<td>categórica en números</td>
 			<td>0-2</td>
-			<td> - </td>
 			</tr>
 			<td><p><strong>Colesterol:</strong> nivel de colesterol de la persona, tal como se ha registrado en el momento del tratamiento indicado cuando su más reciente ataque al corazón.</p></td>
-			<td>Continua</td>
-			<td>122-239</td>
-			<td> No tiene una forma de distribución conocida </td>
+			<td>continua</td>
+			<td>122 - 239</td>
 			</tr>
 			<td><p><strong>Manejo_stress: </strong> Indica si el paciente ha participado previamente de cursos de manejo del estrés: 0 = no; 1 = si.</p></td>
-			<td>Boniminal</td>
+			<td>categórica - dummy</td>
 			<td>0-1</td>
-			<td> - </td>
 			</tr>
-			<td><p><strong>Trat_ansiedad:</strong> Atributo que toma valores de tipo entero entre 0 y 100 indicativo del nivel natural de estrés de cada persona y de su habilidad para manejarlo. Poco tiempo después de que la persona se recuperara de su primer ataque, se le administró un test de ansiedad natural estándar. Los valores están tabulados en incrementos de 5. Un valor de 0 indicaría que la persona nunca siente ansiedad, presión o estrés en ninguna situación, mientras que un valor de 100 indicaría que la persona vive en un estado continuo de sobrecarga e incapaz de lidiar con su situación.</p></td>
-			<td>Categórica entendida como continua</td>
+			<td><p><strong>Trat_ansiedad:</strong> Atributo que toma valores de tipo entero entre 0 y 100 indicativo del nivel natural de estrés de cada persona y de su habilidad para manejarlo. </p></td>
+			<td>categórica entendida como continua</td>
 			<td>35-80</td>
-			<td> No tiene una forma de distribución conocida - podría ser normal con sesgo a la derecha </td>
 			</tr>   
       </table>
    </body>
 </html>
-					<p style="font-size:30px"> Analizados los atributos se identifican los rangos de los mismos, 
-					<span class="image main"><img src="images/p2_pdatos.JPG"  alt="" /></span>
-					Como se observa en esta imagen los 0 indican que no hay atributos faltantes (missing), los rangos no denotan valores anormales (outliers)
-					<p style="font-size:30px"> Se observan los atributos y las posibles correlaciones que pueden existir entre los mismos. Por ejemplo podrían identificarse entre manejo del estrés y tratamiento de la ansiedad posibles correlaciones y también hay estudios que vinculan niveles de colesterol con factores de estrés así como con el sexo de la persona.</p>
 
-					<p style="font-size:30px"> A continuación se realiza la preparación de los datos: 
-					Se observa la matriz de correlación entre atributos: </p>
-					<span class="image main"><img src="images/p2_mcorr.JPG"  alt="" /></span>
-					<p style="font-size:30px">Se observa que los atributos continuos más correlacionados podrían ser edad y tratamiento de la ansiedad pero su valor es bajo.
-					A su vez todos los atributos son importantes y aportan a la predicción de la variable dependiente, por tanto no se seleccionan atributos.<br>
+<p style="font-size:20px ;text-align:justify"> En cuanto a la variable Trat_ansiedad resulta de una prueba aplicada al paciente luego de sufrir el 1er ataque cardíaco, 
+a cada paciente se le administró un test de ansiedad natural estándar. <br>
+Los valores están tabulados en incrementos de 5. Un valor de 0 indicaría que la persona nunca siente ansiedad,
+ presión o estrés en ninguna situación, mientras que un valor de 100 indicaría que la persona vive en un estado continuo
+  de sobrecarga e incapaz de lidiar con su situación.<br>
 
-					Algo importante a realizar es la normalización de los datos para que los rangos de variación de los mismos no sean muy disímiles.<br>
-								
-								
-					Dado el problema que se aborda, y debido a que la variable dependiente toma los valores Sí y No (es categoríca - binominal) se considera que aplicar un método de regresión logística es adecuado para el modelo.		 </p>
-								
-					<span class="image main"><img src="images/p2_accuracy.JPG"  alt="" /></span>			
-								
-					<p style="font-size:30px">Con respecto a la evaluación del modelo, se divide el set de información rotulada en datos de entrenamiento y datos de validación para observar qué tan bien predice el modelo y obtener resultados de su performance.
-						En cuanto a esto se observa que tiene una precisión del 82,93%, observando que  18 casos predichos como sí eran efectivamente sí, mientras que 5 son falsos positivos. Por otra parte 16 casos fueron correctamente predichos como No mientras que 2 fueron falsos negativos.</p>
-						
-		
+El atributo <strong>2do_Ataque_Corazon </strong> existe solamente en el dataset de entrenamiento. Es la variable objetivo o de predicción (“label” en RapidMiner). 
+En el dataset de entrenamiento, este atributo contiene “Si” para aquellos individuos que han sufrido un segundo ataque al corazón, y “No” en caso contrario. <br>
+
+Analizados los atributos se estudian con más detalle los factores que pueden perjudicar cualquier modelo como ser los rangos de los mismos, valores missing y outliers.<br>
+Observamos a continuación el resumen de estadísticos que ofrece RapidMiner:<br>
+<img title="tabla" src="images/p2_pdatos.JPG" style="width:90%;height:50%;" alt="" /><br>
+Como se observa en esta imagen los 0 indican que no hay atributos faltantes (missing), 
+los rangos no denotan valores anormales (outliers) de hecho los promedios y desviaciones de cada columna se encuentran bastante
+ajustados a la media.<br>
+
+Se observa las posibles correlaciones que pueden existir entre los mismos en caso de aplicar algoritmos como Regresión Logística o Naive Bayes sensibles
+a las correlaciones entre las variables.<br>
+Por ejemplo podrían identificarse entre manejo del estrés y tratamiento de la ansiedad posibles correlaciones altas
+ y también hay estudios que vinculan niveles de colesterol con factores de estrés así como con el sexo de la persona.<br>
+
+Para los datos de nuestro data set sin embargo no parecieran haber correlaciones significativas:<br>
+<img title="matriz" src="images/p2_mcorr.JPG" style="width:90%;height:50%;" alt="" /><br>	<br>
+
+El registro más elevado se observa en edad y tratamiento de ansiedad, así como categoría peso y colesterol con tratamiento de ansiedad,
+pero son valores bajos no significativos que justifiquen una remoción del atributo del modelo.<br>
+
+Si aplicamos un análisis de componentes principales, ya que todas nuestras variables son numéricas podemos hacerlo con facilidad,
+observamos la siguiente tabla de valores propios (eigenvalues):<br>
+
+<img title="matriz" src="images/p2_pca.PNG" style="width:100%;height:50%;" alt="" /><br>	<br>
+
+Se observa que los dos primeros componentes principales explican el 97,7% de la varianza del modelo, si buscamos dentro de los
+vectores propios (eigenvectors) :
+
+<img title="matriz" src="images/p2_pca2.PNG" style="width:100%;height:50%;" alt="" /><br>	<br>
+
+Se observa que el primer componente tiene un peso altísimo del colesterol, lo que es lógico con las recomendaciones médicas habituales
+de controlar dicho factor de riesgo.<br>
+El segundo componente tiene un gran peso de la variable tratamiento de ansiedad de forma negativa lo que no tendría mucha lógica a simple 
+vista dado que indicaría a mayores puntajes de ansiedad en la prueba menor riesgo de padecer un segundo ataque, pero en estos casos
+es cuando debe comprenderse la existencia de posibles variables correlacionadas, es decir, podría establecer la hipótesis
+de que la gente más ansiosa tiende a descargar dicha energía haciendo por ejemplo ejercicio lo que sería bueno para la salud
+y se correlacionaría con esta variable. <br>
+Por otra parte el segundo atributo que compone el segundo componente principal es Edad, de forma negativa, aunque en este caso
+su peso se reduce.<br>
+ Se observa en la siguiente imagen la proporción de la varianza acumulada por componentes principales:<br>
+
+ <img title="matriz" src="images/p2_pcaCurve.PNG" style="width:100%;height:50%;" alt="" /><br>	<br>
+
+Algo importante a realizar es la normalización de los datos para que los rangos de variación de los mismos no sean muy disímiles
+sobre todo porque algoritmos como LDA o Naive Bayes asumen distribuciones normales.<br>
+
+En los modelos de rapid miner los operadores de SVM, Logistic Regression ofrecen realizar la estandarización como parámetro ajustable del nodo. <br>
+			
+Antes de decidir qué operador utilizar vamos a observar con una ROC Curve la performance de los diferentes modelos.<br>
+En el problema de referencia nos interesa una buena predicción de los True Positive por sobre que haya False Positive dado que no tendría
+un perjuicio para el paciente cuidarse, hacer ejercicio, comer sano. Igualmente como en todo modelo el ideal es que FP=0.<br>
+En este caso como no es utilizado para un diagnóstico específico (como por ejemplo los casos de cáncer) no se le va a comunicar al paciente:
+"usted va a sufrir un segundo infarto", sino tener la información para realizar controles más seguido y hacer énfasis en el cuidado del paciente.<br>
+Observamos la curva ROC obtenida al probar los modelos Random Forest, SVM, Logistic Regression y Naive Bayes:<br>
+			 <img title="matriz" src="images/p2_rocCurve.PNG" style="width:100%;height:50%;" alt="" /><br>	<br>
+
+Como se ve Random Forest presenta una mejor performance para los TP al inicio del modelo, luego todos se estabilizan presentando
+buenas performances finales.<br>
+
+Mediremos la performance de estos cuatro métodos y observamos los resultados utilizando el nodo de cross-validation con 10 folds y
+un muestreo aleatorio de los datos utilizados para entrenamiento y para validación.<br>
+Dentro del cross validation se aplican los cuatro modelos y se mide su performance.<br>
+
+Se obtienen las siguientes performance para los modelos:<br><br>
+
+REGRESIÓN LOGÍSTICA <br>
+<img src="images/p2_logReg.PNG"style="width:100%;height:50%;" alt="" />			<br>
+			
+			SVM <br>
+<img src="images/p2_svm.PNG"style="width:100%;height:50%;" alt="" />			<br>
+
+			NAIVE BAYES <br>
+<img src="images/p2_naive.PNG"style="width:100%;height:50%;" alt="" />			<br>
+
+			RANDOM FOREST <br>
+<img src="images/p2_randomF.PNG"style="width:100%;height:50%;" alt="" />			<br>
+
+
+
+En relación a lo observado con la ROC curve el modelo que presenta mejor performance es Random Forest,  con un 97,14% de precisión.
+Seguido por Regresión Logística 92,03% ,Naive Bayes: 88,35% y por último SVM 85,55%.
+
+Por tanto aplicando Random Forest al modelo con 50 árboles y una profundidad máxima de 5 (luego de probar diversos parámetros)
+se obtienen la confianza de 97,86%: <br>
+
+
+<img src="images/p2_finalAcc.PNG"style="width:100%;height:50%;" alt="" />	
+
+Y las predicciones sobre los datos de test:
+
+<img src="images/p2_apply.PNG"style="width:100%;height:50%;" alt="" />	<br>
+
+
+Lo que indica que por ejemplo el ejemplo 1 es una predicción de No con una confianza de 99,5%, mientras que el 2 una predicción de Sí
+con una confianza de 99,7%.<br>
+
+Por último el modelo arroja los siguientes árboles de entre los 50 elaborados:<br>
+
+Arbol 1<br>
+
+<img src="images/p2_arbol1.PNG"style="width:80%;height:50%;" alt="" />	<br>
+
+Arbol 2<br>
+<img src="images/p2_arbol2.PNG"style="width:80%;height:50%;" alt="" />	<br>
+
+
+Dado que 50 árboles puede ser excesivo para el entendimiento del modelo (una de las fortalezas que tienen los árboles 
+de decisión es su simplicidad para ser interpretados), se prueba reducir la cantidad de árboles a 5 obteniendo una
+performance de 95,71% es decir un descenso de más de 2 puntos porcentuales, en este caso queda evaluar al investigador
+que utilizar el modelo el trade-off entre comprensibilidad del modelo y exactitud.</p>
+
 					
-					</section>
-					</div>
-					</div>
+</section>
+</div>
+</div>
 
 	<!-- Sidebar -->
 <div id="sidebar">
