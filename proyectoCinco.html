@@ -13,31 +13,36 @@
 
 				<!-- Main -->
 					<div id="main">
-						<div class="inner">
+		<div class="inner">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"></a>
-									<ul class="icons">
-											<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
-								</ul>
-								</header>
-								
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h2>Predicción trastorno de espectro autista en adultos</h2>
-									</header>
-																	
-								<p style="font-size:18px">Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult"> data set adultos p/diag TEA</a>
-								<hr class="major" />
-								<p style="font-size:20px ;text-align:justify">
-							El trastorno del espectro autista (TEA) es una afección del desarrollo neurológico y se asocia en general con costos de atención médica altos, repercusiones profundas en la vida de la persona diagnosticada y su entorno. Hoy en día el diagnóstico lleva tiempo y tiene un impacto económico y social muy alto, el presente estudio considera de valor el diagnóstico temprano ayudando a reducir estas repercusiones significativamente. <br>
-							Al constatar un aumento de los casos de TEA en los últimos tiempos a nivel mundial se considera relevante desarrollar métodos de diagnóstico eficaces que ayuden al profesional de la salud a realizar diagnósticos de forma temprana acortando procesos escabrosos para el paciente y su familia y reduciendo costos.<br>
-							En el siguiente estudio se utilizan 20 atributos: diez características de comportamiento (AQ-10-Child) más diez características de la persona que sucesivos estudios han demostrado son efectivas para detectar los casos de TEA en ciencias del comportamiento.<br>
-							La fuente del data set es Fadi Fayez Thabtah, del departamento de tecnología digital del Instituto de tecnología Manukau de Auckland, New Zealand.<br>
-							Los atributos utilizados en el presente data set son:<br>
+			<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"></a>
+					<ul class="icons">
+							<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
+					<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+				</ul>
+				</header>
+				
+			<!-- Content -->
+				<section>
+					<header class="main">
+						<h2>Predicción trastorno de espectro autista en adultos</h2>
+					</header>
+													
+				<p style="font-size:18px">Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult"> data set adultos p/diag TEA</a>
+				<hr class="major" />
+					<span class="image object">
+									<img src="images/p5_tea.jpg" style="width:80%;height:80%;" alt="" />
+								</span>
+				<p style="font-size:20px ;text-align:justify">
+			El trastorno del espectro autista (TEA) es una afección del desarrollo neurológico y se asocia en general con costos de atención médica altos, repercusiones profundas en la vida de la persona diagnosticada y su entorno. <br>
+			Hoy en día el diagnóstico lleva tiempo y tiene un impacto económico y social muy alto, el presente estudio considera de valor el diagnóstico temprano ayudando a reducir estas repercusiones significativamente. <br>
+			Al constatar un aumento de los casos de TEA en los últimos tiempos a nivel mundial se considera relevante desarrollar métodos de diagnóstico eficaces que ayuden al profesional de la salud a realizar diagnósticos de forma temprana acortando procesos escabrosos para el paciente y su familia y reduciendo costos.<br>
+			
+			En el siguiente estudio se utiliza un data set con 20 atributos: diez características de comportamiento más diez características de la persona que sucesivos estudios han demostrado son efectivas para detectar los casos de TEA en ciencias del comportamiento.<br>
+			La fuente del data set es Fadi Fayez Thabtah, del departamento de tecnología digital del Instituto de tecnología Manukau de Auckland, New Zealand.<br>
+			Los atributos utilizados en el presente data set son:<br></p>
 
 	<!DOCTYPE html>
 <html>
@@ -150,25 +155,111 @@
    </body>
 </html>
 <p style="font-size:20px ;text-align:justify">
-Class/ASD es la variable dependiente que determina una clasificación binaria en si el paciente es autista o no.<br>
-
+Class/ASD es la variable dependiente que determina una clasificación binaria en si el paciente es diagnosticado como con TEA o no.<br>
 Por tanto, nos enfrentamos a un problema de clasificación, supervisado dado que tenemos una salida que se evalúa “correcta”.<br>
-Se analizaron tres data set distintos, uno para datos de niños, otro para datos de adolescentes y otro de adultos.<br>
-Pero se observó que el modelo funciona mejor cuando se separan los grupos etáreos para el análisis<br>
+Se analizaron tres data set distintos, uno para datos de niños, otro para datos de adolescentes y otro de adultos.
+Pero se observó que el modelo funciona mejor cuando se separan los grupos etáreos para el análisis.<br>
+En este caso utilizaremos el data set de adultos.<br>
 
-Para este proyecto utilizaremos python y las librerías pandas y scikit para modelado de datos y 
-Entendimiento de los datos
-En primer lugar, analizamos la información que tiene el data set, observamos que hay atributos deterministas en el modelo como ser las respuestas al test, el resultado del mismo y la clasificación de si tiene trastorno del espectro autista o no la persona estudiada. Por ende no tiene sentido que incluyamos dichas variables en el modelo dada su directa relación con la causa estudiada, son variables efímeras.
-Por tanto los atributos a incorporar para el análisis son:
+Para este proyecto utilizaremos python y las librerías pandas y scikit para modelado de datos y elaboración del modelo de predicción.<br><br>
+Se carga el archivo a utilizar en un data frame utilizando la librería pandas<br><br></p>
+	<pre>
+	input_file3 = "autismAdult.csv"
+	missing_values = ["?"]
+	df3 = pd.read_csv(input_file3, na_values = missing_values)
+	dataFrame=df3
+	</pre>
+<p style="font-size:20px ;text-align:justify">Entendimiento de los datos
+En primer lugar, analizamos la información que tiene el data set, observamos que hay atributos deterministas en el modelo como ser las respuestas al test, 
+el resultado del mismo y la clasificación de si tiene trastorno del espectro autista o no la persona estudiada.
+ Por ende no tiene sentido que incluyamos dichas variables en el modelo dada su directa relación con la causa estudiada, son variables efímeras.
 
-<TABLAAA>
-Preparación de datos:
-A la hora de trabajar con los datos se observa la existencia de atributos con escala continua, como edad, datos categóricos de dos tipos, variables como sexo, etnicidad, país de residencia y quién completa el test así como variables dummies (sí /no) que indagan acerca de si cumple una característica deseada o no tomando los valores 1 y 0.
-Se observan valores missing en las variables Edad, Origen étnico y relación con el encuestado de quién completa la encuesta.
-La cantidad de datos missing es de 294 
+Por lo que seleccionamos los atributos a utilizar en el análisis, nos fijamos si hay datos missing y si los hay en este caso los 
+retiramos del análisis dropeándolos.<br><br></p>
 
-				
-	
+	<pre>
+	subDF=dataFrame[['age','gender','ethnicity','jundice','austim','contry_of_res','used_app_before', 'relation','Class/ASD']]
+	print(subDF.columns[subDF.isnull().any()])
+	dataClean=subDF.dropna()
+	</pre>
+<p style="font-size:20px ;text-align:justify">Seleccionamos por tanto para el modelo las variables age, gender, ethnicity, jundice, austim, country_of_res, used_app_before,
+relation y Class/ASD, esta última como variable dependiente.<br></p>
+
+<p style="font-size:20px ;text-align:justify">Por otra parte sabemos que los atributos jundice, austim, used_app_before  asumen los valores Yes y No, 
+por tanto debemos transformarlos en alguna variable interpretable para el modelo, en este caso se optó por 
+variables categóricas que asumen los valores 1 y 0.<br>
+Se aplica la recodificación utilizando pandas:<br></p>
+	<pre>
+	ordinals = ['jundice', 'austim', 'used_app_before']
+	new_df = pd.DataFrame(dataClean[ordinals])
+	dataClean[ordinals] =pd.DataFrame({col: new_df[col].astype('category').cat.codes for col in new_df}, index = dataClean.index)
+	dataClean2=pd.get_dummies(dataClean, columns=['gender','ethnicity','contry_of_res','relation'])
+</pre>
+<p style="font-size:20px ;text-align:justify">Podemos observar aquí también que las variables gender,ethnicity,contry_of_res y relation que son categóricas se
+recodifican también transformándolas en variables dummies a fin de interpretar el modelo de forma adecuada y poder trabajar
+con modelos que incluyan atributos numéricos.<br>
+Se observa a continuación los atributos recodificados:<br></p>
+<img title="ver nulos" src="images/p5_3.JPG" style="width:90%;height:90%;" alt="" /><br>
+
+<p style="font-size:20px ;text-align:justify">A continuación se seleccionan las variables dependientes(X) y la variable independiente (Y) <br>
+
+	<pre>	
+	X = np.array(dataClean2.drop(['Class/ASD'],1))
+	y = np.array(dataClean2['Class/ASD'])
+	le = preprocessing.LabelEncoder()
+	y_encoded=le.fit_transform(y)	</pre>
+
+<p style="font-size:20px ;text-align:justify">Se recodifica la variable Y=Class/ASD que tiene salidas Yes y No para que asuma valores 0 y 1.<br>
+
+<p style="font-size:20px ;text-align:justify">A su vez se establece el tamaño para dividir la muestra en datos de entrenamiento y test así como la semilla para poder
+replicar el modelo con la misma muestra y así obtener iguales resultados.<br>
+
+
+	<pre>
+	test_size = 0.30
+	seed = 7
+	train_X, test_X, train_y, test_y  = train_test_split(X, y_encoded, test_size=test_size, random_state=seed)
+	</pre>
+
+<p style="font-size:20px ;text-align:justify">A continuación seleccionaremos los modelos a probar, dado que se trata de un problema de clasificación cuya salida es una
+variable binaria usaremos entre otros modelos el de Regresión Logística:<br>
+
+	<pre>
+	print("Logistic Regression")
+	log=LogisticRegression()
+	log.fit(train_X,train_y)
+	y_pred=log.predict(test_X)
+	print(classification_report(test_y ,y_pred))
+	confusion_matrix = pd.crosstab(test_y, y_pred, rownames=['Actual'], colnames=['Predicted'])
+	print(confusion_matrix)
+	sn.heatmap(confusion_matrix, annot=True)
+</pre>
+
+<p style="font-size:20px ;text-align:justify">Se puede observar una performance promedio de 67% lo que no parece demasiado bueno.<br>
+
+
+<img title="ver nulos" src="images/p5_1.JPG" style="width:30%;height:30%;" alt="" /><br>
+<p style="font-size:20px ;text-align:justify">Ahora observaremos otro método , el de Linear Discriminant Analysis:<br><br>
+<pre>
+	print("LDA")
+	lda=LinearDiscriminantAnalysis()
+	lda=lda.fit(train_X, train_y)
+	y_pred=lda.predict(test_X)
+	print("Predicted vs Expected")
+	print(classification_report(test_y, y_pred, digits=3))
+
+
+</pre>
+
+<p style="font-size:20px ;text-align:justify">Se puede observar una performance promedio de 71% lo que aumenta levemente el resultado anterior.<br><br>
+
+
+<img title="ver nulos" src="images/p5_2.JPG" style="width:30%;height:30%;" alt="" /><br>
+
+<p style="font-size:20px ;text-align:justify">Esto mejora la predicción anterior pero sería bueno seguir indagando diferentes modelos
+que obtengan mejores resultados.</p>
+
+
 		</section>
 		</div>
 		</div>
