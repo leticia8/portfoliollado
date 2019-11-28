@@ -105,16 +105,16 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
    </body>
 </html>
 
-		es_paciente es la variable de predicción asume dos valores que representan si el paciente tiene hígado o no.<br>
+	<strong><p style="font-size:20px ;text-align:justify">	es_paciente </strong> es la variable de predicción asume dos valores que representan si el paciente tiene hígado o no.<br><br>
 
 
 		
 		<span class="image main"><img src="images/p3_results.PNG"  alt="" /></span>
 		
 	<p style="font-size:20px ;text-align:justify">	Como se observa en esta imagen los 0 en la columna (missing) indican que sólo el atributo alkphos (Fosfatasa alcalina) tiene 4 datos faltantes. Depende del modelo a utilizar la repercusión que pueden tener los datos faltantes en el mismo.<br> 
-	Los árboles en general ignoran los atributos faltantes, pero cualquier algoritmo de cálculo de distancia va a presentar una performance peor.<br>
+	Los árboles en general ignoran los atributos faltantes, pero cualquier algoritmo de cálculo de distancia va a presentar una performance peor.<br><br>
 	Los rangos no denotan valores anormales (outliers) al menos se concentran alrededor de la media y los valores límites no son
-	de instancias únicas sino que en general se acompañan por grupos de datos.<br>
+	de instancias únicas sino que en general se acompañan por grupos de datos.<br><br>
 
 
 	Por otra parte este problema consta con datos etiquetados, por lo que utilizaremos un modelo supervisado de aprendizaje y la variable dependiente a explicar es categórica por tanto estamos ante un problema de clasificación.<br>
@@ -122,18 +122,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	A su vez se transforma la variable sexo para que tome valores 0 (Hombre) 1(Mujer) y la variable de salida también tomará 
 	valores 0 y 1 en caso de no tener hígado y tener respecctivamente.<br>
 
-	Se decide visualizar con una gráfica de ROC - Curve los algoritmos de clasificación más utilizados para evaluar su performance obteniendo:<br>
+	Se decide visualizar con una gráfica de ROC - Curve los algoritmos de clasificación más utilizados para evaluar su performance obteniendo:<br><br>
 
 	
-		<img src="images/p3_rocCurve.PNG"  style="width:100%;height:80%;" alt="" /><br>
+		<img src="images/p3_rocCurve.PNG"  style="width:100%;height:80%;" alt="" /><br><br>
 
 	Por tanto es posible afirmar que el árbol de decisión demuestra una buena performance en comparación al resto de los modelos analizados.<br>
 	
-	Se obtienen los parámetros ideales para aplicar el proceso con diferentes métodos de optimización, 
-					<span class="image main"><img src="images/p3_accuracy.PNG" style="width:100%;height:80%;" alt="" />
+	Se obtienen los parámetros ideales para aplicar el proceso con diferentes métodos de optimización, <br><br>
+					<span class="image main"><img src="images/p3_accuracy.PNG" style="width:100%;height:80%;" alt="" /><br><br>
 
 	El modelo obtiene una precisión del 73,24%, utilizando Gain Ratio como parámetro de ajuste,
-	con una profundidad máxima de 6 y un valor mínimo en cada hoja de 1<br>
+	con una profundidad máxima de 6 y un valor mínimo en cada hoja de 1<br><br>
 	
 	Aquí se observa que 411 casos cuya predicción fue Sí, efectivamente son pacientes con hígado mientras  
 	que hay 152 pacientes que se predijo que tienen hígado pero realmente no tienen, es por esto
