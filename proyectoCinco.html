@@ -114,7 +114,7 @@
 
 			<td><p><strong>edad </strong>Edad de la persona.</p></td>
 			<td>continua</td>
-			<td> fffffff</td>
+			<td> 17-64</td>
 			</tr>
 				<td><p><strong>Sexo: </strong> Sexo de la persona.</p></td>
 			<td>Continua</td>
@@ -142,7 +142,7 @@
 			<td>0 - 1</td>
 			</tr>
 		
-			<td><p><strong>age_desc </strong> Valores de la enzima alanina aminotransferasa medidos en sangre.</p></td>
+			<td><p><strong>age_desc </strong> Edad categórica.</p></td>
 			<td>Categórica</td>
 			<td>'18 and more'</td>
 			</tr>
@@ -160,7 +160,7 @@ Por tanto, nos enfrentamos a un problema de clasificación, supervisado dado que
 Se analizaron tres data set distintos, uno para datos de niños, otro para datos de adolescentes y otro de adultos.
 Pero se observó que el modelo funciona mejor cuando se separan los grupos etáreos para el análisis.<br>
 En este caso utilizaremos el data set de adultos.<br>
-
+Se observa que hay un dato con valor 383 en la edad, se decide dejar afuera dicho caso.<br>
 Para este proyecto utilizaremos python y las librerías pandas y scikit para modelado de datos y elaboración del modelo de predicción.<br><br>
 Se carga el archivo a utilizar en un data frame utilizando la librería pandas<br><br></p>
 	<pre>
