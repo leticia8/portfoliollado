@@ -44,36 +44,33 @@
 
 					<p style="font-size:20px ;text-align:justify">Regression problems are those in which the output
 						variable takes a continuous value. <br>
-						Among the most used regression algorithms are: <br>
+						Most used regression algorithms are: <br>
 
 					<p style="font-size:24px ;color:Tomato;"> LINEAR REGRESSION </p>
 					<p style="font-size:18px ;text-align:justify">It is a linear model, which assumes a linear
-						relationship between the input variables and the output variable (y). <br>
+						relationship between the input variables and the output variable <img src="http://latex.codecogs.com/gif.latex?y" border="0"/>. <br>
+						
 						The linear regression equation assigns a scale factor to each input attribute, called a
 						coefficient and usually represented by the letter β. An additional coefficient is added, giving
-						a greater degree of freedom usually called the ¨intercept¨ or the bias coefficient. It is common
+						a greater degree of freedom usually called the intercept or the bias coefficient. It is common
 						to talk about the complexity of the linear regression model referring to the number of
 						coefficients. <br>
 						Learning a linear regression model applies estimating the values of the coefficients used in the
 						representation of the information. <br> <br>
 						<strong> DATA PREPARATION: </strong> <br>
-						Assumption of linear relationship: it may be necessary to transform the information to make that
-						relationship between input and output linear. <br>
+						Assumption of linear relationship: it may be necessary to transform data to make the relationship between input and output linear. <br>
 						Noise and collinearity must be removed <br>
 						Gaussian distribution: predictions will be more reliable if the distribution is Gaussian
 						(normal). <br>
 						Normalization: predictions will be more reliable if normalization is used. <br>
 					</p>
-
-
-
 					<p style="font-size:24px ;color:Tomato;"> DECISION TREES - CART - Classification And Regression
 						Trees </p>
 					<p style="font-size:18px ;text-align:justify">They have been classically referred to as decision
 						trees although currently they are called Classification and Regression Trees (CART) <br>
 
-						The representation is a binary tree where each node represents an input variable x and a cut-off
-						point in said variable. The leaves of the tree contain the output variable (y) that are used to
+						The representation is a binary tree where each node represents an input variable <img src="http://latex.codecogs.com/gif.latex?x" /> and a cut-off
+						point in said variable. The leaves of the tree contain the output variable <img src="http://latex.codecogs.com/gif.latex?y"/> that are used to
 						make the prediction. <br>
 						Making predictions is pretty straightforward.
 						Each input variable can be thought of as a dimension in p-dimensional space.
@@ -116,7 +113,7 @@
 						In random forest all trees are created independently to have the desired depth and contribute in
 						the same way to the model. <br>
 
-					<p style="font-size:24px ;color:Tomato;"> "GRADIENT BOOST" FOR REGRESSION TREES
+					<p style="font-size:24px ;color:Tomato;"> GRADIENT BOOST FOR REGRESSION TREES
 					<p style="font-size:18px ;text-align:justify">
 						Given a loss measurement function and a weak learning algorithm, an additive model is found that
 						minimizes the loss function. <br>
