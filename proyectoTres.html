@@ -5,216 +5,272 @@ html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
 <head>
-<title>Proyecto análisis cardiológico </title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="assets/css/main.css" />
+	<title>Proyecto análisis cardiológico </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
+
 <body class="is-preload">
 
-<!-- Wrapper -->
-<div id="wrapper">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-<!-- Main -->
-<div id="main">
-	<div class="inner">
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="logo"></a>
-				<ul class="icons">
-						<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
-				<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
-			</ul>
-			</header>
-			
-		<!-- Content -->
-			<section>
-				<header class="main">
-					<h2>Predicción pacientes de India</h2>
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"></a>
+					<ul class="icons">
+						<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span
+									class="label">Git Hub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/"
+								class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+					</ul>
 				</header>
-											
-		<p style="font-size:18px"> Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)"> data set pacientes</a>
 
-	<hr class="major" />
-	<p style="font-size:20px ;text-align:justify">El presente data set consta de información sobre la tenencia de hígado o no 
-	de 583 pacientes del noreste de Andhra Pradesh, India. <br>
-	Por tanto se cuenta con datos etiquetados, lo que indica que se llevará a cabo un aprendizaje supervisado.<br>
-	Para lograr una mejor comprensión de los datos observamos los atributos medidos y su significado:<br>
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h2>Predicción pacientes de India</h2>
+					</header>
 
-	<!DOCTYPE html>
-<html>
-   <head>
-      <style>
-         table, th, td {
-            border: 2px solid black;
-         }
-      </style>
-   </head>
+					<p style="font-size:18px"> Datos utilizados <a
+							href="https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)"> data set
+							pacientes</a>
 
-   <body>
-      <table>
-         	<tr>
-            <th><p style="font-size:18px">Atributo</th></p>
-			<th><p style="font-size:18px">Tipo de atributo</th>
-            <th><p style="font-size:18px">Rango</th>
-         	</tr>
-			<tr>
-			<td><strong>age - Edad:</strong> Edad del paciente. Se categoriza como 90 cualquier persona mayor a 90.</td>
-			<td>Numérico</td>
-			<td>4-90</td>
-			</tr>
-			<td><p><strong>gender - Genero:</strong> Asume los valores femenino y masculino</p></td>
-			<td>Binominal</td>
-			<td>Femenino-Masculino</td>
-			</tr>
-			<td><p><strong>tot_bilirrubin - Bilirrubina total:</strong>Valores de bilirrubina total del paciente (combinación de directa e indirecta). </p></td>
-			<td>Continua</td>
-			<td>0,4-75</td>
-			</tr>
-			<td><p><strong>direct_bilirrubin - Bilirrubina directa:</strong>Valores de bilirrubina directa del paciente.</p></td>
-			<td>Continua</td>
-			<td>0,10-19,7</td>
-			</tr>
-			<td><p><strong>tot_proteins - Proteínas totales: </strong> Cantidad de proteínas en sangre.</p></td>
-			<td>Continua</td>
-			<td>63-2210</td>
-			</tr>
-			<td><p><strong>albumin - Albuminas: </strong> Total de albuminas en sangre.</p></td>
-			<td>Continua</td>
-			<td>10-2000</td>
-			</tr>
-				<td><p><strong>ag_ratio - Ratio de albuminas y globulinas: </strong>Indica el ratio entre albuminas y globulinas.</p></td>
-			<td>Continua</td>
-			<td>10-4929</td>
-			</tr>
-				<td><p><strong>sgpt - Alanina aminotransferasa </strong> Valores de la enzima alanina aminotransferasa medidos en sangre.</p></td>
-			<td>Continua</td>
-			<td>2,7-9,6</td>
-			</tr>
-			<td><p><strong>sgot - Aspartato aminotransferasa:</strong> Valores de la enzima medidos en sangre. </p></td>
-			<td>Continua</td>
-			<td>0,9-5,5</td>
-			</tr>   
-			<td><p><strong>alkphos - Fosfatasa alcalina: </strong> Valores de la enzima medidos en sangre. </p></td>
-			<td>Continua</td>
-			<td>0,3-2,8</td>
-			</tr>  
-      </table>
-   </body>
+						<hr class="major" />
+					<p style="font-size:20px ;text-align:justify">El presente data set consta de información sobre la
+						tenencia de hígado o no
+						de 583 pacientes del noreste de Andhra Pradesh, India. <br>
+						Por tanto se cuenta con datos etiquetados, lo que indica que se llevará a cabo un aprendizaje
+						supervisado.<br>
+						Para lograr una mejor comprensión de los datos observamos los atributos medidos y su
+						significado:<br>
+
+						<!DOCTYPE html>
+						<html>
+
+						<head>
+							<style>
+								table,
+								th,
+								td {
+									border: 2px solid black;
+								}
+							</style>
+						</head>
+
+						<body>
+							<table>
+								<tr>
+									<th>
+										<p style="font-size:18px">Atributo
+									</th>
+					</p>
+					<th>
+						<p style="font-size:18px">Tipo de atributo
+					</th>
+					<th>
+						<p style="font-size:18px">Rango
+					</th>
+					</tr>
+					<tr>
+						<td><strong>age - Edad:</strong> Edad del paciente. Se categoriza como 90 cualquier persona
+							mayor a 90.</td>
+						<td>Numérico</td>
+						<td>4-90</td>
+					</tr>
+					<td>
+						<p><strong>gender - Genero:</strong> Asume los valores femenino y masculino</p>
+					</td>
+					<td>Binominal</td>
+					<td>Femenino-Masculino</td>
+					</tr>
+					<td>
+						<p><strong>tot_bilirrubin - Bilirrubina total:</strong>Valores de bilirrubina total del paciente
+							(combinación de directa e indirecta). </p>
+					</td>
+					<td>Continua</td>
+					<td>0,4-75</td>
+					</tr>
+					<td>
+						<p><strong>direct_bilirrubin - Bilirrubina directa:</strong>Valores de bilirrubina directa del
+							paciente.</p>
+					</td>
+					<td>Continua</td>
+					<td>0,10-19,7</td>
+					</tr>
+					<td>
+						<p><strong>tot_proteins - Proteínas totales: </strong> Cantidad de proteínas en sangre.</p>
+					</td>
+					<td>Continua</td>
+					<td>63-2210</td>
+					</tr>
+					<td>
+						<p><strong>albumin - Albuminas: </strong> Total de albuminas en sangre.</p>
+					</td>
+					<td>Continua</td>
+					<td>10-2000</td>
+					</tr>
+					<td>
+						<p><strong>ag_ratio - Ratio de albuminas y globulinas: </strong>Indica el ratio entre albuminas
+							y globulinas.</p>
+					</td>
+					<td>Continua</td>
+					<td>10-4929</td>
+					</tr>
+					<td>
+						<p><strong>sgpt - Alanina aminotransferasa </strong> Valores de la enzima alanina
+							aminotransferasa medidos en sangre.</p>
+					</td>
+					<td>Continua</td>
+					<td>2,7-9,6</td>
+					</tr>
+					<td>
+						<p><strong>sgot - Aspartato aminotransferasa:</strong> Valores de la enzima medidos en sangre.
+						</p>
+					</td>
+					<td>Continua</td>
+					<td>0,9-5,5</td>
+					</tr>
+					<td>
+						<p><strong>alkphos - Fosfatasa alcalina: </strong> Valores de la enzima medidos en sangre. </p>
+					</td>
+					<td>Continua</td>
+					<td>0,3-2,8</td>
+					</tr>
+					</table>
+</body>
+
 </html>
 
-	<strong><p style="font-size:20px ;text-align:justify">	es_paciente </strong> es la variable de predicción asume dos valores que representan si el paciente tiene hígado o no.<br><br>
+<strong>
+	<p style="font-size:20px ;text-align:justify"> es_paciente
+</strong> es la variable de predicción asume dos valores que representan si el paciente tiene hígado o no.<br><br>
 
 
-		
-		<span class="image main"><img src="images/p3_results.PNG"  alt="" /></span>
-		
-	<p style="font-size:20px ;text-align:justify">	Como se observa en esta imagen los 0 en la columna (missing) indican que sólo el atributo alkphos (Fosfatasa alcalina) tiene 4 datos faltantes. Depende del modelo a utilizar la repercusión que pueden tener los datos faltantes en el mismo.<br> 
-	Los árboles en general ignoran los atributos faltantes, pero cualquier algoritmo de cálculo de distancia va a presentar una performance peor.<br><br>
-	Los rangos no denotan valores anormales (outliers) al menos se concentran alrededor de la media y los valores límites no son
+
+<span class="image main"><img src="images/p3_results.PNG" alt="" /></span>
+
+<p style="font-size:20px ;text-align:justify"> Como se observa en esta imagen los 0 en la columna (missing) indican que
+	sólo el atributo alkphos (Fosfatasa alcalina) tiene 4 datos faltantes. Depende del modelo a utilizar la repercusión
+	que pueden tener los datos faltantes en el mismo.<br>
+	Los árboles en general ignoran los atributos faltantes, pero cualquier algoritmo de cálculo de distancia va a
+	presentar una performance peor.<br><br>
+	Los rangos no denotan valores anormales (outliers) al menos se concentran alrededor de la media y los valores
+	límites no son
 	de instancias únicas sino que en general se acompañan por grupos de datos.<br><br>
 
 
-	Por otra parte este problema consta con datos etiquetados, por lo que utilizaremos un modelo supervisado de aprendizaje y la variable dependiente a explicar es categórica por tanto estamos ante un problema de clasificación.<br>
+	Por otra parte este problema consta con datos etiquetados, por lo que utilizaremos un modelo supervisado de
+	aprendizaje y la variable dependiente a explicar es categórica por tanto estamos ante un problema de
+	clasificación.<br>
 
-	A su vez se transforma la variable sexo para que tome valores 0 (Hombre) 1(Mujer) y la variable de salida también tomará 
+	A su vez se transforma la variable sexo para que tome valores 0 (Hombre) 1(Mujer) y la variable de salida también
+	tomará
 	valores 0 y 1 en caso de no tener hígado y tener respecctivamente.<br>
 
-	Se decide visualizar con una gráfica de ROC - Curve los algoritmos de clasificación más utilizados para evaluar su performance obteniendo:<br><br>
+	Se decide visualizar con una gráfica de ROC - Curve los algoritmos de clasificación más utilizados para evaluar su
+	performance obteniendo:<br><br>
 
-	
-		<img src="images/p3_rocCurve.PNG"  style="width:100%;height:80%;" alt="" /><br><br>
 
-	Por tanto es posible afirmar que el árbol de decisión demuestra una buena performance en comparación al resto de los modelos analizados.<br>
-	
+	<img src="images/p3_rocCurve.PNG" style="width:100%;height:80%;" alt="" /><br><br>
+
+	Por tanto es posible afirmar que el árbol de decisión demuestra una buena performance en comparación al resto de los
+	modelos analizados.<br>
+
 	Se obtienen los parámetros ideales para aplicar el proceso con diferentes métodos de optimización, <br><br>
-					<span class="image main"><img src="images/p3_accuracy.PNG" style="width:100%;height:80%;" alt="" /><br><br>
+	<span class="image main"><img src="images/p3_accuracy.PNG" style="width:100%;height:80%;" alt="" /><br><br>
 
-	El modelo obtiene una precisión del 73,24%, utilizando Gain Ratio como parámetro de ajuste,
-	con una profundidad máxima de 6 y un valor mínimo en cada hoja de 1<br><br>
-	
-	Aquí se observa que 411 casos cuya predicción fue Sí, efectivamente son pacientes con hígado mientras  
-	que hay 152 pacientes que se predijo que tienen hígado pero realmente no tienen, es por esto
-	que el recall de clase para esa predicción es muy bajo dado que toma como clase positiva la clase 0 y no halla en realidad
-	todos los casos que debiera.
+		El modelo obtiene una precisión del 73,24%, utilizando Gain Ratio como parámetro de ajuste,
+		con una profundidad máxima de 6 y un valor mínimo en cada hoja de 1<br><br>
 
-	El árbol resultante luego de aplicar el modelo es el siguiente:<br>
+		Aquí se observa que 411 casos cuya predicción fue Sí, efectivamente son pacientes con hígado mientras
+		que hay 152 pacientes que se predijo que tienen hígado pero realmente no tienen, es por esto
+		que el recall de clase para esa predicción es muy bajo dado que toma como clase positiva la clase 0 y no halla
+		en realidad
+		todos los casos que debiera.
 
-				<img src="images/p3_treeFinal.PNG" style="width:80%;height:60%;" alt="" />
+		El árbol resultante luego de aplicar el modelo es el siguiente:<br>
+
+		<img src="images/p3_treeFinal.PNG" style="width:80%;height:60%;" alt="" />
 
 
 
-				
-	
+
+
 		</section>
 		</div>
 		</div>
 
-<!-- Sidebar -->
-<div id="sidebar">
-	<div class="inner">
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
 
-		<!-- Search -->
-			<section id="search" class="alt">
-				<form method="post" action="#">
-					<input type="text" name="query" id="query" placeholder="Search" />
-				</form>
-			</section>
-		<!-- Menu -->
-		<nav id="menu">
-			<header class="major">
-				<h2>Menu</h2>
-			</header>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
-				<li>
-					<span class="opener" href="index.html">Marco teórico</span>
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
 					<ul>
-						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
-						<ul>
-						<li><a href="deRegresion.html">De regresión</a></li>
-						<li><a href="deClasificacion.html">De clasificación</a></li>
-						</ul>
-						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
-						<ul>
-						<li><a href="deClustering.html">De Clustering</a></li>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
-						
-						</ul>
-					</ul>
-				</li>
-				<li>
-					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
-					<ul>
-						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
-						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
-					
-						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
-						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
-				
-			
+						<li><a href="index.html">Home</a></li>
+						<li><a href="introduccion.html">Introduction to Machine Learning </a></li>
+						<li>
+							<span class="opener" href="index.html">Theoretical framework</span>
+							<ul>
+								<li><a href="supervisados.html">Supervised learning</a></li>
+								<ul>
+									<li><a href="deRegresion.html">Regression</a></li>
+									<li><a href="deClasificacion.html">Classification</a></li>
+								</ul>
+								<li><a href="noSupervisados.html">Unsupervised learning</a></li>
+								<ul>
+									<li><a href="deClustering.html">Clustering</a></li>
+									<li><a href="deReduccionDim.html">Reduction of dimensions</a></li>
+
+								</ul>
+							</ul>
+						</li>
+						<li>
+							<span class="opener" href="proyectos.html">Projects</span>
+							<ul>
+								<li><a href="proyectoUno.html">Home price prediction </a></li>
+								<li><a href="proyectoDos.html">Cardiology prediction</a></li>
+
+								<li><a href="proyectoCuatro.html"> Height prediction from skeletal remains</a></li>
+								<li><a href="proyectoTres.html">Prediction of patients with / without liver</a></li>
+								<li><a href="proyectoCinco.html">Prediction of autism in adults</a></li>
+
+
+
+							</ul>
+						</li>
 
 					</ul>
-				</li>
-				<li><a href="TAS.html">TA's del curso</a></li>
-			
-			</ul>
-		</nav>
+				</nav>
+			</div>
 		</div>
-	</div>
 
-</div>
+		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-	</body>
-</html>
+		</body>
+
+		</html>

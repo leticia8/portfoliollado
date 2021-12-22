@@ -5,300 +5,394 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Predicción precios viviendas </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Home price prediction </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+<body class="is-preload">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"></a>
-									<ul class="icons">
-											<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
-							</ul>
-								</header>
-					
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-		<!-- Content -->
-		<section>
-		<header class="main">
-		<h2>Predicción de precios de viviendas en Boston</h2>
-		</header>
-		
-		<p style="font-size:20px"> Datos utilizados: <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/housing/"> data set precios viviendas</a>
-						
-		<p style="font-size:20px">El presente proyecto busca entrenar un modelo para predecir la variable dependiente Y=precios de vivienda en los suburbios de la ciudad de Boston, Massachusetts, Estados Unidos
-		partiendo de una serie de variables independientes (X) vinculadas a la vivienda sí misma y a variables del entorno. <br>
-		Como es de esperar los precios de las casas están condicionados por múltiples factores, la localidad de la cual se trate, así como superficie y cercanía (o lejanía) a diferentes puntos emblemáticos de una ciudad.
-		<p style="font-size:20px">Para tal fin utilizaremos el data set de UCI - housing. 
-		<br>
-		Pasaremos al análisis de los datos, para su mejor comprensión, observamos las variables independientes del data set y su significado:<br>
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-		<!DOCTYPE html>
-		<html>
-		<head>
-		<style>
-		table, th, td {
-		border: 1px solid black;}
-		</style>
-		</head>
-		<body>
-		<table>
-		<tr>
-<th><p style="font-size:18px">Nombre</th>
-<th><p style="font-size:18px">Significado</th>
-<th><p style="font-size:18px">Tipo de dato</th>
-<th><p style="font-size:18px">Rangos</th>
-</tr>
-<tr>
-<td>CRIM</td>
-<td>Tasa de crimen per cápita según ciudad</td>
-<td>numérica</td>
-<td>0 - 88,976</td>
-</tr>
-<td>ZN</td>
-<td>Proporción de zona residencial divivida en lotes de más de 25 mil metros cuadrados</td>
-<td>numérica</td>
-<td>0 - 100</td>
-</tr>
-<td>INDUS</td>
-<td>Proporción de acres de negocios no minoristas por ciudad</td>
-<td>numérica</td>
-<td>0,46 - 27,740</td>
-</tr>
-<td>CHAS</td>
-<td>Limita con el río Charles (1 sí y 0 no)</td>
-<td>categórica</td>
-<td>toma valores 0 y 1</td>
-</tr>
-<td>NOX</td>
-<td>Concentración de óxido nítrico (partes por 10 millones)</td>
-<td>numérica</td>
-<td>0,385 - 0,871</td>
-</tr>
-<td>RM</td>
-<td>Número promedio de habitaciones por vivienda</td>
-<td>numérica</td>
-<td>3,561 - 8,780</td>
-</tr>
-<td>AGE</td>
-<td>Proporción de unidades ocupadas por sus dueños construidas antes de 1940</td>
-<td>numérica</td>
-<td>2,9 - 100</td>
-</tr>
-<td>DIS</td>
-<td>Distancia ponderada a 5 centros de empleo de Boston</td>
-<td>Real- numérica</td>
-<td>1,130 - 12,127</td>
-</tr>
-<td>RAD  </td>
-<td>Índice de accesibilidad a autopistas radiales</td>
-<td>numérica</td>
-<td>1 - 24</td>
-</tr>
-<td>TAX</td>
-<td>Tasa de impuesto total a la propiedad cada $10.000</td>
-<td>numérica</td>
-<td>187 - 711</td>
-</tr>
-<td>PTRATIO</td>
-<td>Ratio alumno/maestro por ciudad</td>
-<td>numérica</td>
-<td>12,6 - 22,0</td>
-</tr>
-<td>B</td>
-<td>1000(Bk - 0.63)^2 donde Bk es la proporción de afrodescendientes por ciudad</td>
-<td>numérica</td>
-<td>0,320 - 396,9</td>
-</tr>
-<td>LSTAT</td>
-<td>Porcentaje de población de clase baja</td>
-<td>Real- numérica</td>
-<td>1,73 - 37,97</td>
-</tr>   
-</table>
-</body>
-</html>
-<p style="font-size:25px ;text-align:justify"> La variable dependiente es MEDV, el valor promedio de las viviendas ocupadas por sus propietarios en miles de dólares. <br>
-Considerando que contamos con datos etiquetados que permiten entrenar una respuesta correcta, utilizaremos modelos supervisados, siendo el objetivo elaborar un modelo para poder predecir nueva información de la variable dependiente cuando tengamos nuevos datos de variables
-independientes.<br>
-A su vez dado que la variable dependiente es un valor continuo estamos ante un problema de regresión y no de clasificación.<br>
-
-Al ser un problema de regresión utilizaremos la regresión lineal asegurándonos de remover el ruido y la colinealidad de las variables, así como de 
-normalizar los datos en caso de tener distribuciones muy dispares dado que así lo requiere el uso de este algoritmo.<br>
-Para esto analizaremos datos faltantes y outliers, el data set no tiene datos faltantes, salvo en la variable a predecir (4 casos) <br>
-<br>
-En cuanto a los outliers para las variables que presentan una mayor desviación dentro de sus rangos ZN,  AGE, TAX se observan las gráficas de dispersión:<br><br>
-Gráfica de dispersión de variable AGE<br>
-<span class="image main"><img title="tabla" src="images/p1_age.png" style="width:50%;height:50%;" alt="" /></span>
-Gráfica de dispersión de variable TAX<br>
-<span class="image main"><img title="tabla" src="images/p1_tax.png" style="width:50%;height:50%;" alt="" /></span>
-Gráfica de dispersión de variable ZN<br>
-<span class="image main"><img title="tabla" src="images/p1_ZN.png" style="width:50%;height:50%;" alt="" /></span>
-En estas variables no se observan valores anormales, más allá de que algunos se sitúan en los extremos de la distribución conforman un grupo de varios puntos lo que
-no indicaría que son datos erróneos u outliers.<br>
-Ahora nos centraremos en el estudio de la colinealidad de los atributos, en el caso de rapid miner, la herramienta incorpora en el modelo la remoción
-de atributos correlacionados para evitar perjudicar la performance del modelo, pero igualmente es útil analizar la matriz de correlaciones para visualizar 
-dichas relaciones: <br>
-<span class="image main"><img title="tabla" src="images/p1_matrix.PNG" style="width:90%;height:50%;" alt="" /></span><br>
-
-Al observar la matriz se ve que ciertos atributos tienen una correlacióon importante, los más correlacionados son representados
-con colores violeta oscuro. Es posible observar que NOX muestra correlaciones altas con AGE (0.731) y DIS (-0.769) .
-A su vez INDUS muestra correlaciones altas con NOX (0.764), con DIS (-0.708)  y con TAX (0.721)
-Pero también se observan de AGE e DIS (-0.748)<br>
-A su vez variables como INDUS y NOX muestran correlaciones con otras del modelo, por lo que son grandes candidatas a ser retiradas del mismo.
-<br>
-
-Por último los rangos de los atributos son disímiles entre sí, como podemos observar en la tabla de descripción de los atributos
-desarrollada al inicio, esto indica que vamos a precisar estandarizar las distribuciones para lograr que todas las variables se muevan dentro de un rango
-similar evitando otorgar mayor peso a aquellas variables con rangos mayores que quizás no sean tan relevantes para el modelo es por esto que se
-recomienda normalizar los datos para trabajar con modelos sensibles a estas variaciones como la regresión lineal.<br>
-
-Dividiremos el data set en datos de entrenamiento y de test, para asegurar que el data set de entrenamiento sea representativo se aleatorizan
-los datos con un nodo denominado Shuffle.Esto es para evitar que estén ordenados a la hora de seleccionar partes del data set para validación, 
-entrenamiento y test de forma de evitar trabajar con datos segmentados y no representativos de todo el universo.<br>
-
-Luego de aleatorizar los datos se dividirá el data set filtrando un 70% para datos de entrenamiento y un 30% para test como se observa en la siguiente imagen: <br>
-<img title="tabla" src="images/p1_model.PNG" style="width:90%;height:50%;" alt="" /><br>
-
-A los datos de entrenamiento les aplicamos un nodo de rapid miner utilizado para optimizar parámetros: Optimizer y obtenemos que los mínimos errores al cuadrado
-se obtienen al usar T-Test como método de feature selection, con un alpha de 0.5 y sin usar sesgo.
-En dicho caso la sumatoria de la raíz cuadrada de los errores a la media da 3.589, el valor más bajo obtenido.
-A continuación se observa la salida obtenida por rapid miner de los primeras iteraciones ordenadas de menor a mayor por raíz cuadrada del error: <br>
-<img title="tabla" src="images/p1_gridopt.PNG" style="width:90%;height:50%;" alt="" /><br>
-
-Como se puede observar todas dan el mismo error y utilizan el mismo método de feature selection variando cantidad de iteraciones y valor de alpha.<br>
-
-Por lo tanto se decide aplicar dicha selección en la regresión lineal.<br>
-
-Dentro del Validation del modelo de rapid miner aplico la normalización y el modelo de regresión lineal:<br><br>
-
-<img title="tabla" src="images/p1_model2.PNG" style="width:90%;height:50%;" alt="" /><br>
-
-Aplicando el modelo y midiendo la performance para validación del entrenamiento a la salida.<br>
-
-Si se observa la salida de la regresión lineal sin dudas alguna se ve que de las variables analizadas son más significativas en 
-cuanto al modelo y su predicción como es posible osbervar en la siguiente imagen: <br>
-<img  src="images/p1_salReg.PNG" style="width:95%;height:20%;" alt="" />		<br>		
-De acuerdo a la imagen (cuantos más asteriscos es más significativa la variable para el modelo) se obtiene que <br>
-RM: Número promedio de cuartos de la vivienda<br>
-DIS: Distancia ponderada a 5 centros de empleo de Boston<br>
-PTRATIO: Ratio alumno/maestro por ciudad<br>
-LSTAT: % de población de clase baja<br>
-Son las variables más significativas para el modelo, seguidas de:<br>
-ZN:Proporción de zona residencial con lotes sobre 25 mil metros cuadrados<br>
-TAX: Valor de impuestos de la vivienda cada $10.000<br>
-RAD: Índice de accesibilidad a autopistas radiales<br>
-
-La salida de la regresión lineal indica un resumen de los coeficientes obtenidos para cada variable independiente del modelo:<br>
-
-<img title="tabla" src="images/p1_salReg2.PNG" style="width:20%;height:20%;" alt="" /><br>
-
-En la imagen se observa un coeficiente elevado para RM: Número promedio de cuartos de la vivienda, siendo el p valor 0 y el estadístico t elevado,
-A su vez la variable independiente DIS: Distancia ponderada a 5 centros de empleo de Boston tiene un coeficiente negativo, lo que tiene sentido dado que
-disminuiría el precio de la vivienda la mayor distancia a centros de empleo, algo similar aunque con menor peso ocurre
-coon el % de población de clase baja en el vecindario (LSTAT) y PTRATIO: Ratio alumno/maestro por ciudad, dado que al haber más alumnos por maestro tampoco
-se considera atractiva la zona para vivir pensando en familais con hijos.<br>
-<img title="tabla" src="images/p1_sqcorr.JPG" style="width:25%;height:20%;" alt="" /><br>
-Cuando evaluamos la performance del modelo para los datos de test se observa para el set de datos analizado que la correlación del modelo obtenida es de un 0,823 es decir, el 82,3% de la variación
-de la variable dependiente Y=MEDV puede ser explicada por la variación de las variables indendientes utilizadas en el modelo.<br>
-
-A su vez también podemos medir el error de predicción ya que conocemos el valor real de salida, para tal fin creamos 
-la variable residuos, resta de la predicción con el valor real: <br>
-<img title="tabla" src="images/p1_residuo.PNG" style="width:100%;height:100%;" alt="" /><br>
-
-Se obtiene por tanto un valor de residuos mínimo de -18,864 y máximo de 12,268 con una media de 0,067 y una desviación de 4,637.<br>
-La siguiente gráfica indica cómo se distribuyen los residuos, siguiendo una distribución normal.</p>
-<img title="tabla" src="images/p1_residuos.png" style="width:70%;height:50%;" alt="" /><br>
-</p>
-
-
-
-
-
-
-
-
-
-</section>
-</div>
-</div>
-<!-- Sidebar -->
-<div id="sidebar">
-	<div class="inner">
-
-		<!-- Search -->
-			<section id="search" class="alt">
-				<form method="post" action="#">
-					<input type="text" name="query" id="query" placeholder="Search" />
-				</form>
-			</section>
-	<!-- Menu -->
-		<nav id="menu">
-			<header class="major">
-				<h2>Menu</h2>
-			</header>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
-				<li>
-					<span class="opener" href="index.html">Marco teórico</span>
-					<ul>
-						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
-						<ul>
-						<li><a href="deRegresion.html">De regresión</a></li>
-						<li><a href="deClasificacion.html">De clasificación</a></li>
-						</ul>
-						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
-						<ul>
-						<li><a href="deClustering.html">De Clustering</a></li>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
-						
-						</ul>
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"></a>
+					<ul class="icons">
+						<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span
+									class="label">Git Hub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/"
+								class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
 					</ul>
-				</li>
-				<li>
-					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
-					<ul>
-						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
-						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
-					
-						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
-						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
-				
-			
+				</header>
 
-					</ul>
-				</li>
-				<li><a href="TAS.html">TA's del curso</a></li>
-			
-			</ul>
-		</nav>
-		
-			
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h2>Boston home price prediction</h2>
+					</header>
+
+					<p style="font-size:20px"> Data used:<a
+							href="https://archive.ics.uci.edu/ml/machine-learning-databases/housing/"> Housing prices
+							data set</a>
+
+					<p style="font-size:20px">This project seeks to train a model to predict the dependent variable
+
+						<img src="http://latex.codecogs.com/gif.latex? Y =" border="0" />
+
+						housing prices in the suburbs of the city of Boston, Massachusetts, United States
+						starting from a series of independent variables (<img
+							src="http://latex.codecogs.com/gif.latex? X" border="0" />) linked to the dwelling itself
+						and to variables of the environment. <br>
+						As expected, house prices are conditioned by multiple factors, the locality in question, as well
+						as surface area and proximity (or distance) to different emblematic points of a city.
+					<p style="font-size: 20px"> For this purpose we will use the UCI - housing data set.
+
+
+						<br>
+
+						We will proceed to the analysis of the data, for a better understanding, we observe the
+						independent variables of the data set and their meaning: <br>
+
+						<!DOCTYPE html>
+						<html>
+
+						<head>
+							<style>
+								table,
+								th,
+								td {
+									border: 1px solid black;
+								}
+							</style>
+						</head>
+
+						<body>
+							<table>
+								<tr>
+									<th>
+										<p style="font-size:18px">Name
+									</th>
+									<th>
+										<p style="font-size:18px">Description
+									</th>
+									<th>
+										<p style="font-size:18px">Type
+									</th>
+									<th>
+										<p style="font-size:18px">Range
+									</th>
+								</tr>
+								<tr>
+									<td>CRIM</td>
+									<td>Crime rate per capita by city</td>
+									<td>Numeric</td>
+									<td>0 - 88,976</td>
+								</tr>
+								<td>ZN</td>
+								<td>Proportion of residential area divided into lots of more than 25 thousand square
+									meters</td>
+								<td>Numeric</td>
+								<td>0 - 100</td>
+								</tr>
+								<td>INDUS</td>
+								<td>Proportion of Non-Retail Business Acres by City</td>
+								<td>Numeric</td>
+								<td>0,46 - 27,740</td>
+								</tr>
+								<td>CHAS</td>
+								<td>Borders with the Charles River (1 yes - 0 no)</td>
+								<td>Categoric</td>
+								<td> 0 - 1 </td>
+								</tr>
+								<td>NOX</td>
+								<td>Nitric Oxide concentration (parts per 10 million)</td>
+								<td>Numeric</td>
+								<td>0,385 - 0,871</td>
+								</tr>
+								<td>RM</td>
+								<td>Average number of rooms per dwelling</td>
+								<td>Numeric</td>
+								<td>3,561 - 8,780</td>
+								</tr>
+								<td>AGE</td>
+								<td>Proportion of owner-occupied units built before 1940</td>
+								<td>Numeric</td>
+								<td>2,9 - 100</td>
+								</tr>
+								<td>DIS</td>
+								<td>Weighted Distance to 5 Boston Job Centers</td>
+								<td>Real- numeric </td>
+								<td>1,130 - 12,127</td>
+								</tr>
+								<td>RAD </td>
+								<td>Radial motorway accessibility index</td>
+								<td>Numeric</td>
+								<td>1 - 24</td>
+								</tr>
+								<td>TAX</td>
+								<td>Total property tax rate every $ 10,000</td>
+								<td>Numeric</td>
+								<td>187 - 711</td>
+								</tr>
+								<td>PTRATIO</td>
+								<td>Student / teacher ratio by city</td>
+								<td>Numeric</td>
+								<td>12,6 - 22,0</td>
+								</tr>
+								<td>B</td>
+								<td>1000(Bk - 0.63)^2 where Bk is the proportion of Afro-descendants per city</td>
+								<td>Numeric</td>
+								<td>0,320 - 396,9</td>
+								</tr>
+								<td>LSTAT</td>
+								<td>Percentage of the lower class population</td>
+								<td>Real- numeric</td>
+								<td>1,73 - 37,97</td>
+								</tr>
+							</table>
+						</body>
+
+						</html>
+					<p style="font-size:25px ;text-align:justify"> The dependent variable is MEDV, the average value of
+						owner-occupied homes in thousands of dollars. <br>
+						Considering that we have labeled data that allow us to train a correct response, we will use
+						supervised models, the objective being to develop a model to be able to predict new information
+						on the dependent variable when we have new data on variables.
+						independent. <br>
+						In turn, given that the dependent variable is a continuous value, we are facing a regression
+						problem and not a classification problem. <br>
+
+						Being a regression problem we will use linear regression making sure to remove the noise and
+						collinearity of the variables, as well as
+						normalize the data in case of having very disparate distributions since the use of this
+						algorithm requires it. <br>
+						For this we will analyze missing data and outliers, the data set does not have missing data,
+						except in the variable to predict (4 cases) <br>
+						<br>
+
+
+						Regarding the outliers for the variables that present a greater deviation within their ranges
+						ZN, AGE, TAX, the scatter graphs are observed: <br> <br>
+						Scatter plot of AGE variable <br>
+
+
+						<span class="image main"><img title="tabla" src="images/p1_age.png"
+								style="width:50%;height:50%;" alt="" /></span>
+						Scatter plot of variable TAX<br>
+						<span class="image main"><img title="tabla" src="images/p1_tax.png"
+								style="width:50%;height:50%;" alt="" /></span>
+						Scatter plot of variable ZN<br>
+						<span class="image main"><img title="tabla" src="images/p1_ZN.png" style="width:50%;height:50%;"
+								alt="" /></span>
+						In these variables no abnormal values are observed, apart from the fact that some are located at
+						the extremes of the distribution, they make up a group of several points which
+						it would not indicate that they are erroneous data or outliers.<br>
+						Now we will focus on the study of the collinearity of the attributes, in the case of rapid
+						miner, the tool incorporates the removal in the model
+						of correlated attributes to avoid damaging the performance of the model, but it is also useful
+						to analyze the correlation matrix to visualize
+						said relationships:<br>
+						<span class="image main"><img title="tabla" src="images/p1_matrix.PNG"
+								style="width:90%;height:50%;" alt="" /></span><br>
+
+						When observing the matrix it is seen that certain attributes have an important correlation, the
+						most correlated are represented
+						with dark violet colors. It is possible to observe that NOX shows high correlations with AGE
+						(0.731) and DIS (-0.769).
+						In turn, INDUS shows high correlations with NOX (0.764), with DIS (-0.708) and with TAX (0.721)
+						But AGE and DIS (-0.748) are also observed <br>
+						In turn, variables such as INDUS and NOX show correlations with others in the model, which is
+						why they are great candidates to be withdrawn from it.
+
+
+						<br>
+
+						Finally, the ranges of the attributes are dissimilar to each other, as we can see in the
+						attribute description table
+						developed at the beginning, this indicates that we are going to need to standardize the
+						distributions to achieve that all the variables move within a range
+						similar, avoiding giving greater weight to those variables with higher ranges that may not be so
+						relevant for the model.
+						So it's recommended normalizing the data to work with models sensitive to these variations, such
+						as linear regression. <br>
+
+						We will divide the data set into training and test data, to ensure that the training data set is
+						representative, they are randomized
+						the data with a node named Shuffle. This is to prevent them from being sorted when selecting
+						parts of the data set for validation,
+						training and testing to avoid working with segmented and unrepresentative data from the entire
+						universe. <br>
+
+						After randomizing the data, the data set will be divided filtering 70% for training data and 30%
+						for tests, as shown in the following image: <br>
+
+
+						<img title="tabla" src="images/p1_model.PNG" style="width:90%;height:50%;" alt="" /><br>
+						To the training data we apply a rapid miner node used to optimize parameters: Optimizer and we
+						obtain that the minimum squared errors
+						They are obtained by using T-Test as a feature selection method, with an alpha of 0.5 and
+						without using bias.
+						In this case, the sum of the square root of the errors at the mean gives 3,589, the lowest value
+						obtained.
+						The following is the output obtained by rapid miner of the first iterations ordered from least
+						to greatest by square root of the error: <br>
+
+
+						<img title="tabla" src="images/p1_gridopt.PNG" style="width:90%;height:50%;" alt="" /><br>
+
+						As you can see, they all give the same error and use the same feature selection method, varying
+						the number of iterations and the value of alpha. <br>
+
+						Therefore, it is decided to apply said selection in linear regression. <br>
+
+						Within the Validation of the rapid miner model I apply the normalization and the linear
+						regression model: <br> <br>
+
+
+						<img title="tabla" src="images/p1_model2.PNG" style="width:90%;height:50%;" alt="" /><br>
+
+						Applying the model and measuring the performance for validation of the training at the start.
+						<br>
+
+						If the output of the linear regression is observed, without any doubts, it is seen that of the
+						variables analyzed are more significant in
+						Regarding the model and its prediction, as it is possible to see in the following image: <br>
+						<img src="images / p1_salReg.PNG" style="width: 95%; height: 20%;" alt="" /> <br>
+						According to the image (the more asterisks the variable is more significant for the model) it is
+						obtained that:<br>
+						RM: Average number of rooms in the home <br>
+						DIS: Weighted distance to 5 Boston job centers <br>
+						PTRATIO: Student / teacher ratio by city <br>
+						LSTAT: % of lower class population <br>
+						They are the most significant variables for the model, followed by: <br>
+						ZN: Proportion of residential area with lots over 25 thousand square meters <br>
+						TAX: Home tax value every $ 10,000 <br>
+						RAD: Radial motorway accessibility index <br>
+
+						The output of the linear regression indicates a summary of the coefficients obtained for each
+						independent variable of the model: <br>
+
+
+						<img title="tabla" src="images/p1_salReg2.PNG" style="width:20%;height:20%;" alt="" /><br>
+						The image shows a high coefficient for RM: Average number of rooms in the house, with the p
+						value being 0 and a high t statistic,<br>
+						The independent variable DIS: Weighted distance to 5 Boston job centers has a negative
+						coefficient, which makes sense given that
+						the greater distance to employment centers would decrease the price of housing, <br>
+						Something similar although with less weight occurs with the % of the lower class population in
+						the neighborhood (LSTAT) and PTRATIO: Student / teacher ratio by city, given that since there
+						are more students per teacher
+						the area is considered attractive to live thinking of families with children. <br>
+
+
+						<img title="tabla" src="images/p1_sqcorr.JPG" style="width:25%;height:20%;" alt="" /><br>
+						When we evaluate the performance of the model for the test data, it is observed for the analyzed
+						data set that the correlation of the model obtained is 0.823, that is, 82.3% of the variation
+						of the dependent variable
+
+						<img src="http://latex.codecogs.com/gif.latex? Y = MEDV" border="0" />
+						can be explained by the variation of the independent variables used in the model. <br>
+
+						At the same time we can also measure the prediction error since we know the real output value,
+						for this we create
+						the variable residuals, subtract from the prediction with the real value: <br>
+
+
+						<img title="tabla" src="images/p1_residuo.PNG" style="width:100%;height:100%;" alt="" /><br>
+
+						Therefore, a minimum residual value of -18,864 and a maximum of 12,268 are obtained with a mean
+						of 0.067 and a deviation of 4.637. <br>
+						The following graph indicates how the residuals are distributed, following a normal
+						distribution.
+
+					</p>
+					<img title="tabla" src="images/p1_residuos.png" style="width:70%;height:50%;" alt="" /><br>
+					</p>
+
+
+
+
+
+
+
+
+
+				</section>
+			</div>
 		</div>
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="introduccion.html">Introduction to Machine Learning </a></li>
+						<li>
+							<span class="opener" href="index.html">Theoretical framework</span>
+							<ul>
+								<li><a href="supervisados.html">Supervised learning</a></li>
+								<ul>
+									<li><a href="deRegresion.html">Regression</a></li>
+									<li><a href="deClasificacion.html">Classification</a></li>
+								</ul>
+								<li><a href="noSupervisados.html">Unsupervised learning</a></li>
+								<ul>
+									<li><a href="deClustering.html">Clustering</a></li>
+									<li><a href="deReduccionDim.html">Reduction of dimensions</a></li>
+
+								</ul>
+							</ul>
+						</li>
+						<li>
+							<span class="opener" href="proyectos.html">Projects</span>
+							<ul>
+								<li><a href="proyectoUno.html">Home price prediction </a></li>
+								<li><a href="proyectoDos.html">Cardiology prediction</a></li>
+
+								<li><a href="proyectoCuatro.html"> Height prediction from skeletal remains</a></li>
+								<li><a href="proyectoTres.html">Prediction of patients with / without liver</a></li>
+								<li><a href="proyectoCinco.html">Prediction of autism in adults</a></li>
+
+
+
+							</ul>
+						</li>
+
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+
 	</div>
 
-</div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+</body>
 
-	</body>
 </html>

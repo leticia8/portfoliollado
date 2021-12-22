@@ -1,230 +1,301 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Proyecto diagnóstico TEA </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Proyecto diagnóstico TEA </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-				<!-- Main -->
-					<div id="main">
-		<div class="inner">
+<body class="is-preload">
 
-			<!-- Header -->
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
 				<header id="header">
 					<a href="index.html" class="logo"></a>
 					<ul class="icons">
-							<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
-					<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
-				</ul>
+						<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span
+									class="label">Git Hub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/"
+								class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
+					</ul>
 				</header>
-				
-			<!-- Content -->
+
+				<!-- Content -->
 				<section>
 					<header class="main">
 						<h2>Predicción trastorno de espectro autista en adultos</h2>
 					</header>
-													
-				<p style="font-size:18px">Datos utilizados <a href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult"> data set adultos p/diag TEA</a>
-				<hr class="major" />
-					<span class="image object">
-									<img src="images/p5_tea.jpg" style="width:80%;height:80%;" alt="" />
-								</span>
-				<p style="font-size:20px ;text-align:justify">
-			El trastorno del espectro autista (TEA) es una afección del desarrollo neurológico y se asocia en general con costos de atención médica altos, repercusiones profundas en la vida de la persona diagnosticada y su entorno. <br>
-			Hoy en día el diagnóstico lleva tiempo y tiene un impacto económico y social muy alto, el presente estudio considera de valor el diagnóstico temprano ayudando a reducir estas repercusiones significativamente. <br>
-			Al constatar un aumento de los casos de TEA en los últimos tiempos a nivel mundial se considera relevante desarrollar métodos de diagnóstico eficaces que ayuden al profesional de la salud a realizar diagnósticos de forma temprana acortando procesos escabrosos para el paciente y su familia y reduciendo costos.<br>
-			
-			En el siguiente estudio se utiliza un data set con 20 atributos: diez características de comportamiento más diez características de la persona que sucesivos estudios han demostrado son efectivas para detectar los casos de TEA en ciencias del comportamiento.<br>
-			La fuente del data set es Fadi Fayez Thabtah, del departamento de tecnología digital del Instituto de tecnología Manukau de Auckland, New Zealand.<br>
-			Los atributos utilizados en el presente data set son:<br></p>
 
-	<!DOCTYPE html>
-<html>
-   <head>
-      <style>
-         table, th, td {
-            border: 2px solid black;
-         }
-      </style>
-   </head>
+					<p style="font-size:18px">Datos utilizados <a
+							href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult"> data set adultos
+							p/diag TEA</a>
+						<hr class="major" />
+						<span class="image object">
+							<img src="images/p5_tea.jpg" style="width:80%;height:80%;" alt="" />
+						</span>
+					<p style="font-size:20px ;text-align:justify">
+						El trastorno del espectro autista (TEA) es una afección del desarrollo neurológico y se asocia
+						en general con costos de atención médica altos, repercusiones profundas en la vida de la persona
+						diagnosticada y su entorno. <br>
+						Hoy en día el diagnóstico lleva tiempo y tiene un impacto económico y social muy alto, el
+						presente estudio considera de valor el diagnóstico temprano ayudando a reducir estas
+						repercusiones significativamente. <br>
+						Al constatar un aumento de los casos de TEA en los últimos tiempos a nivel mundial se considera
+						relevante desarrollar métodos de diagnóstico eficaces que ayuden al profesional de la salud a
+						realizar diagnósticos de forma temprana acortando procesos escabrosos para el paciente y su
+						familia y reduciendo costos.<br>
 
-   <body>
-      <table>
-         	<tr>
-            <th><p style="font-size:18px">Atributo</th></p>
-			<th><p style="font-size:18px">Tipo de atributo</th>
-            <th><p style="font-size:18px">Rango</th>
-         	</tr>
-			<tr>
-			<td><strong> A1_Score </strong> Código de respuesta a la primer pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A2_Score </strong> Código de respuesta a la segunda pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A3_Score </strong> Código de respuesta a la tercer pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A4_Score </strong> Código de respuesta a la cuarta pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A5_Score </strong> Código de respuesta a la quinta pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A6_Score </strong> Código de respuesta a la sexta pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A7_Score </strong> Código de respuesta a la séptima pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A8_Score </strong> Código de respuesta a la octava pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A9_Score </strong> Código de respuesta a la novena pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-			<tr>
-			<td><strong> A10_Score </strong> Código de respuesta a la décima pregunta realizada en el test aplicado.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
+						En el siguiente estudio se utiliza un data set con 20 atributos: diez características de
+						comportamiento más diez características de la persona que sucesivos estudios han demostrado son
+						efectivas para detectar los casos de TEA en ciencias del comportamiento.<br>
+						La fuente del data set es Fadi Fayez Thabtah, del departamento de tecnología digital del
+						Instituto de tecnología Manukau de Auckland, New Zealand.<br>
+						Los atributos utilizados en el presente data set son:<br></p>
 
-			<td><p><strong>edad </strong>Edad de la persona.</p></td>
-			<td>continua</td>
-			<td> 17-64</td>
-			</tr>
-				<td><p><strong>Sexo: </strong> Sexo de la persona.</p></td>
-			<td>Continua</td>
-			<td>10-4929</td>
-			</tr>
-		
-			<td><p><strong>Etnicidad:</strong> Listado de orígenes étnicos. </p></td>
-			<td>Categórica</td>
-			<td>listado de orígenes étnicos</td>
-			</tr>   
-			<td><p><strong>Ictericia </strong>Indica si nació con ictericia o no. </p></td>
-			<td>Categórica</td>
-			<td>Sí-No</td>
-			</tr>  
-			<td><p><strong>Austim </strong>Indica si tiene un familiar autista.</p></td>
-			<td>Categórica</td>
-			<td>listado de países</td>
-			</tr>
-			<td><p><strong>Country_of_res </strong>País de residencia.</p></td>
-			<td>Categórica</td>
-			<td>f-m</td>
-			</tr>
-			<td><strong>used_app_before </strong> Utilizó una app de screening antes o no.</td>
-			<td>dummy</td>
-			<td>0 - 1</td>
-			</tr>
-		
-			<td><p><strong>age_desc </strong> Edad categórica.</p></td>
-			<td>Categórica</td>
-			<td>'18 and more'</td>
-			</tr>
-			<td><p><strong>relation </strong> Quién completa el cuestionario.</p></td>
-			<td>Categórica</td>
-			<td>listado de vínculos</td>
-			</tr>
-		
-      </table>
-   </body>
-</html>
-<p style="font-size:20px ;text-align:justify">
-Class/ASD es la variable dependiente que determina una clasificación binaria en si el paciente es diagnosticado como con TEA o no.<br>
-Por tanto, nos enfrentamos a un problema de clasificación, supervisado dado que tenemos una salida que se evalúa “correcta”.<br>
-Se analizaron tres data set distintos, uno para datos de niños, otro para datos de adolescentes y otro de adultos.
-Pero se observó que el modelo funciona mejor cuando se separan los grupos etáreos para el análisis.<br>
-En este caso utilizaremos el data set de adultos.<br>
-Se observa que hay un dato con valor 383 en la edad, se decide dejar afuera dicho caso.<br>
-Para este proyecto utilizaremos python y las librerías pandas y scikit para modelado de datos y elaboración del modelo de predicción.<br><br>
-Se carga el archivo a utilizar en un data frame utilizando la librería pandas<br><br></p>
-	<pre>
+					<!DOCTYPE html>
+					<html>
+
+					<head>
+						<style>
+							table,
+							th,
+							td {
+								border: 2px solid black;
+							}
+						</style>
+					</head>
+
+					<body>
+						<table>
+							<tr>
+								<th>
+									<p style="font-size:18px">Atributo
+								</th>
+								</p>
+								<th>
+									<p style="font-size:18px">Tipo de atributo
+								</th>
+								<th>
+									<p style="font-size:18px">Rango
+								</th>
+							</tr>
+							<tr>
+								<td><strong> A1_Score </strong> Código de respuesta a la primer pregunta realizada en el
+									test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A2_Score </strong> Código de respuesta a la segunda pregunta realizada en
+									el test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A3_Score </strong> Código de respuesta a la tercer pregunta realizada en el
+									test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A4_Score </strong> Código de respuesta a la cuarta pregunta realizada en el
+									test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A5_Score </strong> Código de respuesta a la quinta pregunta realizada en el
+									test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A6_Score </strong> Código de respuesta a la sexta pregunta realizada en el
+									test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A7_Score </strong> Código de respuesta a la séptima pregunta realizada en
+									el test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A8_Score </strong> Código de respuesta a la octava pregunta realizada en el
+									test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A9_Score </strong> Código de respuesta a la novena pregunta realizada en el
+									test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+							<tr>
+								<td><strong> A10_Score </strong> Código de respuesta a la décima pregunta realizada en
+									el test aplicado.</td>
+								<td>dummy</td>
+								<td>0 - 1</td>
+							</tr>
+
+							<td>
+								<p><strong>edad </strong>Edad de la persona.</p>
+							</td>
+							<td>continua</td>
+							<td> 17-64</td>
+							</tr>
+							<td>
+								<p><strong>Sexo: </strong> Sexo de la persona.</p>
+							</td>
+							<td>Continua</td>
+							<td>10-4929</td>
+							</tr>
+
+							<td>
+								<p><strong>Etnicidad:</strong> Listado de orígenes étnicos. </p>
+							</td>
+							<td>Categórica</td>
+							<td>listado de orígenes étnicos</td>
+							</tr>
+							<td>
+								<p><strong>Ictericia </strong>Indica si nació con ictericia o no. </p>
+							</td>
+							<td>Categórica</td>
+							<td>Sí-No</td>
+							</tr>
+							<td>
+								<p><strong>Austim </strong>Indica si tiene un familiar autista.</p>
+							</td>
+							<td>Categórica</td>
+							<td>listado de países</td>
+							</tr>
+							<td>
+								<p><strong>Country_of_res </strong>País de residencia.</p>
+							</td>
+							<td>Categórica</td>
+							<td>f-m</td>
+							</tr>
+							<td><strong>used_app_before </strong> Utilizó una app de screening antes o no.</td>
+							<td>dummy</td>
+							<td>0 - 1</td>
+							</tr>
+
+							<td>
+								<p><strong>age_desc </strong> Edad categórica.</p>
+							</td>
+							<td>Categórica</td>
+							<td>'18 and more'</td>
+							</tr>
+							<td>
+								<p><strong>relation </strong> Quién completa el cuestionario.</p>
+							</td>
+							<td>Categórica</td>
+							<td>listado de vínculos</td>
+							</tr>
+
+						</table>
+					</body>
+
+					</html>
+					<p style="font-size:20px ;text-align:justify">
+						Class/ASD es la variable dependiente que determina una clasificación binaria en si el paciente
+						es diagnosticado como con TEA o no.<br>
+						Por tanto, nos enfrentamos a un problema de clasificación, supervisado dado que tenemos una
+						salida que se evalúa “correcta”.<br>
+						Se analizaron tres data set distintos, uno para datos de niños, otro para datos de adolescentes
+						y otro de adultos.
+						Pero se observó que el modelo funciona mejor cuando se separan los grupos etáreos para el
+						análisis.<br>
+						En este caso utilizaremos el data set de adultos.<br>
+						Se observa que hay un dato con valor 383 en la edad, se decide dejar afuera dicho caso.<br>
+						Para este proyecto utilizaremos python y las librerías pandas y scikit para modelado de datos y
+						elaboración del modelo de predicción.<br><br>
+						Se carga el archivo a utilizar en un data frame utilizando la librería pandas<br><br></p>
+					<pre>
 	input_file3 = "autismAdult.csv"
 	missing_values = ["?"]
 	df3 = pd.read_csv(input_file3, na_values = missing_values)
 	dataFrame=df3
 	</pre>
-<p style="font-size:20px ;text-align:justify">Entendimiento de los datos
-En primer lugar, analizamos la información que tiene el data set, observamos que hay atributos deterministas en el modelo como ser las respuestas al test, 
-el resultado del mismo y la clasificación de si tiene trastorno del espectro autista o no la persona estudiada.
- Por ende no tiene sentido que incluyamos dichas variables en el modelo dada su directa relación con la causa estudiada, son variables efímeras.
+					<p style="font-size:20px ;text-align:justify">Entendimiento de los datos
+						En primer lugar, analizamos la información que tiene el data set, observamos que hay atributos
+						deterministas en el modelo como ser las respuestas al test,
+						el resultado del mismo y la clasificación de si tiene trastorno del espectro autista o no la
+						persona estudiada.
+						Por ende no tiene sentido que incluyamos dichas variables en el modelo dada su directa relación
+						con la causa estudiada, son variables efímeras.
 
-Por lo que seleccionamos los atributos a utilizar en el análisis, nos fijamos si hay datos missing y si los hay en este caso los 
-retiramos del análisis dropeándolos.<br><br></p>
+						Por lo que seleccionamos los atributos a utilizar en el análisis, nos fijamos si hay datos
+						missing y si los hay en este caso los
+						retiramos del análisis dropeándolos.<br><br></p>
 
-	<pre>
+					<pre>
 	subDF=dataFrame[['age','gender','ethnicity','jundice','austim','contry_of_res','used_app_before', 'relation','Class/ASD']]
 	print(subDF.columns[subDF.isnull().any()])
 	dataClean=subDF.dropna()
 	</pre>
-<p style="font-size:20px ;text-align:justify">Seleccionamos por tanto para el modelo las variables age, gender, ethnicity, jundice, austim, country_of_res, used_app_before,
-relation y Class/ASD, esta última como variable dependiente.<br></p>
+					<p style="font-size:20px ;text-align:justify">Seleccionamos por tanto para el modelo las variables
+						age, gender, ethnicity, jundice, austim, country_of_res, used_app_before,
+						relation y Class/ASD, esta última como variable dependiente.<br></p>
 
-<p style="font-size:20px ;text-align:justify">Por otra parte sabemos que los atributos jundice, austim, used_app_before  asumen los valores Yes y No, 
-por tanto debemos transformarlos en alguna variable interpretable para el modelo, en este caso se optó por 
-variables categóricas que asumen los valores 1 y 0.<br>
-Se aplica la recodificación utilizando pandas:<br></p>
-	<pre>
+					<p style="font-size:20px ;text-align:justify">Por otra parte sabemos que los atributos jundice,
+						austim, used_app_before asumen los valores Yes y No,
+						por tanto debemos transformarlos en alguna variable interpretable para el modelo, en este caso
+						se optó por
+						variables categóricas que asumen los valores 1 y 0.<br>
+						Se aplica la recodificación utilizando pandas:<br></p>
+					<pre>
 	ordinals = ['jundice', 'austim', 'used_app_before']
 	new_df = pd.DataFrame(dataClean[ordinals])
 	dataClean[ordinals] =pd.DataFrame({col: new_df[col].astype('category').cat.codes for col in new_df}, index = dataClean.index)
 	dataClean2=pd.get_dummies(dataClean, columns=['gender','ethnicity','contry_of_res','relation'])
 </pre>
-<p style="font-size:20px ;text-align:justify">Podemos observar aquí también que las variables gender,ethnicity,contry_of_res y relation que son categóricas se
-recodifican también transformándolas en variables dummies a fin de interpretar el modelo de forma adecuada y poder trabajar
-con modelos que incluyan atributos numéricos.<br>
-Se observa a continuación los atributos recodificados:<br></p>
-<img title="ver nulos" src="images/p5_3.JPG" style="width:90%;height:90%;" alt="" /><br>
+					<p style="font-size:20px ;text-align:justify">Podemos observar aquí también que las variables
+						gender,ethnicity,contry_of_res y relation que son categóricas se
+						recodifican también transformándolas en variables dummies a fin de interpretar el modelo de
+						forma adecuada y poder trabajar
+						con modelos que incluyan atributos numéricos.<br>
+						Se observa a continuación los atributos recodificados:<br></p>
+					<img title="ver nulos" src="images/p5_3.JPG" style="width:90%;height:90%;" alt="" /><br>
 
-<p style="font-size:20px ;text-align:justify">A continuación se seleccionan las variables dependientes(X) y la variable independiente (Y) <br>
+					<p style="font-size:20px ;text-align:justify">A continuación se seleccionan las variables
+						dependientes(X) y la variable independiente (Y) <br>
 
-	<pre>	
+					<pre>
 	X = np.array(dataClean2.drop(['Class/ASD'],1))
 	y = np.array(dataClean2['Class/ASD'])
 	le = preprocessing.LabelEncoder()
 	y_encoded=le.fit_transform(y)	</pre>
 
-<p style="font-size:20px ;text-align:justify">Se recodifica la variable Y=Class/ASD que tiene salidas Yes y No para que asuma valores 0 y 1.<br>
+					<p style="font-size:20px ;text-align:justify">Se recodifica la variable Y=Class/ASD que tiene
+						salidas Yes y No para que asuma valores 0 y 1.<br>
 
-<p style="font-size:20px ;text-align:justify">A su vez se establece el tamaño para dividir la muestra en datos de entrenamiento y test así como la semilla para poder
-replicar el modelo con la misma muestra y así obtener iguales resultados.<br>
+					<p style="font-size:20px ;text-align:justify">A su vez se establece el tamaño para dividir la
+						muestra en datos de entrenamiento y test así como la semilla para poder
+						replicar el modelo con la misma muestra y así obtener iguales resultados.<br>
 
 
-	<pre>
+					<pre>
 	test_size = 0.30
 	seed = 7
 	train_X, test_X, train_y, test_y  = train_test_split(X, y_encoded, test_size=test_size, random_state=seed)
 	</pre>
 
-<p style="font-size:20px ;text-align:justify">A continuación seleccionaremos los modelos a probar, dado que se trata de un problema de clasificación cuya salida es una
-variable binaria usaremos entre otros modelos el de Regresión Logística:<br>
+					<p style="font-size:20px ;text-align:justify">A continuación seleccionaremos los modelos a probar,
+						dado que se trata de un problema de clasificación cuya salida es una
+						variable binaria usaremos entre otros modelos el de Regresión Logística:<br>
 
-	<pre>
+					<pre>
 	print("Logistic Regression")
 	log=LogisticRegression()
 	log.fit(train_X,train_y)
@@ -235,12 +306,14 @@ variable binaria usaremos entre otros modelos el de Regresión Logística:<br>
 	sn.heatmap(confusion_matrix, annot=True)
 </pre>
 
-<p style="font-size:20px ;text-align:justify">Se puede observar una performance promedio de 67% lo que no parece demasiado bueno.<br>
+					<p style="font-size:20px ;text-align:justify">Se puede observar una performance promedio de 67% lo
+						que no parece demasiado bueno.<br>
 
 
-<img title="ver nulos" src="images/p5_1.JPG" style="width:30%;height:30%;" alt="" /><br>
-<p style="font-size:20px ;text-align:justify">Ahora observaremos otro método , el de Linear Discriminant Analysis:<br><br>
-<pre>
+						<img title="ver nulos" src="images/p5_1.JPG" style="width:30%;height:30%;" alt="" /><br>
+					<p style="font-size:20px ;text-align:justify">Ahora observaremos otro método , el de Linear
+						Discriminant Analysis:<br><br>
+					<pre>
 	print("LDA")
 	lda=LinearDiscriminantAnalysis()
 	lda=lda.fit(train_X, train_y)
@@ -251,83 +324,85 @@ variable binaria usaremos entre otros modelos el de Regresión Logística:<br>
 
 </pre>
 
-<p style="font-size:20px ;text-align:justify">Se puede observar una performance promedio de 71% lo que aumenta levemente el resultado anterior.<br><br>
+					<p style="font-size:20px ;text-align:justify">Se puede observar una performance promedio de 71% lo
+						que aumenta levemente el resultado anterior.<br><br>
 
 
-<img title="ver nulos" src="images/p5_2.JPG" style="width:30%;height:30%;" alt="" /><br>
+						<img title="ver nulos" src="images/p5_2.JPG" style="width:30%;height:30%;" alt="" /><br>
 
-<p style="font-size:20px ;text-align:justify">Esto mejora la predicción anterior pero sería bueno seguir indagando diferentes modelos
-que obtengan mejores resultados.</p>
+					<p style="font-size:20px ;text-align:justify">Esto mejora la predicción anterior pero sería bueno
+						seguir indagando diferentes modelos
+						que obtengan mejores resultados.</p>
 
 
-		</section>
+				</section>
+			</div>
 		</div>
-		</div>
 
-<!-- Sidebar -->
-<div id="sidebar">
-	<div class="inner">
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
 
-		<!-- Search -->
-			<section id="search" class="alt">
-				<form method="post" action="#">
-					<input type="text" name="query" id="query" placeholder="Search" />
-				</form>
-			</section>
-		<!-- Menu -->
-		<nav id="menu">
-			<header class="major">
-				<h2>Menu</h2>
-			</header>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
-				<li>
-					<span class="opener" href="index.html">Marco teórico</span>
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
 					<ul>
-						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
-						<ul>
-						<li><a href="deRegresion.html">De regresión</a></li>
-						<li><a href="deClasificacion.html">De clasificación</a></li>
-						</ul>
-						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
-						<ul>
-						<li><a href="deClustering.html">De Clustering</a></li>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
-						
-						</ul>
-					</ul>
-				</li>
-				<li>
-					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
-					<ul>
-						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
-						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
-					
-						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
-						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
-				
-			
+						<li><a href="index.html">Home</a></li>
+						<li><a href="introduccion.html">Introduction to Machine Learning </a></li>
+						<li>
+							<span class="opener" href="index.html">Theoretical framework</span>
+							<ul>
+								<li><a href="supervisados.html">Supervised learning</a></li>
+								<ul>
+									<li><a href="deRegresion.html">Regression</a></li>
+									<li><a href="deClasificacion.html">Classification</a></li>
+								</ul>
+								<li><a href="noSupervisados.html">Unsupervised learning</a></li>
+								<ul>
+									<li><a href="deClustering.html">Clustering</a></li>
+									<li><a href="deReduccionDim.html">Reduction of dimensions</a></li>
+
+								</ul>
+							</ul>
+						</li>
+						<li>
+							<span class="opener" href="proyectos.html">Projects</span>
+							<ul>
+								<li><a href="proyectoUno.html">Home price prediction </a></li>
+								<li><a href="proyectoDos.html">Cardiology prediction</a></li>
+
+								<li><a href="proyectoCuatro.html"> Height prediction from skeletal remains</a></li>
+								<li><a href="proyectoTres.html">Prediction of patients with / without liver</a></li>
+								<li><a href="proyectoCinco.html">Prediction of autism in adults</a></li>
+
+
+
+							</ul>
+						</li>
 
 					</ul>
-				</li>
-				<li><a href="TAS.html">TA's del curso</a></li>
-			
-			</ul>
-		</nav>
-			
+				</nav>
+
+			</div>
 		</div>
+
 	</div>
 
-</div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+</body>
 
-	</body>
 </html>
