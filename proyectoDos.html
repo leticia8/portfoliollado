@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Predicción de segundo ataque cardíaco </title>
+	<title>Second heart attack prediction</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -36,36 +36,31 @@
 				<!-- Content -->
 				<section>
 					<header class="main">
-						<h2>Predicción de segundo ataque cardíaco</h2>
+						<h2>Second heart attack prediction</h2>
 					</header>
 
-					<p style="font-size:18px"> Datos utilizados entrenamiento: <a href="files/cardiac-training"> data
-							set cardiológico training</a>
+					<p style="font-size:18px"> Training used data:<a href="files/cardiac-training"> data
+						cardiology training set</a>
 
-					<p style="font-size:18px"> Datos utilizados test: <a href="files/cardiac-scoring"> data set
-							cardiológico entrenamiento</a>
+					<p style="font-size:18px"> Test used data: <a href="files/cardiac-scoring">data
+						cardiology test set</a>
 
 						<hr class="major" />
-					<p style="font-size:20px ;text-align:justify"> El presente data set consta de información de
-						pacientes :<br>
-
-						En primer lugar siguiendo el modelo CRISP-DM se procede a la comprensión del área de estudio, la
-						misma refiere a mediciones de diferentes variables<br>
-						de pacientes cardiológicos. El cardiólogo desea poder contar con un sistema que le permita
-						inferir partiendo de datos observados del paciente si
-						hay riesgo de sufrir un nuevo infarto o no. Cuenta con datos históricos de pacientes y variables
-						medidas que científicamente se utilizan como indicadores proxy para
-						predecir enfermedades coronarias.<br>
-						El doctor cuenta en su registro con información histórica de pacientes que sufrieron un infarto
-						y por tanto hay datos que ya tiene etiquetados debido a que los pacientes fallecieron (ya
-						confirmó la
-						posibilidad de sufrir un nuevo infarto o no). Por tanto nos encontramos frente a un problema
-						supervisado.<br>
-						Por otro lado queremos determinar una clasificación de los pacientes en dos grupos, aquellos que
-						sí tienen riesgo de sufrir un 2do infarto
-						y los que no, por lo que estamos ante un problema de clasificación.<br>
-						Procederemos primero a la comprensión de los datos, observamos los atributos medidos y su
-						significado:<br>
+					<p style="font-size:20px ;text-align:justify"> This data set consists of information from
+						patients: <br>
+						
+						In the first place, following the CRISP-DM model, we proceed to understand the area of study which refers to measurements of different variables <br>
+						of cardiological patients. The cardiologist wants to have a system that allows him infer from observed patient data whether
+						there is a risk of suffering a new heart attack or not. It has historical data of patients and variables
+						measures that are scientifically used as proxy indicators for predict coronary heart disease.
+						The doctor has in his registry with historical information of patients who suffered a heart attack
+						and therefore there is data that it already has labeled because the patients died (already
+						confirm the possibility of suffering a new heart attack or not). Therefore we are faced with a problem
+						supervised. <br>
+						On the other hand, we want to determine a classification of patients into two groups, those who
+						they are at risk of having a 2nd heart attack and those that don't, so we are facing a classification problem. <br>
+						We will first proceed to the understanding of the data, we observe the measured attributes and their
+						meaning: <br><br>
 
 						<!DOCTYPE html>
 						<html>
@@ -84,55 +79,54 @@
 							<table>
 								<tr>
 									<th>
-										<p style="font-size:18px">Atributo
+										<p style="font-size:18px">Attribute
 									</th>
 					</p>
 					<th>
-						<p style="font-size:18px">Tipo de atributo
+						<p style="font-size:18px">Type
 					</th>
 					<th>
-						<p style="font-size:18px">Rango
+						<p style="font-size:18px">Range
 					</th>
 					</tr>
 					<tr>
-						<td><strong>Estado_civil:</strong> Asume los valores: 0 = soltero; 1 = casado, 2 = divorciado y
-							3 = viudo.</td>
-						<td>categórica más de 2 clases</td>
+						<td><strong>Civil status:</strong> Values: 0 = single; 1 = married, 2 = divorced and
+							3 = widower.</td>
+						<td>Categorical</td>
 						<td>0-3</td>
 					</tr>
 					<td>
-						<p><strong>Sexo:</strong> Asume los valores 0 = femenino; 1= masculino.</p>
+						<p><strong>Sex:</strong> Values: 0 = female; 1= male.</p>
 					</td>
-					<td>categórica - dummy</td>
+					<td> Categorical - dummy</td>
 					<td>0-1</td>
 					</tr>
 					<td>
-						<p><strong>Categoria_Peso:</strong> Toma tres valores: 0 = normal; 1 = sobrepeso; 2 = obeso.
-						</p>
+						<p><strong>Category_Weight:</strong> Values: 0 = normal; 1 = overweight; 2 = obese.</p>
 					</td>
-					<td>categórica en números</td>
+					<td>Categorical in numbers</td>
 					<td>0-2</td>
 					</tr>
 					<td>
-						<p><strong>Colesterol:</strong> nivel de colesterol de la persona, tal como se ha registrado en
-							el momento del tratamiento indicado cuando su más reciente ataque al corazón.</p>
+						<p><strong>Cholesterol:</strong> cholesterol level of the person, as recorded in
+							the time of treatment indicated when your most recent heart attack.</p>
 					</td>
-					<td>continua</td>
+					<td>Continuous</td>
 					<td>122 - 239</td>
 					</tr>
 					<td>
-						<p><strong>Manejo_stress: </strong> Indica si el paciente ha participado previamente de cursos
-							de manejo del estrés: 0 = no; 1 = si.</p>
+						<p><strong>Handling_stress: </strong> Indicates if the patient has previously participated in courses
+							stress management: 0 = no; 1 = yes.</p>
 					</td>
-					<td>categórica - dummy</td>
+					<td>Categorical - dummy</td>
 					<td>0-1</td>
 					</tr>
 					<td>
-						<p><strong>Trat_ansiedad:</strong> Atributo que toma valores de tipo entero entre 0 y 100
-							indicativo del nivel natural de estrés de cada persona y de su habilidad para manejarlo.
+						<p><strong>Trat_anxiety:</strong> Attribute that takes values of type integer between 0 and 100
+							indicative of each person's natural stress level and ability to handle it.
 						</p>
 					</td>
-					<td>categórica entendida como continua</td>
+					<td>Categorical understood as continuous</td>
 					<td>35-80</td>
 					</tr>
 					</table>
@@ -140,105 +134,99 @@
 
 </html>
 
-<p style="font-size:20px ;text-align:justify"> En cuanto a la variable Trat_ansiedad resulta de una prueba aplicada al
-	paciente luego de sufrir el 1er ataque cardíaco,
-	a cada paciente se le administró un test de ansiedad natural estándar. <br>
-	Los valores están tabulados en incrementos de 5. Un valor de 0 indicaría que la persona nunca siente ansiedad,
-	presión o estrés en ninguna situación, mientras que un valor de 100 indicaría que la persona vive en un estado
-	continuo
-	de sobrecarga e incapaz de lidiar con su situación.<br>
+<p style="font-size:20px ;text-align:justify"> Regarding the Trat_anxiety variable, it results from a test applied to the
+	patient after suffering 1st heart attack,
+	Each patient was administered a standard natural anxiety test.  <br>
+	The values are tabulated in increments of 5. A value of 0 would indicate that the person never feels anxiety,
+	pressure or stress in any situation, while a value of 100 would indicate that the person lives in a continuous state of overload and unable to cope with their situation. <br>
 
-	El atributo <strong>2do_Ataque_Corazon </strong> existe solamente en el dataset de entrenamiento. Es la variable
-	objetivo o de predicción (“label” en RapidMiner).
-	En el dataset de entrenamiento, este atributo contiene “Si” para aquellos individuos que han sufrido un segundo
-	ataque al corazón, y “No” en caso contrario. <br>
+	The <strong> 2nd_Attack_Heart </strong> attribute exists only in the training dataset. It is the variable
+		target or prediction (“label” in RapidMiner).
+		In the training dataset, this attribute contains "Yes" for those individuals who have suffered a second
+		heart attack, and "No" otherwise.  <br>
 
-	Analizados los atributos se estudian con más detalle los factores que pueden perjudicar cualquier modelo como ser
-	los rangos de los mismos, valores missing y outliers.<br>
-	Observamos a continuación el resumen de estadísticos que ofrece RapidMiner:<br>
+
+		Once the attributes are analyzed, the factors that can modify any model are studied in more detail, specially
+		their ranges, missing values and outliers. <br>
+		We see below the summary of statistics offered by RapidMiner: <br>
+		
+		
 	<img title="tabla" src="images/p2_pdatos.JPG" style="width:90%;height:50%;" alt="" /><br>
-	Como se observa en esta imagen los 0 indican que no hay atributos faltantes (missing),
-	los rangos no denotan valores anormales (outliers) de hecho los promedios y desviaciones de cada columna se
-	encuentran bastante
-	ajustados a la media.<br>
+	As can be seen in this image, the 0s indicate that there are no missing attributes,
+	the ranges do not denote abnormal values (outliers) in fact the averages and deviations of each column are
+	find enough adjusted to average. <br>
 
-	Se observa las posibles correlaciones que pueden existir entre los mismos en caso de aplicar algoritmos como
-	Regresión Logística o Naive Bayes sensibles
-	a las correlaciones entre las variables.<br>
-	Por ejemplo podrían identificarse entre manejo del estrés y tratamiento de la ansiedad posibles correlaciones altas
-	y también hay estudios que vinculan niveles de colesterol con factores de estrés así como con el sexo de la
-	persona.<br>
+	The possible correlations that may exist between them are observed in the case of applying algorithms such as
+	Logistic Regression or Sensitive Naive Bayes
+	to the correlations between the variables. <br>
+	For example, possible high correlations between stress management and anxiety treatment could be identified
+	and there are also studies that link cholesterol levels with stress factors as well as with the sex of the
+	person. <br>
+	
+	For the data of our data set, however, there do not appear to be significant correlations: <br>
 
-	Para los datos de nuestro data set sin embargo no parecieran haber correlaciones significativas:<br>
+
 	<img title="matriz" src="images/p2_mcorr.JPG" style="width:90%;height:50%;" alt="" /><br> <br>
 
-	El registro más elevado se observa en edad y tratamiento de ansiedad, así como categoría peso y colesterol con
-	tratamiento de ansiedad,
-	pero son valores bajos no significativos que justifiquen una remoción del atributo del modelo.<br>
+	The highest record is observed in age and anxiety treatment, as well as weight and cholesterol category with
+	anxiety treatment, but they are low non-significant values that justify a removal of the attribute from the model. <br>
 
-	Si aplicamos un análisis de componentes principales, ya que todas nuestras variables son numéricas podemos hacerlo
-	con facilidad,
-	observamos la siguiente tabla de valores propios (eigenvalues):<br>
+	If we apply a principal components analysis (since all our variables are numerical we can do it
+	easily)	we observe the following table of eigenvalues: <br>
+
 
 	<img title="matriz" src="images/p2_pca.PNG" style="width:100%;height:50%;" alt="" /><br> <br>
 
-	Se observa que los dos primeros componentes principales explican el 97,7% de la varianza del modelo, si buscamos
-	dentro de los
-	vectores propios (eigenvectors) :
+	It is observed that the first two main components explain 97.7% of the variance of the model, if we look for
+	within the eigenvectors:
 
 	<img title="matriz" src="images/p2_pca2.PNG" style="width:100%;height:50%;" alt="" /><br> <br>
 
-	Se observa que el primer componente tiene un peso altísimo del colesterol, lo que es lógico con las recomendaciones
-	médicas habituales
-	de controlar dicho factor de riesgo.<br>
-	El segundo componente tiene un gran peso de la variable tratamiento de ansiedad de forma negativa lo que no tendría
-	mucha lógica a simple
-	vista dado que indicaría a mayores puntajes de ansiedad en la prueba menor riesgo de padecer un segundo ataque, pero
-	en estos casos
-	es cuando debe comprenderse la existencia de posibles variables correlacionadas, es decir, podría establecer la
-	hipótesis
-	de que la gente más ansiosa tiende a descargar dicha energía haciendo por ejemplo ejercicio lo que sería bueno para
-	la salud
-	y se correlacionaría con esta variable. <br>
-	Por otra parte el segundo atributo que compone el segundo componente principal es Edad, de forma negativa, aunque en
-	este caso
-	su peso se reduce.<br>
-	Se observa en la siguiente imagen la proporción de la varianza acumulada por componentes principales:<br>
+	It is observed that the first component has a very high cholesterol weight, which is logical with the recommendations
+	usual medical to control this risk factor. <br>
+	The second component has a great weight of the anxiety treatment variable in a negative way, which it would not have
+	a lot of logic to simple view given that it would indicate higher anxiety scores in the test lower risk of suffering a second attack, but
+	in these cases is when the existence of possible correlated variables must be understood, that is, it could establish the
+	hypothesis that more anxious people tend to discharge this energy by doing, for example, exercise which would be good for
+	health and it would be correlated with this variable. <br>
+	On the other hand, the second attribute that makes up the second main component is Age, negatively, although in
+	this case the weight importance is reduced. <br>
+	The proportion of the accumulated variance by principal components is observed in the following image: <br>
+
 
 	<img title="matriz" src="images/p2_pcaCurve.PNG" style="width:100%;height:50%;" alt="" /><br> <br>
 
-	Algo importante a realizar es la normalización de los datos para que los rangos de variación de los mismos no sean
-	muy disímiles
-	sobre todo porque algoritmos como LDA o Naive Bayes asumen distribuciones normales.<br>
+	Something important to do is the normalization of the data so that the ranges of variation of the same are not
+	very dissimilar 	especially since algorithms like LDA or Naive Bayes assume normal distributions. <br>
 
-	En los modelos de rapid miner los operadores de SVM, Logistic Regression ofrecen realizar la estandarización como
-	parámetro ajustable del nodo. <br>
+	In the models of rapid miner the operators of SVM, Logistic Regression offer to carry out the standardization as
+	adjustable node parameter. <br>
+	Before deciding which operator to use, we are going to observe with a ROC Curve the performance of the different
+	models. <br>
+	In the reference problem we are interested in a good prediction of the True Positive even if there is False
+	Positive since it would not have
+	a detriment to the patient taking care of himself, exercising, eating healthy. Likewise, as in any model, the ideal is that
+	FP = 0. <br>
+	In this case, as it is not used for a specific diagnosis (such as cancer cases) but to have the information to carry out more frequent checks and
+	emphasis on patient care. <br>
+	We observe the ROC curve obtained by testing the Random Forest, SVM, Logistic Regression and Naive Bayes models: <br>
 
-	Antes de decidir qué operador utilizar vamos a observar con una ROC Curve la performance de los diferentes
-	modelos.<br>
-	En el problema de referencia nos interesa una buena predicción de los True Positive por sobre que haya False
-	Positive dado que no tendría
-	un perjuicio para el paciente cuidarse, hacer ejercicio, comer sano. Igualmente como en todo modelo el ideal es que
-	FP=0.<br>
-	En este caso como no es utilizado para un diagnóstico específico (como por ejemplo los casos de cáncer) no se le va
-	a comunicar al paciente:
-	"usted va a sufrir un segundo infarto", sino tener la información para realizar controles más seguido y hacer
-	énfasis en el cuidado del paciente.<br>
-	Observamos la curva ROC obtenida al probar los modelos Random Forest, SVM, Logistic Regression y Naive Bayes:<br>
 	<img title="matriz" src="images/p2_rocCurve.PNG" style="width:100%;height:50%;" alt="" /><br> <br>
 
-	Como se ve Random Forest presenta una mejor performance para los TP al inicio del modelo, luego todos se estabilizan
-	presentando
-	buenas performances finales.<br>
+	As seen, Random Forest presents a better performance for the TPs at the beginning of the model, then they all stabilize
+	presenting good final performances. <br>
 
-	Mediremos la performance de estos cuatro métodos y observamos los resultados utilizando el nodo de cross-validation
-	con 10 folds y
-	un muestreo aleatorio de los datos utilizados para entrenamiento y para validación.<br>
-	Dentro del cross validation se aplican los cuatro modelos y se mide su performance.<br>
+	We will measure the performance of these four methods and observe the results using the cross-validation node
+	with 10 folds and a random sampling of the data used for training and validation. <br>
+	Within the cross validation, the four models are applied and their performance is measured. <br>
 
-	Se obtienen las siguientes performance para los modelos:<br><br>
+	The following performance is obtained for the models: <br> <br>
 
-	REGRESIÓN LOGÍSTICA <br>
+
+
+	
+
+	LOGISTIC REGRESSION<br>
 	<img src="images/p2_logReg.PNG" style="width:100%;height:50%;" alt="" /> <br>
 
 	SVM <br>
@@ -252,42 +240,41 @@
 
 
 
-	En relación a lo observado con la ROC curve el modelo que presenta mejor performance es Random Forest, con un 97,14%
-	de precisión.
-	Seguido por Regresión Logística 92,03% ,Naive Bayes: 88,35% y por último SVM 85,55%.
+	In relation to what is observed with the ROC curve, the model that presents the best performance is Random Forest, with 97.14%
+	precision.
+	Followed by Logistics Regression 92.03%, Naive Bayes: 88.35% and lastly SVM 85.55%.
 
-	Por tanto aplicando Random Forest al modelo con 50 árboles y una profundidad máxima de 5 (luego de probar diversos
-	parámetros)
-	se obtienen la confianza de 97,86%: <br>
+	Therefore, applying Random Forest to the model with 50 trees and a maximum depth of 5 (after testing various
+	parameters)
+	97.86% confidence is obtained:
+
+	<br>
 
 
 	<img src="images/p2_finalAcc.PNG" style="width:100%;height:50%;" alt="" />
 
-	Y las predicciones sobre los datos de test:
+	And the predictions on the test data:
 
 	<img src="images/p2_apply.PNG" style="width:100%;height:50%;" alt="" /> <br>
 
 
-	Lo que indica que por ejemplo el ejemplo 1 es una predicción de No con una confianza de 99,5%, mientras que el 2 una
-	predicción de Sí
-	con una confianza de 99,7%.<br>
+	Which indicates that for example example 1 is a prediction of No with a confidence of 99.5%, while example 2 a
+	Yes prediction with a 99.7% confidence.<br>
 
-	Por último el modelo arroja los siguientes árboles de entre los 50 elaborados:<br>
+	Finally, the model yields the following trees from among the 50 elaborated:<br>
 
-	Arbol 1<br>
+	Tree 1<br>
 
 	<img src="images/p2_arbol1.PNG" style="width:80%;height:50%;" alt="" /> <br>
 
-	Arbol 2<br>
+	Tree 2<br>
 	<img src="images/p2_arbol2.PNG" style="width:80%;height:50%;" alt="" /> <br>
 
 
-	Dado que 50 árboles puede ser excesivo para el entendimiento del modelo (una de las fortalezas que tienen los
-	árboles
-	de decisión es su simplicidad para ser interpretados), se prueba reducir la cantidad de árboles a 5 obteniendo una
-	performance de 95,71% es decir un descenso de más de 2 puntos porcentuales, en este caso queda evaluar al
-	investigador
-	que utilizar el modelo el trade-off entre comprensibilidad del modelo y exactitud.
+	Given that 50 trees may be excessive for understanding the model (one of the strengths of the
+	trees decision is its simplicity to be interpreted), I reduced the number of trees to 5 obtaining a
+	performance of 95.71%, that is, a decrease of more than 2 percentage points, in this case it remains to evaluate the
+	investigator than to use the model the trade-off between model comprehensibility and accuracy.
 </p>
 
 
