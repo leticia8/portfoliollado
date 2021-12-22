@@ -6,7 +6,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 -->
 <html>
 <head>
-<title>De Clasificación </title>
+<title>Classification</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
@@ -32,62 +32,60 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Content -->
 				<section>
 					<header class="main">
-						<h1>Algoritmos de clasificación</h1>
+						<h1>Classification algorithms</h1>
 					</header>
 
 					<span class="image main"><img src="images/supClas.png" style="width:60%;height:80%;" alt="" /></span>
 
-					<p>Los problemas de clasificación son aquellos en los que la variable de salida es una clase categórica como "rojo" o "verde", "alto" y "bajo". Algunos
-					algoritmos presentan mejores performances para clases binominales mientras que otros sirven para múltiples clases.</p>
-					Entre los algoritmos más utilizados de clasificación se encuentran: </p>
+					<p>Classification problems are those in which the output variable is a categorical class such as "red" or "green", "high" and "low". Some
+						algorithms present better performances for binominal classes while others serve for multiple classes. </p>
+						Among the most used classification algorithms are: </p>
 
 
 
-				<p style="font-size:24px ;color:Tomato;" > REGRESIÓN LOGÍSTICA </p>
+				<p style="font-size:24px ;color:Tomato;" > LOGISTIC REGRESSION </p>
 							<p style="font-size:18px ;text-align:justify" >
-							Es un algoritmo para problemas de clasificación binaria, es decir su salida determina la pertenencia o no a una clase.
-							El algoritmo utiliza una función sigmoidea que resulta en una curva con forma de S que puede tomar cualquier valor real y 
-							mapearlo en valores de 0 a 1 pero nunca exactamente esos valores.
-							Modela la probabilidad de la clase por defecto , es decir, la probabilidad de que un valor de entrada X pertenezca a la clase por defecto Y=1:
+								It is an algorithm for binary classification problems, that is, its output determines whether or not it belongs to a class.
+								The algorithm uses a sigmoid function that results in an S-shaped curve that can take any real value and
+								map it and values from 0 to 1 but never exactly those values.
+								Models the probability of the default class, that is, the probability that an input value X belongs to the default class Y = 1:<br><br>								
 									<img src="http://latex.codecogs.com/gif.latex?P(X)=P(Y=1|X)" border="0"/>. <br>
 
-							Es un método lineal, pero las predicciones se transforman utilizando la función logística, mientras que por medio de la estimación de máxima verosimilitud 
-							se calculan los coeficientes del algoritmo.<br><br>
-							<strong>PREPARACIÓN DATOS: </strong><br>
-							Remover ruido<br>
-							Asegurar distribución Gaussiana: Asume relacion lineal entre variables<br>
-							Remover variables de entrada correlacionadas o si la infomación está muy diferenciada puede fallar en converger.<br>
-							También puede tener baja performance al haber pocos datos.</p>
+									It is a linear method, but the predictions are transformed using the logistic function, while by means of the maximum likelihood estimation, the coefficients of the algorithm are calculated.<br><br>
+							<strong>DATA PREPARATION: </strong><br>
+							<ul>Remove noise</ul>
+							<ul>Ensure Gaussian distribution: Assume linear relationship between variables</ul>
+							<ul>Remove correlated input variables or if the information is highly differentiated it may fail to converge. </ul>
+							<ul>It can also have low performance due to a small amount of data.</ul></p>
 							
 							
-							<p style="font-size:24px ;color:Tomato;" >ANÁLISIS DEL DISCRIMINANTE LINEAL</p>
+							<p style="font-size:24px ;color:Tomato;" >LINEAR DISCRIMINANT ANALYSIS</p>
 
-							<p style="font-size:18px ;text-align:justify" >Si tenemos más de dos clases, es la técnica de clasificación preferida, también se puede aplicar con problemas de clasificación binaria.<br>
-							Para cada clase se calculan descriptores estadísticos, para una variable única de entrada estos pueden ser media y varianza para cada clase. 
-							Para muchas variables se utilizan matrices de medias y de covarianza.<br>
-							El método LDA asume que los datos tienen distribución normal y cada atributo tiene la misma varianza.<br>
-							Se calcula la suma de las diferencias al cuadrado de cada valor a la media dentro de la clase de referencia, pero se realiza el promedio usando como referencia todos los grupos.<br>
-							LDA predice estimando la probabilidad de que un nuevo set de puntos pertenezcan a cada clase. 
-							La clase que obtiene la probabilidad mayor es la clase de saluda. El algoritmo utiliza el teorema de Bayes para estimar esas probabilidades.<br><br>
-								<strong>PREPARACIÓN DATOS: </strong><br>
-							Soporta clasificaciones binarias y multiclase.<br>
-							Distribución normal: la implementación normal asume distribución normal para las variables de entrada.<br>
-							Remover outliers:<br>
-							Misma varianza: LDA assume que cada variable de entrada tiene la misma varianza. Es bueno estandarizar los datos con media 0 y varianza 1 antes de aplicar el algoritmo.<br>
-
+							<p style="font-size:18px ;text-align:justify" >If we have more than two classes, it is the preferred classification technique, it can also be applied with binary classification problems. <br>
+								Statistical descriptors are calculated for each class, for a single input variable these can be mean and variance for each class.
+								Means and covariance matrices are used for many variables.<br>
+								The LDA method assumes that the data has a normal distribution and each attribute has the same variance. <br>
+								The sum of the squared differences of each value to the mean within the reference class is calculated, but the average is performed using all groups as reference. <br>
+								LDA predicts by estimating the probability that a new set of points belong to each class.
+								The class that gets the highest probability is the output class. The algorithm uses Bayes' theorem to estimate these probabilities.
+								<br><br>
+								<strong>DATA PREPARATION </strong><br>
+								Supports binary and multiclass classifications.<br>
+								Normal distribution: normal implementation assumes normal distribution for input variables.<br>
+							Remove outliers:<br>
+							Same variance: LDA assumes that each input variable has the same variance. It is good to standardize the data with mean 0 and variance 1 before applying the algorithm.<br>
 							<p style="font-size:24px ;color:Tomato;" >SUPPORT VECTOR MACHINE - SVM</p>
 
-							<p style="font-size:18px ;text-align:justify" >Se selecciona el hiperplano que mejor separa los puntos en el espacio de variables de entrada. 
-							Podría visualizarse como una línea, y se asume que todos los valores de las variables de entrada pueden ser completamente separados por esta línea.<br>
-							Usando esta línea se puede determinar si un nuevo punto a clasificar está por encima o por debajo de la línea según si retorna valores positivos o negativos; en el primer caso devuelve el valor 0 y en el segundo 1.
-							Un valor cercano a la línea puede ser difícil de clasificar.<br>
-							El margen se calcula como la distancia ortogonal a la línea para los puntos más cercanos. Sólo estos puntos son relevantes para definir la línea y para construir el clasificador. Estos puntos se llaman vectores de soport y definen el hiperplano.<br>
+							<p style="font-size:18px ;text-align:justify" >The hyperplane that best separates the points in the input variable space is selected.
+								It could be displayed as a line, and it is assumed that all the values of the input variables can be completely separated by this line.<br>
+								Using this line it is possible to determine if a new point to be classified is above or below the line depending on whether it returns positive or negative values; in the first case, it returns the value 0 and in the second, 1.
+								A value close to the line can be difficult to classify.<br>
+							The margin is calculated as the orthogonal distance to the line for the closest points. Only these points are relevant for defining the line and for constructing the classifier. These points are called support vectors and define the hyperplane.<br>
 							
-							Hay una adaptación que suaviza lo estricto del margen, permitiendo que algunos puntos violen la separación de la línea. Se define un parámetro de tuneo C que refiere a la cantidad de puntos que se tolera violen ese margen. Un C=0 implica ninguna violación
-							y es el que adopta el método Maximal-Margin Classifier. Cuanto más pequeño el valor de C, el algoritmo es más sensible a valores de entrenamiento.<br>
+							There is an adaptation that softens the strictness of the margin, allowing some points to violate the separation of the line. A tuning parameter C is defined that refers to the number of points that are tolerated that violate this margin. A C = 0 implies no violation and is the one adopted by the Maximal-Margin Classifier method. The smaller the value of C, the algorithm is more sensitive to training values.<br>
 							<strong>KERNEL SVM: </strong><br>
-							En la práctima el algoritmo se implementa usando un kernel o núcleo. Dicha función Kernel puede ser:
-							Lineal:<br>
+							In practice the algorithm is implemented using a kernel or kernel. Said Kernel function can be:
+							Linear:<br>
 							<img src="http://latex.codecogs.com/gif.latex?K(x, x_i)=\sum(x * x_i)" border="0"/>. <br>
 							Polinomial:<br>
 									<img src="http://latex.codecogs.com/gif.latex?K(x,x_i) = 1 + \sum(x * x_i)^d" border="0"/>. <br>
@@ -96,67 +94,67 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							Radial:<br>
 							<img src="http://latex.codecogs.com/gif.latex?K(x,x_i) = e ^ {-gamma *\sum(x * x_i^2)}" border="0"/>. <br><br>
 						
-							<strong>PREPARACIÓN DATOS: </strong><br>
-							Los valores de las variables de entrada deben ser numéricos, si son categóricas habrá que transformarlas a variables dummy (valor 1 - 0).
-							Es un método pensado idealmente para clasificación binaria.</p>
+							<strong>DATA PREPARATION: </strong><br>
+							The values ​​of the input variables must be numeric, if they are categorical they will have to be transformed to dummy variables (value 1 - 0). 
+							It is a method ideally thought for binary classification.</p>
 							
 							<p style="font-size:24px ;color:Tomato;" >NAIVE BAYES</p>
-							<p style="font-size:18px ;text-align:justify" >El teorema de Naive Bayes se basa en la utilización del conocimiento previo que posee el investigador sobre cierto tema.
-							El teorema de Bayes es:<br><br>
+							<p style="font-size:18px ;text-align:justify" >The Naive Bayes theorem is based on the use of the researcher's prior knowledge on a certain topic.
+								Bayes' theorem is:<br><br>
 							<img src="http://latex.codecogs.com/gif.latex?P(h|d) = \frac{P(d|h) * P(h)}{P(d)}" border="0"/>. <br><br>
 							
 
-							Donde:
-							P(h│d) es la probabilidad de una hipótesis h dada la información d. A esto se le llama probabilidad a posteriori.<br>
-							P(d│h) es la probabilidad de la información d dado que la hipótesis h es cierta.<br>
-							P(h) es la probabilidad de la hipótesis h sea cierta. Es la probabilidad a priori.<br>
-							P(d) es la probabilidad de la información<br>
+							Where:
+							P(h│d) is the probability of a hypothesis h given the information d. This is called a posteriori probability.<br>
+							P(d│h) is the probability of the information d given that the hypothesis h is true.<br>
+							P(h) is the probability of hypothesis h to be true. It is the a priori probability.<br>
+							P(d) is the probability of the data<br>
 
-							Naive Bayes es un algoritmo de clasificación para problemas binarios y multiclase. La técnica es la más fácil de entender cuando se describe usando variables binarias o categóricas.<br>
-							Los valores de probabilidad de cada atributo se asumen condicionalmente independientes dado el valor objetivo a calcular.<br>
-							La representación del método Naive Bayes es una lista de probabilidades almacenados que incluye probabilidades de clase y probabilidades condicionales.<br>
-							El entrenamiento es rápido porque sólo la probabilidad de cada clase y la de cada clase dado el valor de entrada debe calcularse, no se precisa ajustar coeficientes ni procedimientos de optimización.<br>
-							El algoritmo puede ser extendido a atributos reales, asumiendo distribuciones normales, también pueden utilizarse otras funciones de distribución pero la distribución gaussiana es la forma más fácil de trabajar porque sólo precisa estimar media y desviación estándar.<br><br>
-							<strong>PREPARACIÓN DATOS: </strong><br>
-							Variables de entrada categóricas: asume que los atributos a estimar son binarios, categóricos o nominales.
-							Distribución normal: si las variables de entrada son reales se asume distribuciónón normal.
-							Algoritmo de clasificación que sirve para clasificar en dos o más clases.
-							Probabilidades logarítmicas: es útil realizar una transformación logarítmica de las probabilidades con el fin de evitar desbordamiento de precisión.
-							Para diferentes distribuciones de los datos se pueden utilizar distribuciones más complejas así como una variedad de funciones de densidad del núcleo(kernel).</p>
+							Naive Bayes is a classification algorithm for binary and multiclass problems. The technique is the easiest to understand when it is described using binary or categorical variables. <br>
+							The probability values of each attribute are assumed to be conditionally independent given the target value to be calculated. <br>
+							The representation of the Naive Bayes method is a list of stored probabilities that includes class probabilities and conditional probabilities. <br>
+							The training is fast because only the probability of each class and that of each class given the input value must be calculated, it is not necessary to adjust coefficients or optimization procedures. <br>
+							The algorithm can be extended to real attributes, assuming normal distributions, other distribution functions can also be used but the Gaussian distribution is the easiest way to work because it only needs to estimate mean and standard deviation.<br><br>
+							<strong>DATA PREPARATION: </strong><br>
+							Categorical input variables: assumes that the attributes to be estimated are binary, categorical or nominal.
+							Normal distribution: if the input variables are real, normal distribution is assumed.
+							Classification algorithm used to classify into two or more classes.
+							Logarithmic probabilities: It is useful to perform a logarithmic transformation of the probabilities in order to avoid precision overflow.
+							More complex distributions as well as a variety of kernel density functions can be used for different data distributions.</p>
 
 
-							<p style="font-size:24px ;color:Tomato;" > ÁRBOLES DE DECISIÓN - 	CART – Classification And Regression Trees </p>
-							<p style="font-size:18px ;text-align:justify" >Clásicamente se han referido como árboles de decisión aunque actualmente se los nombre como Classification and Regression Trees (CART)<br>
+							<p style="font-size:24px ;color:Tomato;" >DECISION TREES - CART - Classification And Regression Trees </p>
+							<p style="font-size:18px ;text-align:justify" >They have classically been referred to as decision trees although today they are called Classification and Regression Trees (CART)<br>
 						
-							La representación es un árbol binario donde cada nodo representa una variable de entrada x y un punto de corte en dicha variable. Las hojas del árbol contienen la variable de salida (y) que son usadas para hacer la predicción.<br>
-							Hacer predicciones es bastante directo. 
-							Se puede pensar a cada variable de entrada como una dimensión en un espacio p-dimensional. 
-							El árbol de decisión divide el espacio en dos rectángulos o hiper-rectángulos con más entradas.<br>
-							Se usa un método ávido dividir el espacio denominado división recursiva binaria. 
-							Es un procedimiento numérico donde todos los valores se alinean y diferentes puntos de división se prueban usando una función de costo. 
-							La división con mejor costo es seleccionada. <br>
+								The representation is a binary tree where each node represents an input variable x and a cut point on that variable. The leaves of the tree contain the output variable (y) that are used to make the prediction. <br>
+								Making predictions is pretty straightforward.
+								Each input variable can be thought of as a dimension in p-dimensional space.
+								The decision tree divides the space into two rectangles or hyper-rectangles with more entries. <br>
+								An avid method is used to divide the space called binary recursive division.
+								It is a numerical procedure where all the values are aligned and different division points are tested using a cost function.
+								The division with the best cost is selected.<br>
 							
-							Para problemas de clasificación el costo de Gini es usado y provee una indicación de cuán puros son los nodos, los valores cercanos a 0 tienen todas las clases del mismo tipo.<br>
-							Para algoritmos de clasificación como en bagging cada árbol vota y la proporción de votos en cada clase es el error probabilístico estimado.<br>
-							El procedimiento de detención más común es usar la mínima cantidad de datos de entrenamiento usados para cada nodo hoja.<br>
-							Se puede podar el árbol luego del entrenamiento dado que árboles más sencillos son preferidos dado que son más fáciles de entender y menos probable de que sobreajusten la información.<br>
-							Los métodos de poda más rápidos y sencillos se llevan a cabo evaluando el efecto sobre el costo de remover dicho nodo del modelo.
-							Cuando no se logran mejoras se detiene el procedimiento.<br><br>
-							<strong>PREPARACIÓN DATOS: </strong><br>
-							No require preparación.<br></p>
+								For classification problems the Gini cost is used and provides an indication of how pure the nodes are, values close to 0 have all classes of the same type. <br>
+								For classification algorithms such as bagging, each tree votes and the proportion of votes in each class is the estimated probability error. <br>
+								The most common stopping procedure is to use the minimum amount of training data used for each leaf node. <br>
+								The tree can be pruned after training since simpler trees are preferred since they are easier to understand and less likely to overfit information. <br>
+								The quickest and simplest pruning methods are carried out by evaluating the effect on the cost of removing said node from the model.
+								When no improvements are achieved, the procedure is stopped.<br><br>
+							<strong>DATA PREPARATION: </strong><br>
+								No required.<br></p>
 
 							
 							<p style="font-size:24px ;color:Tomato;" >RANDOM FOREST</p>
-							<p style="font-size:18px ;text-align:justify"> Son una mejora sobre los árboles de decisión que utilizan el algoritmo Bagged (Bagging and Aggregation).
-							El problema es que es un algoritmo ávido, esto implica que en cada iteración busca el óptimo local que puede terminar no siendo el óptimo a nivel general.
-							En cada split se evalúa un número de atributos establecidos por parámetro que son seleccionados aleatoriamente de entre todos los atributos disponibles,
-							Para problemas de clasificación se aconseja utilizar la raíz cuadrada del número de predictores como parámetro que determina cuántos atributos aleatorios seleccionar.<br>  
-							Random Forest soluciona el problema de la correlación entre los modelos al incluir aleatoriedad en la elaboración de los mismos.
-							Para decidir la cantidad m de atributos a seleccionar es mejor iniciar con 5 valores entre 2 y p (cantidad de atributos o variables de entrada) e ir probando la performance, para la cantidad de modelos a ejecutar
-							se recomienda un aproximado a 1000 árboles aunque como en todos los casos depende del problema y el conocimiento del negocio. <br>
-							En random forest todos los árboles se crean independientemente para tener la profundidad deseada y contribuye de igual forma al modelo.<br>
-							
-								</p>
+							<p style="font-size:18px ;text-align:justify"> They are an improvement over decision trees that use the Bagged (Bagging and Aggregation) algorithm.
+								The problem is that it is an avid algorithm, this implies that in each iteration it looks for the local optimum that may not be the optimum at a general level.
+								In each split, a number of attributes established by parameter are evaluated that are randomly selected from among all the available attributes.
+								For classification problems it is advisable to use the square root of the number of predictors as a parameter that determines how many random attributes to select. <br>
+								Random Forest solves the problem of correlation between models by including randomness in their elaboration.
+								To decide the number m of attributes to select, it is better to start with 5 values between 2 and p (number of attributes or input variables) and go testing the performance, for the number of models to run.
+								An approximate 1000 trees is recommended, although it depends on the problem and knowledge of the business. 
+								<br>
+								In random forest all trees are created independently to have the desired depth and contribute equally to the model.
+								<br></p>
 						
 
 
@@ -164,11 +162,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 					<hr class="major" />
 
-								<h2>Proyectos que utilizan métodos de clasificación</h2>
+								<h2>Projects using classification methods</h2>
 						<ul>
-										<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
-										<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-										<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
+										<li><a href="proyectoDos.html">Cardiology prediction</a></li>
+										<li><a href="proyectoTres.html"></a>Prediction of patients with / without liver</li>
+										<li><a href="proyectoCinco.html">Prediction of autism in adults</a></li>
 									</ul>
 					<h2> </h2>
 					
@@ -194,39 +192,38 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				<h2>Menu</h2>
 			</header>
 			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="introduccion.html">Introduction to Machine Learning </a></li>
 				<li>
-					<span class="opener" href="index.html">Marco teórico</span>
+					<span class="opener" href="index.html">Theoretical framework</span>
 					<ul>
-						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
+						<li><a  href="supervisados.html">Supervised learning</a></li>
 						<ul>
-						<li><a href="deRegresion.html">De regresión</a></li>
-						<li><a href="deClasificacion.html">De clasificación</a></li>
+						<li><a href="deRegresion.html">Regression</a></li>
+						<li><a href="deClasificacion.html">Classification</a></li>
 						</ul>
-						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
+						<li><a  href="noSupervisados.html">Unsupervised learning</a></li>
 						<ul>
-						<li><a href="deClustering.html">De Clustering</a></li>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
+						<li><a href="deClustering.html">Clustering</a></li>
+						<li><a href="deReduccionDim.html">Reduction of dimensions</a></li>
 						
 						</ul>
 					</ul>
 				</li>
 				<li>
-					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
+					<span class="opener" href="proyectos.html">Projects</span>
 					<ul>
-						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
-						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
+						<li><a href="proyectoUno.html">Home price prediction  </a></li>
+						<li><a href="proyectoDos.html">Cardiology prediction</a></li>
 					
-						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
-						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
+						<li><a href="proyectoCuatro.html">	Height prediction from skeletal remains</a></li>
+						<li><a href="proyectoTres.html">Prediction of patients with / without liver</a></li>
+						<li><a href="proyectoCinco.html">Prediction of autism in adults</a></li>
 				
 			
 
 					</ul>
 				</li>
-				<li><a href="TAS.html">TA's del curso</a></li>
 			
 			</ul>
 		</nav>

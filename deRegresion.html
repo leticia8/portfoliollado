@@ -5,170 +5,211 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Marco teórico Machine Learning </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Regression </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+<body class="is-preload">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"></a>
-									<ul class="icons">
-										<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
-							</ul>
-								</header>
-								
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Algoritmos de regresión</h1>
-									</header>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-									<span class="image main"><img src="images/supLearn.png" style="width:60%;height:80%;" alt="" /></span>
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-									<p style="font-size:20px ;text-align:justify" >Los problemas de regresión son aquellos en los que la variable de salida toma un valor continuo.<br>
-									Entre los algoritmos más utilizados de regresión se encuentran: <br>
-									
-									<p style="font-size:24px ;color:Tomato;" > REGRESIÓN LINEAL </p>
-									<p style="font-size:18px ;text-align:justify" >Es un modelo lineal, que asume una relación lineal entre las variables de entrada y la variable de salida (y).<br>
-									La ecuación de regresión lineal asigna un factor de escala a cada atributo de entrada, llamado coeficiente y generalmente representado por la letra β. Se agregar un coeficiente adicional, dando un grado mayor de libertad usualmente llamado ¨intercepto¨ o el coeficiente de sesgo. Es común hablar de la complejidad del modelo de regresión lineal refiriéndose a la cantidad de coeficientes.<br>
-									Aprender un modelo de regresión lineal aplica estimar los valores de los coeficientes usados en la representación de la información.<br><br>
-									<strong>PREPARACIÓN DATOS: </strong><br>
-									Asunción de relación lineal : podrá ser necesario transformar la información para hacer esa relación entre input y output lineal.<br>
-									Se debe remover ruido y colinealidad<br>
-									Distribución gaussiana: las predicciones serán más confiables si la distribución es Gaussiana (normal).<br>
-									Normalización: las predicciones serán más confiables si se usa normalización.<br>
-									</p>
-
-									<p style="font-size:24px ;color:Tomato;" > ÁRBOLES DE DECISIÓN - 	CART – Classification And Regression Trees </p>
-									<p style="font-size:18px ;text-align:justify" >Clásicamente se han referido como árboles de decisión aunque actualmente se los nombre como Classification and Regression Trees (CART)<br>
-								
-									La representación es un árbol binario donde cada nodo representa una variable de entrada x y un punto de corte en dicha variable. Las hojas del árbol contienen la variable de salida (y) que son usadas para hacer la predicción.<br>
-									Hacer predicciones es bastante directo. 
-									Se puede pensar a cada variable de entrada como una dimensión en un espacio p-dimensional. 
-									El árbol de decisión divide el espacio en dos rectángulos o hiper-rectángulos con más entradas.<br>
-									Se usa un método ávido dividir el espacio denominado división recursiva binaria. 
-									Es un procedimiento numérico donde todos los valores se alinean y diferentes puntos de división se prueban usando una función de costo. 
-									La división con mejor costo es seleccionada. <br>
-									Para problemas de regresión la función costo que es minimizada para seleccionar los puntos de corte es la suma de errores al cuadrado de todas las muestras de entrenamiento.<br>
-									El procedimiento de detención más común es usar la mínima cantidad de datos de entrenamiento usados para cada nodo hoja.<br>
-									Se puede podar el árbol luego del entrenamiento dado que árboles más sencillos son preferidos dado que son más fáciles de entender y menos probable de que sobreajusten la información.<br>
-									Los métodos de poda más rápidos y sencillos se llevan a cabo evaluando el efecto sobre el costo de remover dicho nodo del modelo.
-									Cuando no se logran mejoras se detiene el procedimiento.<br><br>
-									<strong>PREPARACIÓN DATOS: </strong><br>
-									No require preparación.<br>
-
-									<p style="font-size:24px ;color:Tomato;" >RANDOM FOREST</p>
-									<p style="font-size:18px ;text-align:justify"> Son una mejora sobre los árboles de decisión que utilizan el algoritmo Bagged (Bagging and Aggregation).
-									El problema es que es un algoritmo ávido, esto implica que en cada iteración busca el óptimo local que puede terminar no siendo el óptimo a nivel general.
-									En cada split se evalúa un número de atributos establecidos por parámetro que son seleccionados aleatoriamente de entre todos los atributos disponibles,
-									se recomienda para algoritmos de regresión que dicho número sea igual a p/3 siendo p el número de variables o atributos de entrada.<br>
-									Random Forest soluciona el problema de la correlación entre los modelos al incluir aleatoriedad en la elaboración de los mismos.
-									Para decidir la cantidad m de atributos a seleccionar es mejor iniciar con 5 valores entre 2 y p (cantidad de atributos o variables de entrada) e ir probando la performance, para la cantidad de modelos a ejecutar
-									se recomienda un aproximado a 1000 árboles aunque como en todos los casos depende del problema y el conocimiento del negocio. <br>
-									En random forest todos los árboles se crean independientemente para tener la profundidad deseada y contribuye de igual forma al modelo.<br>
-									
-									
-									<p style="font-size:24px ;color:Tomato;" >"GRADIENT BOOST" PARA ÁRBOLES DE REGRESIÓN 
-									<p style="font-size:18px ;text-align:justify">
-									Dada una función de medida de pérdida y un algoritmo de aprendizaje débil se halla un modelo aditivo que minimiza la función de pérdida.<br>
-									Se inicia con el promedio de las respuestas se calcula el gradiente y el modelo es adaptado a los residuos para minimizar la función de pérdida. 
-									El modelo se adiciona al anterior y el procedimiento continúa las veces estipuladas en el parámetro que es establecido por el investigador.<br>
-			
-								    Ventajas que presenta la utilización de árboles es que los mismos pueden volverse modelos débiles controlando la profundidad del árbol, a su vez, pueden ser separados, manteniendo la independencia y pueden ser generados rápidamente.<br>
-									
-						
-									<p style="font-size:18px ;text-align:justify" >
-									<hr class="major" />
-															<h2>Proyectos que utilizan métodos de regresión</h2>
-										<ul>
-														<li><a href="proyectoUno.html">Predicción de precios de viviendas</a></li>
-														<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
-													</ul>
-									<h2> </h2>
-									
-								</section>
-
-						</div>
-					</div>
-
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-	<!-- Menu -->
-		<nav id="menu">
-			<header class="major">
-				<h2>Menu</h2>
-			</header>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
-				<li>
-					<span class="opener" href="index.html">Marco teórico</span>
-					<ul>
-						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
-						<ul>
-						<li><a href="deRegresion.html">De regresión</a></li>
-						<li><a href="deClasificacion.html">De clasificación</a></li>
-						</ul>
-						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
-						<ul>
-						<li><a href="deClustering.html">De Clustering</a></li>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
-						
-						</ul>
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"></a>
+					<ul class="icons">
+						<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span
+									class="label">Git Hub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/"
+								class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
 					</ul>
-				</li>
-				<li>
-					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
-					<ul>
-						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
-						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
-					
-						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
-						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
-				
-			
+				</header>
 
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Regression algorithms</h1>
+					</header>
+
+					<span class="image main"><img src="images/supLearn.png" style="width:60%;height:80%;"
+							alt="" /></span>
+
+					<p style="font-size:20px ;text-align:justify">Regression problems are those in which the output
+						variable takes a continuous value. <br>
+						Among the most used regression algorithms are: <br>
+
+					<p style="font-size:24px ;color:Tomato;"> LINEAR REGRESSION </p>
+					<p style="font-size:18px ;text-align:justify">It is a linear model, which assumes a linear
+						relationship between the input variables and the output variable (y). <br>
+						The linear regression equation assigns a scale factor to each input attribute, called a
+						coefficient and usually represented by the letter β. An additional coefficient is added, giving
+						a greater degree of freedom usually called the ¨intercept¨ or the bias coefficient. It is common
+						to talk about the complexity of the linear regression model referring to the number of
+						coefficients. <br>
+						Learning a linear regression model applies estimating the values of the coefficients used in the
+						representation of the information. <br> <br>
+						<strong> DATA PREPARATION: </strong> <br>
+						Assumption of linear relationship: it may be necessary to transform the information to make that
+						relationship between input and output linear. <br>
+						Noise and collinearity must be removed <br>
+						Gaussian distribution: predictions will be more reliable if the distribution is Gaussian
+						(normal). <br>
+						Normalization: predictions will be more reliable if normalization is used. <br>
+					</p>
+
+
+
+					<p style="font-size:24px ;color:Tomato;"> DECISION TREES - CART - Classification And Regression
+						Trees </p>
+					<p style="font-size:18px ;text-align:justify">They have been classically referred to as decision
+						trees although currently they are called Classification and Regression Trees (CART) <br>
+
+						The representation is a binary tree where each node represents an input variable x and a cut-off
+						point in said variable. The leaves of the tree contain the output variable (y) that are used to
+						make the prediction. <br>
+						Making predictions is pretty straightforward.
+						Each input variable can be thought of as a dimension in p-dimensional space.
+						The decision tree divides the space into two rectangles or hyper-rectangles with more entries.
+						<br>
+						An avid method is used to divide the space called binary recursive division.
+						It is a numerical procedure where all values are aligned and different division points are
+						tested using a cost function.
+						The division with the best cost is selected. <br>
+						For regression problems the cost function that is minimized to select the cut-off points is the
+						sum of the squared errors of all the training samples. <br>
+						The most common stopping procedure is to use the minimum amount of training data used for each
+						leaf node. <br>
+						The tree can be pruned after training since simpler trees are preferred since they are easier to
+						understand and less likely to overfit information. <br>
+						The quickest and simplest pruning methods are carried out by evaluating the effect on the cost
+						of removing said node from the model.
+						When improvements are not achieved, the procedure is stopped. <br> <br>
+						<strong> DATA PREPARATION: </strong> <br>
+						No preparation required. <br>
+
+
+
+					<p style="font-size:24px ;color:Tomato;">RANDOM FOREST</p>
+					<p style="font-size:18px ;text-align:justify"> They are an improvement over decision trees that use
+						the Bagged (Bagging and Aggregation) algorithm.
+						Is an avid algorithm, this implies that in each iteration it looks for the local optimum that
+						may end up not being the optimum at a general level.
+						In each split, a number of attributes established by parameter are evaluated that are randomly
+						selected from among all the available attributes,
+						It is recommended for regression algorithms that this number be equal to p / 3, where p is the
+						number of variables or input attributes. <br>
+						Random Forest solves the problem of correlation between models by including randomness in their
+						elaboration.
+						To decide the number m of attributes to select, it is better to start with 5 values between 2
+						and p (number of attributes or input variables) and go testing the performance, for the number
+						of models to run.
+						An approximate 1000 trees is recommended, although as in all cases it depends on the problem and
+						knowledge of the business. for
+						In random forest all trees are created independently to have the desired depth and contribute in
+						the same way to the model. <br>
+
+					<p style="font-size:24px ;color:Tomato;"> "GRADIENT BOOST" FOR REGRESSION TREES
+					<p style="font-size:18px ;text-align:justify">
+						Given a loss measurement function and a weak learning algorithm, an additive model is found that
+						minimizes the loss function. <br>
+						It starts with the average of the responses, the gradient is calculated and the model is adapted
+						to the residuals to minimize the loss function.
+						The model is added to the previous one and the procedure continues as many times as stipulated
+						in the parameter that is established by the researcher. <br>
+
+						Advantages of using trees is that they can become weak models by controlling the depth of the
+						tree, in turn, they can be separated, maintaining independence and can be generated quickly.
+						<br>
+
+
+					<p style="font-size:18px ;text-align:justify">
+						<hr class="major" />
+					<h2>Projects using regression methods</h2>
+					<ul>
+						<li><a href="proyectoUno.html">Home price prediction</a></li>
+						<li><a href="proyectoCuatro.html">Height prediction from skeletal remains</a></li>
 					</ul>
-				</li>
-				<li><a href="TAS.html">TA's del curso</a></li>
-			
-			</ul>
-		</nav>
-		
-			
+					<h2> </h2>
+
+				</section>
+
+			</div>
 		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="introduccion.html">Introduction to Machine Learning </a></li>
+						<li>
+							<span class="opener" href="index.html">Theoretical framework</span>
+							<ul>
+								<li><a href="supervisados.html">Supervised learning</a></li>
+								<ul>
+									<li><a href="deRegresion.html">Regression</a></li>
+									<li><a href="deClasificacion.html">Classification</a></li>
+								</ul>
+								<li><a href="noSupervisados.html">Unsupervised learning</a></li>
+								<ul>
+									<li><a href="deClustering.html">Clustering</a></li>
+									<li><a href="deReduccionDim.html">Reduction of dimensions</a></li>
+
+								</ul>
+							</ul>
+						</li>
+						<li>
+							<span class="opener" href="proyectos.html">Projects</span>
+							<ul>
+								<li><a href="proyectoUno.html">Home price prediction </a></li>
+								<li><a href="proyectoDos.html">Cardiology prediction</a></li>
+
+								<li><a href="proyectoCuatro.html"> Height prediction from skeletal remains</a></li>
+								<li><a href="proyectoTres.html">Prediction of patients with / without liver</a></li>
+								<li><a href="proyectoCinco.html">Prediction of autism in adults</a></li>
+
+
+
+							</ul>
+						</li>
+
+					</ul>
+				</nav>
+
+
+			</div>
+		</div>
+
 	</div>
 
-</div>
 
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+</body>
 
-	</body>
 </html>

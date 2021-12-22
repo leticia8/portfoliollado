@@ -5,166 +5,199 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>De Reducción de dimensiones </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Reduction of dimensions</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+<body class="is-preload">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"></a>
-									<ul class="icons">
-										<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span class="label">Git Hub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/" class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
-							</ul>
-								</header>
-								
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Algoritmos de reducción de dimensiones</h1>
-									</header>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-									<span class="image main"><img src="images/unsupDimRed.png" style="width:80%;height:60%;" alt="" /></span>
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-									<p style="font-size:20px ;text-align:justify" >Los problemas de asociacion o reducción de dimensiones buscan descubrir reglas que apliquen a una gran proporción de los datos,
-									como por ejemplo las personas que compran A suelen comprar B.</p>
-
-																		<span class="image main"><img src="images/featureSel.png" style="width:90%;height:90%;" alt="" /></span>
-
-									<p style="font-size:20px ;text-align:justify" >	Entre las técnicas de reducción de dimensiones se encuentran: <br>
-
-
-								<p style="font-size:24px ;color:Tomato;" > FEATURE SELECTION</p>	
-
-								<p style="font-size:20px ;text-align:justify" >	Hay dos tipos de selección de procesos de selección de atributos: <br>
-									De filtro y de "envoltura" (wrapper). Los de filtro seleccionan aquellos atributos que cumplen ciertos requisitos establecidos
-									mientras que los de wrapper seleccionan iterativamente sólo los atributos que mejoran la performance del algoritmo.<br>
-									Los algoritmos de filtro no requieren de ningún algoritmo de aprendizaje, mientras que los de "envoltura" se optimizan 
-									para un algoritmo en particular.<br>
-
-									Los algoritmos de filtro pueden ser considerados "No supervisados" y se utilizan cuando hay muchos atributos o el costo
-									computacional es muy elevado.<br> </p>
-
-								<p style="font-size:24px ;color:Tomato;" > 	ANÁLISIS DE COMPONENTES PRINCIPALES - PCA</p>	
-																										<span class="image main"><img src="images/pca.png" style="width:50%;height:50%;" alt="" /></span>
-
-								<p style="font-size:20px ;text-align:justify" >	PCA nos ayuda a responder la pregunta de cuántos de los atributos de mi data set explican una cantidad significativa de la variación 
-									contenida en el data set. En general aplica la regla 80/20, puede un 20% de los atributos explicar el 80% de la variación?. <br>
-									PCA captura los atributos que contienen la mayor cantidad de variabilidad en el data set, esto lo hace transformando las variables
-									existentes en un set de "componentes principales" o nuevas variables que tienen las siguientes propiedades:<br>
-									No están correlacionadas entre sí<br>
-									Explican una gran cantidad de la varianza de los datos.<br>
-									Puedenser relacionados con las variables originales por los coeficientes de ponderación. <br>
-									Las variables con bajos factores de coeficiente de ponderación en sus componentes principales son removidas del data set.<br>
-									Mediante una combinación lineal de las variables se crea un componente principal z.<br>
-							
-										<img src="http://latex.codecogs.com/gif.latex?zm =\sum(w_i * x_i)" border="0"/>. <br>
-
-									Se realiza un análisis de los "eigenvalues" (valores propios) de la matriz de covarianza de los atributos originales.<br>
-									El eigenvector (vector propio) asociado con el mayor eigenvalue es el primer componente principal, el vector asociado con el segundo
-									mayor valor de eigenvalues es el segundo componente principal y así sigue.<br>
-									La covarianza explica cómo dos variables varían con respecto a sus medias.<br>
-									PCA sólo trabaja con atributos numéricos. <br>
-									Antes de eliminar cualquier variable debe realizarse un análisis de evaluación de los datos en el contexto del problema,
-									si hay ruido PCA puede sugerir como variables relevantes aquellas que no lo son dado que considera la variación. <br>
-									No ayuda adicionar datos irrelevantes ni datos no correlacionados.<br>
-									PCA es un algoritmo sensible a los rangos de las variables, para minimizar esto se debe normalizar la información.<br></p>
-
-									<p style="font-size:24px ;color:Tomato;" >MÉTODOS ENVOLVEDORES - WRAPPER </p>
-								<p style="font-size:20px ;text-align:justify" >	Las aproximaciones "envolvedoras" iterativamente seleccionan aributos para añadir o remover del data set basados en si la nueva información
-									mejora la precisión del modelo.<br>
-									Una forma de realizar esto es empezar con una variable, y construir un modelo base. Luego añadir una segunda variable y comparar
-									con el modelo base anterior. Si la performance es mejor, hacemos de este modelo el nuevo modelo base, añadimos una tercer variable
-									y seguimos el mismo procedimiento. Si no se produce una mejora seleccionamos un nuevo atributo descartando el anterior y seguimos probando.<br>
-									Este algoritmo se denomina "forward selection".<br>
-									La forma inversa es iniciar con todos los atributos y remover una variable a la vez construyendo un nuevo modelo. En general
-									la variable a remover se selecciona considerando el valor del estadístico t , se deja fuera aquella con menor t valor. Este proceso
-									se llama "backward elimination".<br></p>
-									<hr class="major" />
-
-									
-
-								</section>
-
-						</div>
-					</div>
-
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-	<!-- Menu -->
-		<nav id="menu">
-			<header class="major">
-				<h2>Menu</h2>
-			</header>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="introduccion.html">Introducción a Machine Learning </a></li>
-				<li>
-					<span class="opener" href="index.html">Marco teórico</span>
-					<ul>
-						<li><a  href="supervisados.html">Aprendizaje Supervisado</a></li>
-						<ul>
-						<li><a href="deRegresion.html">De regresión</a></li>
-						<li><a href="deClasificacion.html">De clasificación</a></li>
-						</ul>
-						<li><a  href="noSupervisados.html">Aprendizaje no supervisados</a></li>
-						<ul>
-						<li><a href="deClustering.html">De Clustering</a></li>
-						<li><a href="deReduccionDim.html">De reducción de dimensiones</a></li>
-						
-						</ul>
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"></a>
+					<ul class="icons">
+						<li><a href="https://github.com/leticia8/portofliollado" class="icon brands fa-github"><span
+									class="label">Git Hub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/leticia-lado-50b7a5106/"
+								class="icon brands fa-linkedin"><span class="label">Linked In</span></a></li>
 					</ul>
-				</li>
-				<li>
-					<span class="opener" href="proyectos.html">Proyectos Analizados</span>
-					<ul>
-						<li><a href="proyectoUno.html">Predicción precios de viviendas  </a></li>
-						<li><a href="proyectoDos.html">Predicción cardiológica</a></li>
-					
-						<li><a href="proyectoCuatro.html">Predicción altura a partir de restos óseos</a></li>
-						<li><a href="proyectoTres.html">Predicción pacientes con/sin hígado</a></li>
-						<li><a href="proyectoCinco.html">Predicción de autismo en adultos</a></li>
-				
-			
+				</header>
 
-					</ul>
-				</li>
-				<li><a href="TAS.html">TA's del curso</a></li>
-			
-			</ul>
-		</nav>
-		
-			
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Dimension reduction algorithms</h1>
+					</header>
+
+					<span class="image main"><img src="images/unsupDimRed.png" style="width:80%;height:60%;"
+							alt="" /></span>
+
+					<p style="font-size:20px ;text-align:justify">The problems of association or reduction of dimensions
+						seek to discover rules that apply to a large proportion of the data,
+						as for example people who buy A usually buy B.</p>
+
+					<span class="image main"><img src="images/featureSel.png" style="width:90%;height:90%;"
+							alt="" /></span>
+
+					<p style="font-size:20px ;text-align:justify">Dimension reduction techniques include: <br>
+
+
+					<p style="font-size:24px ;color:Tomato;"> FEATURE SELECTION</p>
+
+					<p style="font-size:20px ;text-align:justify"> There are two types of attribute selection process
+						selection: <br>
+						Filter and wrapper. The filter ones select those attributes that meet certain established
+						requirements
+						while the wrappers iteratively select only the attributes that improve the performance of the
+						algorithm. <br>
+						Filter algorithms do not require any learning algorithm, while wrapper algorithms are optimized
+						for a particular algorithm.<br>
+
+						Filter algorithms can be considered "Unsupervised" and are used when there are many attributes
+						or the cost
+						computational is very high.<br> </p>
+
+					<p style="font-size:24px ;color:Tomato;"> PRINCIPAL COMPONENT ANALYSIS- PCA</p>
+					<span class="image main"><img src="images/pca.png" style="width:50%;height:50%;" alt="" /></span>
+
+					<p style="font-size:20px ;text-align:justify"> PCA helps us answer the question of how many of the
+						attributes in my data set explain a significant amount of the variation
+						contained in the data set. In general, the 80/20 rule applies, 20% of the attributes explain 80%
+						of the variation.
+						PCA captures the attributes that contain the greatest amount of variability in the data set,
+						transforming the variables
+						existing in a set of "principal components" or new variables that have the following properties:
+						<br>
+						They are not correlated with each other <br>
+						They explain a lot of the variance in the data. <br>
+						They can be related to the original variables by the weights. <br>
+						Variables with low weighting coefficient factors in their principal components are removed from
+						the data set. <br>
+						By means of a linear combination of the variables, a principal component z is created. <br>
+
+
+
+						<img src="http://latex.codecogs.com/gif.latex?zm =\sum(w_i * x_i)" border="0" />. <br>
+
+						An analysis of the eigenvalues of the covariance matrix of the original attributes is carried
+						out. <br>
+						The eigenvector associated with the largest eigenvalue is the first principal component, the
+						vector associated with the second
+						greater value of eigenvalues is the second principal component and so on. <br>
+						Covariance explains how two variables vary with respect to their means. <br>
+						PCA only works with numeric attributes. <br>
+						Before eliminating any variable, an evaluation analysis of the data must be carried out in the
+						context of the problem,
+						if there is noise PCA can suggest as relevant variables those that are not, since it considers
+						the variation. <br>
+						It does not help to add irrelevant data or uncorrelated data. <br>
+						PCA is an algorithm sensitive to the ranges of the variables, to minimize this the information
+						must be normalized. <br>
+					</p>
+
+
+
+					<p style="font-size:24px ;color:Tomato;">WRAPPER METHODS </p>
+					<p style="font-size:20px ;text-align:justify"> The "wrapping" approaches iteratively select items to
+						add or remove from the data set based on whether the new information
+						improves model accuracy. <br>
+						One way to do this is to start with a variable, and build a base model. Then add a second
+						variable and compare
+						with the previous base model. If the performance is better, we make this model the new base
+						model, we add a third variable
+						and we follow the same procedure. If there is no improvement, we select a new attribute
+						discarding the previous one and continue testing. <br>
+						This algorithm is called "forward selection". <br>
+						The reverse way is to start with all the attributes and remove one variable at a time by
+						building a new model. In general
+						The variable to be removed is selected considering the value of the t statistic, the one with
+						the lowest t value is left out. This process
+						it's called "backward elimination". <br> </p>
+
+
+					<hr class="major" />
+
+
+
+				</section>
+
+			</div>
 		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="introduccion.html">Introduction to Machine Learning </a></li>
+						<li>
+							<span class="opener" href="index.html">Theoretical framework</span>
+							<ul>
+								<li><a href="supervisados.html">Supervised learning</a></li>
+								<ul>
+									<li><a href="deRegresion.html">Regression</a></li>
+									<li><a href="deClasificacion.html">Classification</a></li>
+								</ul>
+								<li><a href="noSupervisados.html">Unsupervised learning</a></li>
+								<ul>
+									<li><a href="deClustering.html">Clustering</a></li>
+									<li><a href="deReduccionDim.html">Reduction of dimensions</a></li>
+
+								</ul>
+							</ul>
+						</li>
+						<li>
+							<span class="opener" href="proyectos.html">Projects</span>
+							<ul>
+								<li><a href="proyectoUno.html">Home price prediction </a></li>
+								<li><a href="proyectoDos.html">Cardiology prediction</a></li>
+
+								<li><a href="proyectoCuatro.html"> Height prediction from skeletal remains</a></li>
+								<li><a href="proyectoTres.html">Prediction of patients with / without liver</a></li>
+								<li><a href="proyectoCinco.html">Prediction of autism in adults</a></li>
+
+
+
+							</ul>
+						</li>
+
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+
 	</div>
 
-</div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+</body>
 
-	</body>
 </html>
