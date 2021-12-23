@@ -49,8 +49,8 @@
 						<img src="http://latex.codecogs.com/gif.latex? Y =" border="0" />
 
 						housing prices in the suburbs of the city of Boston, Massachusetts, United States
-						starting from a series of independent variables (<img
-							src="http://latex.codecogs.com/gif.latex? X" border="0" />) linked to the dwelling itself
+						starting from a series of independent variables <img
+							src="http://latex.codecogs.com/gif.latex? X" border="0" /> linked to the dwelling itself
 						and to variables of the environment. <br>
 						As expected, house prices are conditioned by multiple factors, the locality in question, as well
 						as surface area and proximity (or distance) to different emblematic points of a city.
@@ -162,108 +162,86 @@
 						</body>
 
 						</html>
-					<p style="font-size:25px ;text-align:justify"> The dependent variable is MEDV, the average value of
+					<p style="font-size:20px ;text-align:justify"> The dependent variable is MEDV, the average value of
 						owner-occupied homes in thousands of dollars. <br>
 						Considering that we have labeled data that allow us to train a correct response, we will use
-						supervised models, the objective being to develop a model to be able to predict new information
-						on the dependent variable when we have new data on variables.
-						independent. <br>
-						In turn, given that the dependent variable is a continuous value, we are facing a regression
+						supervised models, being the objective to develop a model to be able to predict new information
+						on the dependent variable when we have new data. <br>
+						In fact, given that the dependent variable is a continuous value, we are facing a regression
 						problem and not a classification problem. <br>
 
 						Being a regression problem we will use linear regression making sure to remove the noise and
 						collinearity of the variables, as well as
 						normalize the data in case of having very disparate distributions since the use of this
 						algorithm requires it. <br>
-						For this we will analyze missing data and outliers, the data set does not have missing data,
-						except in the variable to predict (4 cases) <br>
+						The data set does not have missing data, except in the variable to predict (4 cases) <br>
 						<br>
-
-
 						Regarding the outliers for the variables that present a greater deviation within their ranges
 						ZN, AGE, TAX, the scatter graphs are observed: <br> <br>
 						Scatter plot of AGE variable <br>
 
-
 						<span class="image main"><img title="tabla" src="images/p1_age.png"
-								style="width:50%;height:50%;" alt="" /></span>
+								style="width:70%;height:50%;" alt="" /></span>
 						Scatter plot of variable TAX<br>
 						<span class="image main"><img title="tabla" src="images/p1_tax.png"
-								style="width:50%;height:50%;" alt="" /></span>
+								style="width:70%;height:50%;" alt="" /></span>
 						Scatter plot of variable ZN<br>
-						<span class="image main"><img title="tabla" src="images/p1_ZN.png" style="width:50%;height:50%;"
+						<span class="image main"><img title="tabla" src="images/p1_ZN.png" style="width:70%;height:50%;"
 								alt="" /></span>
-						In these variables no abnormal values are observed, apart from the fact that some are located at
+						No abnormal values are observed in these variables, apart from the fact that some are located at
 						the extremes of the distribution, they make up a group of several points which
 						it would not indicate that they are erroneous data or outliers.<br>
-						Now we will focus on the study of the collinearity of the attributes, in the case of rapid
-						miner, the tool incorporates the removal in the model
-						of correlated attributes to avoid damaging the performance of the model, but it is also useful
-						to analyze the correlation matrix to visualize
-						said relationships:<br>
+						We will focus on the study of the collinearity of the attributes. Rapid Miner tools incorporates the removal of correlated attributes in the model
+						to avoid damaging the performance, but it is also useful to analyze the correlation matrix to visualize
+						relationships:
 						<span class="image main"><img title="tabla" src="images/p1_matrix.PNG"
-								style="width:90%;height:50%;" alt="" /></span><br>
+								style="width:90%;height:50%;" alt="" /></span>
 
-						When observing the matrix it is seen that certain attributes have an important correlation, the
-						most correlated are represented
-						with dark violet colors. It is possible to observe that NOX shows high correlations with AGE
-						(0.731) and DIS (-0.769).
+						When observing the matrix we can see that certain attributes have an important correlation, the
+						most correlated are represented with darker colors. It is possible to observe that NOX shows 
+						high correlations with AGE (0.731) and DIS (-0.769).
 						In turn, INDUS shows high correlations with NOX (0.764), with DIS (-0.708) and with TAX (0.721)
-						But AGE and DIS (-0.748) are also observed <br>
-						In turn, variables such as INDUS and NOX show correlations with others in the model, which is
+						On the other side high negative correlation is observed between AGE and DIS (-0.748).
+						Variables such as INDUS and NOX show correlations with others in the model, which is
 						why they are great candidates to be withdrawn from it.
-
-
 						<br>
-
 						Finally, the ranges of the attributes are dissimilar to each other, as we can see in the
-						attribute description table
-						developed at the beginning, this indicates that we are going to need to standardize the
-						distributions to achieve that all the variables move within a range
-						similar, avoiding giving greater weight to those variables with higher ranges that may not be so
-						relevant for the model.
+						attribute description table developed at the beginning, this indicates that we need to standardize the
+						distributions to be sure that all the variables move within a similar range, avoiding giving greater 
+						weight to those variables with higher ranges that may not be relevant for the model.
 						So it's recommended normalizing the data to work with models sensitive to these variations, such
 						as linear regression. <br>
 
 						We will divide the data set into training and test data, to ensure that the training data set is
-						representative, they are randomized
-						the data with a node named Shuffle. This is to prevent them from being sorted when selecting
-						parts of the data set for validation,
+						representative, and that they are randomized with a Rapid Miner node named Shuffle. 
+						This is to prevent them from being sorted when selecting parts of the data set for validation,
 						training and testing to avoid working with segmented and unrepresentative data from the entire
 						universe. <br>
 
 						After randomizing the data, the data set will be divided filtering 70% for training data and 30%
 						for tests, as shown in the following image: <br>
-
-
 						<img title="tabla" src="images/p1_model.PNG" style="width:90%;height:50%;" alt="" /><br>
-						To the training data we apply a rapid miner node used to optimize parameters: Optimizer and we
-						obtain that the minimum squared errors
+						To the training data we apply the Optimizer Rapid Miner node used to optimize parameters, to obtain
+						the minimum squared errors.
 						They are obtained by using T-Test as a feature selection method, with an alpha of 0.5 and
 						without using bias.
-						In this case, the sum of the square root of the errors at the mean gives 3,589, the lowest value
+						In this case, the sum of the square root of the errors at the mean gives 3.589, the lowest value
 						obtained.
-						The following is the output obtained by rapid miner of the first iterations ordered from least
+						The following is the output obtained by Rapid Miner of the first iterations ordered from least
 						to greatest by square root of the error: <br>
-
-
 						<img title="tabla" src="images/p1_gridopt.PNG" style="width:90%;height:50%;" alt="" /><br>
-
 						As you can see, they all give the same error and use the same feature selection method, varying
 						the number of iterations and the value of alpha. <br>
 
-						Therefore, it is decided to apply said selection in linear regression. <br>
-
 						Within the Validation of the rapid miner model I apply the normalization and the linear
 						regression model: <br> <br>
-
 
 						<img title="tabla" src="images/p1_model2.PNG" style="width:90%;height:50%;" alt="" /><br>
 
 						Applying the model and measuring the performance for validation of the training at the start.
 						<br>
 
-						If the output of the linear regression is observed, without any doubts, it is seen that of the
+						If the output of the linear regression is observed, it is seen that of the
 						variables analyzed are more significant in
 						Regarding the model and its prediction, as it is possible to see in the following image: <br>
 						<img src="images / p1_salReg.PNG" style="width: 95%; height: 20%;" alt="" /> <br>
@@ -286,8 +264,7 @@
 						The image shows a high coefficient for RM: Average number of rooms in the house, with the p
 						value being 0 and a high t statistic,<br>
 						The independent variable DIS: Weighted distance to 5 Boston job centers has a negative
-						coefficient, which makes sense given that
-						the greater distance to employment centers would decrease the price of housing, <br>
+						coefficient, which makes sense given that the greater distance to employment centers would decrease the price of housing, <br>
 						Something similar although with less weight occurs with the % of the lower class population in
 						the neighborhood (LSTAT) and PTRATIO: Student / teacher ratio by city, given that since there
 						are more students per teacher
@@ -303,13 +280,11 @@
 						can be explained by the variation of the independent variables used in the model. <br>
 
 						At the same time we can also measure the prediction error since we know the real output value,
-						for this we create
-						the variable residuals, subtract from the prediction with the real value: <br>
-
-
+						for this purpose we create residuals variable,which is the subtract from the prediction with the 
+						real value: <br>
 						<img title="tabla" src="images/p1_residuo.PNG" style="width:100%;height:100%;" alt="" /><br>
 
-						Therefore, a minimum residual value of -18,864 and a maximum of 12,268 are obtained with a mean
+						Therefore, a minimum residual value of -18.864 and a maximum of 12.268 are obtained with a mean
 						of 0.067 and a deviation of 4.637. <br>
 						The following graph indicates how the residuals are distributed, following a normal
 						distribution.
@@ -317,14 +292,6 @@
 					</p>
 					<img title="tabla" src="images/p1_residuos.png" style="width:70%;height:50%;" alt="" /><br>
 					</p>
-
-
-
-
-
-
-
-
 
 				</section>
 			</div>
