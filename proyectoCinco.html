@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>TEA diagnostic project </title>
+	<title>ASD diagnostic project </title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,18 +35,16 @@
 					</header>
 
 					<p style="font-size:18px">Data used <a
-							href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult">adult dating set
-							p / diag TEA </a>
+							href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult">adult data set
+							diag ASD </a>
 						<hr class="major" />
 						<span class="image object">
-							<img src="images/p5_tea.jpg" style="width:80%;height:80%;" alt="" />
+							<img src="images/.jpg" style="width:80%;height:80%;" alt="" />
 						</span>
 					<p style="font-size:20px ;text-align:justify">
-						Autism spectrum disorder (ASD) is a neurodevelopmental condition and is associated with
-						generally with high healthcare costs, profound repercussions on the person's life
-						diagnosed and its environment. <br>
-						Today the diagnosis takes time and has a very high economic and social impact, the
-						This study considers early diagnosis of value helping to reduce these
+						Autism spectrum disorder (ASD) is a neurodevelopmental condition and is generally associated with
+						high healthcare costs, and the environment. <br>
+						Today the diagnosis takes time and has a very high economic and social impact. This study considers early diagnosis of value helping to reduce these
 						repercussions significantly. <br>
 						When noting an increase in cases of ASD in recent times worldwide, it is considered
 						relevant to develop effective diagnostic methods that help the health professional to
@@ -57,8 +55,7 @@
 						behavior plus ten characteristics of the person that successive studies have shown are
 						effective in detecting cases of ASD in behavioral sciences. <br>
 						The source of the data set is Fadi Fayez Thabtah, from the department of digital technology of
-						the
-						Auckland Manukau Institute of Technology, New Zealand. <br>
+						the Auckland Manukau Institute of Technology, New Zealand. <br>
 						The attributes used in this data set are: <br> </p>
 
 
@@ -92,61 +89,61 @@
 							<tr>
 								<td><strong> A1_Score </strong> Response code to the first question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A2_Score </strong> Response code to the second question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A3_Score </strong> Response code to the third question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A4_Score </strong> Response code to the fourth question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A5_Score </strong> Response code to the fifth question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A6_Score </strong> Response code to the sixth question asked in the applied
 									test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A7_Score </strong> Response code to the seventh question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A8_Score </strong> Response code to the eighth question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A9_Score </strong> Response code to the ninth question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 							<tr>
 								<td><strong> A10_Score </strong> Response code to the tenth question asked in the
 									applied test.</td>
-								<td>dummy</td>
+								<td>Dummy</td>
 								<td>0 - 1</td>
 							</tr>
 
@@ -157,10 +154,10 @@
 							<td> 17-64</td>
 							</tr>
 							<td>
-								<p><strong>Sex: </strong> Sex.</p>
+								<p><strong>Sex: </strong> Sex of the person.</p>
 							</td>
-							<td>Continuous</td>
-							<td>10-4929</td>
+							<td>Categorical</td>
+							<td>F - M</td>
 							</tr>
 
 							<td>
@@ -173,22 +170,22 @@
 								<p><strong>Jaundice</strong>Indicates if he was born with jaundice or not. </p>
 							</td>
 							<td>Categorical</td>
-							<td>Sí-No</td>
+							<td>Yes-No</td>
 							</tr>
 							<td>
-								<p><strong>Austim </strong>Indicate if have an autistic relative.</p>
+								<p><strong>Autism </strong>Indicate if have an autistic relative.</p>
 							</td>
 							<td>Categorical</td>
-							<td>List of countries</td>
+							<td>Yes-No</td>
 							</tr>
 							<td>
 								<p><strong>Country_of_res </strong>Country of residence.</p>
 							</td>
 							<td>Categorical</td>
-							<td>f-m</td>
+							<td>List of countries</td>
 							</tr>
 							<td><strong>used_app_before </strong> Used a screening app before or not.</td>
-							<td>dummy</td>
+							<td>Dummy</td>
 							<td>0 - 1</td>
 							</tr>
 
@@ -202,7 +199,7 @@
 								<p><strong>relation </strong> Who completes the questionnaire.</p>
 							</td>
 							<td>Categorical</td>
-							<td>List of links</td>
+							<td>List of relatives</td>
 							</tr>
 
 						</table>
@@ -211,40 +208,34 @@
 					</html>
 					<p style="font-size:20px ;text-align:justify">
 						Class / ASD is the dependent variable that determines a binary classification in whether the
-						patient
-						is diagnosed as having ASD or not. <br>
+						patient is diagnosed as having ASD or not. <br>
 						Therefore, we are faced with a classification problem, supervised since we have a output that is
-						evaluated "correct". <br>
-						Three different data sets were analyzed, one for data on children, another for data on
-						adolescents.
-						and another for adults.
+						evaluated as "correct". <br>
+						Three different data sets were analyzed, one for data on children, one for data on
+						teenagers and another for adults.
 						But it was observed that the model works better when the age groups are separated for the
 						analysis. <br>
 						In this case we will use the adult data set. <br>
-						It is observed that there is a data with value 383 in age, it is decided to leave this case out.
+						It is observed that there is a data with value 383 in age, it is decided to leave this case out as an outlier.
 						<br>
 						For this project we will use python and the pandas and scikit libraries for data modeling and
 						development of the prediction model. <br> <br>
 						The file to be used in a data frame is loaded using the pandas library <br> <br> </p>
-					<pre>
-					input_file3 = "autismAdult.csv"
-					missing_values = ["?"]
-					df3 = pd.read_csv(input_file3, na_values = missing_values)
-					dataFrame=df3
-					</pre>
-					<p style="font-size:20px ;text-align:justify">Entendimiento de los datos
-						First, we analyze the information that the data set has, we observe that there are attributes
-						deterministic in the model such as the responses to the test,
-						the result of the same and the classification of whether or not you have autism spectrum
-						disorder
-						person studied.
+						<pre>
+						input_file3 = "autismAdult.csv"
+						missing_values = ["?"]
+						df3 = pd.read_csv(input_file3, na_values = missing_values)
+						dataFrame=df3
+						</pre>
+					<p style="font-size:20px ;text-align:justify">Data understanding<br> 
+						First, we analyze the information of the data set. We observe that the model has deterministic attributes
+						such as the responses to the test, the result of the test and the classification of whether or not the person studied has autism spectrum
+						disorder.
 						Therefore, it does not make sense that we include these variables in the model given their
-						direct relationship
-						With the cause studied, they are ephemeral variables.
+						direct relationship with the cause studied, they are ephemeral variables.
 
-						So we select the attributes to use in the analysis, we check if there is data
-						missing and if there are in this case the
-						we remove the analysis by dropping them. <br> <br> </p>
+						So we select the attributes to use in the analysis, we check if there is missing data
+						and in case there is, removing them from the analysis by dropping them. <br> <br> </p>
 
 
 					<pre>
@@ -252,17 +243,15 @@
 					print(subDF.columns[subDF.isnull().any()])
 					dataClean=subDF.dropna()
 					</pre>
-					<p style="font-size:20px ;text-align:justify">We therefore select for the model the variables
+					<p style="font-size:20px ;text-align:justify">We therefore select the variables
 						age, gender, ethnicity, jundice, austim, country_of_res, used_app_before,
 						relation and Class / ASD, the latter as a dependent variable. <br> </p>
 
 
 
-					<p style="font-size:20px ;text-align:justify">On the other hand we know that the attributes jundice,
-						austim, used_app_before assume the values Yes and No,
-						therefore we must transform them into some interpretable variable for the model, in this case
-						it was opted <br>
-						categorical variables that assume the values 1 and 0. <br>
+					<p style="font-size:20px ;text-align:justify">We know that the attributes jundice,
+						austim, used_app_before assume the values Yes and No, therefore we must transform them into some interpretable variable for the model, in this case
+						it was opted for categorical variables that assume the values 1 and 0. <br>
 						Recoding is applied using pandas: <br> </p>
 
 
@@ -273,19 +262,14 @@
 					dataClean2=pd.get_dummies(dataClean, columns=['gender','ethnicity','contry_of_res','relation'])
 					</pre>
 					<p style="font-size:20px ;text-align:justify">We can also observe here that the variables
-						gender, ethnicity, contry_of_res and relation that are categorical are
-						They also recode transforming them into dummy variables in order to interpret the model of
-						proper way and be able to work
+						gender, ethnicity, contry_of_res and relation are categorical. We recode them transforming 
+						them into dummy variables in order to interpret the model in a proper way and be able to work
 						with models that include numeric attributes. <br>
 						The recoded attributes are shown below: <br> </p>
-
-
 					<img title="ver nulos" src="images/p5_3.JPG" style="width:90%;height:90%;" alt="" /><br>
 
 					<p style="font-size:20px ;text-align:justify">The variables are selected below
-						dependent (X) and the independent variable (Y) <br>
-
-
+						dependent <img src="http://latex.codecogs.com/gif.latex?X" border="0"/> and the independent variable <img src="http://latex.codecogs.com/gif.latex?Y" border="0"/> <br>
 
 					<pre>
 					X = np.array(dataClean2.drop(['Class/ASD'],1))
@@ -293,10 +277,10 @@
 					le = preprocessing.LabelEncoder()
 					y_encoded=le.fit_transform(y)	</pre>
 
-					<p style="font-size:20px ;text-align:justify">The variable Y = Class / ASD which has
+					<p style="font-size:20px ;text-align:justify">The variable  <img src="http://latex.codecogs.com/gif.latex? Y" border="0"/> = Class / ASD has
 						Yes and No outputs so that it assumes values 0 and 1.<br>
 
-					<p style="font-size:20px ;text-align:justify">In turn, the size is established to divide the sample
+					<p style="font-size:20px ;text-align:justify">The size is established to divide the sample
 						into training and test data as well as the seed to be able to replicate the model with the same
 						sample and thus obtain the same results.<br>
 
@@ -324,12 +308,12 @@
 
 					<p style="font-size:20px ;text-align:justify">
 
-						An average performance of 67% can be observed which does not seem too good.<br>
+						An average performance of 67% can be observed. This performance does not seem to be good enough.<br>
 
 
 						<img title="ver nulos" src="images/p5_1.JPG" style="width:30%;height:30%;" alt="" /><br>
 					<p style="font-size:20px ;text-align:justify">
-						Now we will look at another method, that of Linear Discriminant Analysis:
+						Now we will apply Linear Discriminant Analysis:
 						<br><br>
 					<pre>
 					print("LDA")
