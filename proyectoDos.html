@@ -46,20 +46,18 @@
 						cardiology test set</a>
 
 						<hr class="major" />
-					<p style="font-size:20px ;text-align:justify"> This data set consists of information from
-						patients: <br>
+					<p style="font-size:20px ;text-align:justify">  <br>
 						
-						In the first place, following the CRISP-DM model, we proceed to understand the area of study which refers to measurements of different variables <br>
-						of cardiological patients. The cardiologist wants to have a system that allows him infer from observed patient data whether
+						In the first place, following the CRISP-DM model, we proceed to understand the area of study which refers to measurements of different variables related
+						with cardiological patients. The cardiologist wants to have a system that allows him infer from observed patient data whether
 						there is a risk of suffering a new heart attack or not. It has historical data of patients and variables
 						measures that are scientifically used as proxy indicators for predict coronary heart disease.
 						The doctor has in his registry with historical information of patients who suffered a heart attack
 						and therefore there is data that it already has labeled because the patients died (already
-						confirm the possibility of suffering a new heart attack or not). Therefore we are faced with a problem
-						supervised. <br>
+						confirm the possibility of suffering a new heart attack or not). Therefore we are facing a problem that can be modelled using a supervised model. <br>
 						On the other hand, we want to determine a classification of patients into two groups, those who
-						they are at risk of having a 2nd heart attack and those that don't, so we are facing a classification problem. <br>
-						We will first proceed to the understanding of the data, we observe the measured attributes and their
+						are at risk of having a 2nd heart attack and those who don't, so we are facing a classification problem. <br>
+						We will first proceed to understand the data, we observe the measured attributes and their
 						meaning: <br><br>
 
 						<!DOCTYPE html>
@@ -109,13 +107,13 @@
 					</tr>
 					<td>
 						<p><strong>Cholesterol:</strong> cholesterol level of the person, as recorded in
-							the time of treatment indicated when your most recent heart attack.</p>
+							the time of treatment indicated when the most recent heart attack.</p>
 					</td>
 					<td>Continuous</td>
 					<td>122 - 239</td>
 					</tr>
 					<td>
-						<p><strong>Handling_stress: </strong> Indicates if the patient has previously participated in courses
+						<p><strong>Handling_stress: </strong> Indicates if the patient has previously participated in courses for
 							stress management: 0 = no; 1 = yes.</p>
 					</td>
 					<td>Categorical - dummy</td>
@@ -126,7 +124,7 @@
 							indicative of each person's natural stress level and ability to handle it.
 						</p>
 					</td>
-					<td>Categorical understood as continuous</td>
+					<td>Categorical analysed as continuous</td>
 					<td>35-80</td>
 					</tr>
 					</table>
@@ -134,16 +132,15 @@
 
 </html>
 
-<p style="font-size:20px ;text-align:justify"> Regarding the Trat_anxiety variable, it results from a test applied to the
-	patient after suffering 1st heart attack,
-	Each patient was administered a standard natural anxiety test.  <br>
+<p style="font-size:20px ;text-align:justify"> Trat_anxiety variable results from a test applied to the
+	patient after suffering 1st heart attack. Each patient was administered a standard natural anxiety test.  <br>
 	The values are tabulated in increments of 5. A value of 0 would indicate that the person never feels anxiety,
 	pressure or stress in any situation, while a value of 100 would indicate that the person lives in a continuous state of overload and unable to cope with their situation. <br>
 
 	The <strong> 2nd_Attack_Heart </strong> attribute exists only in the training dataset. It is the variable
 		target or prediction (“label” in RapidMiner).
-		In the training dataset, this attribute contains "Yes" for those individuals who have suffered a second
-		heart attack, and "No" otherwise.  <br>
+		In the training dataset, this attribute contains Yes for those individuals who have suffered a second
+		heart attack, and No otherwise.  <br>
 
 
 		Once the attributes are analyzed, the factors that can modify any model are studied in more detail, specially
@@ -153,18 +150,16 @@
 		
 	<img title="tabla" src="images/p2_pdatos.JPG" style="width:90%;height:50%;" alt="" /><br>
 	As can be seen in this image, the 0s indicate that there are no missing attributes,
-	the ranges do not denote abnormal values (outliers) in fact the averages and deviations of each column are
+	the ranges do not denote abnormal values (outliers). In fact, the averages and deviations of each column are
 	find enough adjusted to average. <br>
 
 	The possible correlations that may exist between them are observed in the case of applying algorithms such as
-	Logistic Regression or Sensitive Naive Bayes
-	to the correlations between the variables. <br>
+	Logistic Regression or Sensitive Naive Bayes to the correlations between the variables. <br>
 	For example, possible high correlations between stress management and anxiety treatment could be identified
 	and there are also studies that link cholesterol levels with stress factors as well as with the sex of the
 	person. <br>
 	
 	For the data of our data set, however, there do not appear to be significant correlations: <br>
-
 
 	<img title="matriz" src="images/p2_mcorr.JPG" style="width:90%;height:50%;" alt="" /><br> <br>
 
@@ -173,7 +168,6 @@
 
 	If we apply a principal components analysis (since all our variables are numerical we can do it
 	easily)	we observe the following table of eigenvalues: <br>
-
 
 	<img title="matriz" src="images/p2_pca.PNG" style="width:100%;height:50%;" alt="" /><br> <br>
 
@@ -185,7 +179,7 @@
 	It is observed that the first component has a very high cholesterol weight, which is logical with the recommendations
 	usual medical to control this risk factor. <br>
 	The second component has a great weight of the anxiety treatment variable in a negative way, which it would not have
-	a lot of logic to simple view given that it would indicate higher anxiety scores in the test lower risk of suffering a second attack, but
+	much sense given that it would indicate higher anxiety scores in the test will result in lower risk of suffering a second attack, but
 	in these cases is when the existence of possible correlated variables must be understood, that is, it could establish the
 	hypothesis that more anxious people tend to discharge this energy by doing, for example, exercise which would be good for
 	health and it would be correlated with this variable. <br>
@@ -193,19 +187,17 @@
 	this case the weight importance is reduced. <br>
 	The proportion of the accumulated variance by principal components is observed in the following image: <br>
 
-
 	<img title="matriz" src="images/p2_pcaCurve.PNG" style="width:100%;height:50%;" alt="" /><br> <br>
 
 	Something important to do is the normalization of the data so that the ranges of variation of the same are not
-	very dissimilar 	especially since algorithms like LDA or Naive Bayes assume normal distributions. <br>
+	very dissimilar especially since algorithms like LDA or Naive Bayes assume normal distributions. <br>
 
 	In the models of rapid miner the operators of SVM, Logistic Regression offer to carry out the standardization as
 	adjustable node parameter. <br>
 	Before deciding which operator to use, we are going to observe with a ROC Curve the performance of the different
 	models. <br>
 	In the reference problem we are interested in a good prediction of the True Positive even if there is False
-	Positive since it would not have
-	a detriment to the patient taking care of himself, exercising, eating healthy. Likewise, as in any model, the ideal is that
+	Positive since it would not have a detriment to the patient taking care of himself, exercising, eating healthy. Likewise, as in any model, the ideal is that
 	FP = 0. <br>
 	In this case, as it is not used for a specific diagnosis (such as cancer cases) but to have the information to carry out more frequent checks and
 	emphasis on patient care. <br>
@@ -222,10 +214,6 @@
 
 	The following performance is obtained for the models: <br> <br>
 
-
-
-	
-
 	LOGISTIC REGRESSION<br>
 	<img src="images/p2_logReg.PNG" style="width:100%;height:50%;" alt="" /> <br>
 
@@ -238,28 +226,24 @@
 	RANDOM FOREST <br>
 	<img src="images/p2_randomF.PNG" style="width:100%;height:50%;" alt="" /> <br>
 
-
-
-	In relation to what is observed with the ROC curve, the model that presents the best performance is Random Forest, with 97.14%
+	In the ROC curve, the model that presents the best performance is Random Forest, with 97.14%
 	precision.
 	Followed by Logistics Regression 92.03%, Naive Bayes: 88.35% and lastly SVM 85.55%.
 
 	Therefore, applying Random Forest to the model with 50 trees and a maximum depth of 5 (after testing various
-	parameters)
-	97.86% confidence is obtained:
+	parameters) 97.86% confidence is obtained:
 
 	<br>
 
 
 	<img src="images/p2_finalAcc.PNG" style="width:100%;height:50%;" alt="" />
 
-	And the predictions on the test data:
+	And the predictions on the test dataset:
 
 	<img src="images/p2_apply.PNG" style="width:100%;height:50%;" alt="" /> <br>
 
-
-	Which indicates that for example example 1 is a prediction of No with a confidence of 99.5%, while example 2 a
-	Yes prediction with a 99.7% confidence.<br>
+	Which indicates that example 1 is a prediction of No with a confidence of 99.5%, while example 2 is
+	a Yes prediction with a 99.7% confidence.<br>
 
 	Finally, the model yields the following trees from among the 50 elaborated:<br>
 
