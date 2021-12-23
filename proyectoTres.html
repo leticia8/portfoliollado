@@ -40,18 +40,15 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					</header>
 
 					<p style="font-size:18px"> Data used <a
-							href="https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)"> patients data set</a>
+							href="https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)"> patients
+							data set</a>
 
 						<hr class="major" />
-					<p style="font-size:20px ;text-align:justify">This data set consists of information on the
-						liver ownership or not of 583 patients from northeast Andhra Pradesh, India. <br>
-						Therefore, there is labeled data, which indicates that a learning will be carried out
-						supervised. <br>
+					<p style="font-size:20px ;text-align:justify">This data set contains information about patients with and 
+						without liver. It consists in 583 observations of patients from northeast Andhra Pradesh, India. <br>
+						The data is labeled, indicating that a supervised model could be carried out. <br>
 						To achieve a better understanding of the data we look at the measured attributes and their
 						meaning: <br>
-						
-						
-
 						<!DOCTYPE html>
 						<html>
 
@@ -80,12 +77,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					</th>
 					</tr>
 					<tr>
-						<td><strong>age :</strong> Age of the patient. Anyone over 90 is categorized as 90.</td>
+						<td><strong>Age :</strong> Age of the patient. Anyone over 90 is categorized as 90.</td>
 						<td>Numeric</td>
 						<td>4-90</td>
 					</tr>
 					<td>
-						<p><strong>gender :</strong> Values female and male</p>
+						<p><strong>Gender :</strong> Values female and male</p>
 					</td>
 					<td>Binominal</td>
 					<td>Female-Male</td>
@@ -98,7 +95,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<td>0,4-75</td>
 					</tr>
 					<td>
-						<p><strong>direct_bilirrubin - Direct bilirubin:</strong>Direct bilirubin values of the patient.</p>
+						<p><strong>direct_bilirrubin - Direct bilirubin:</strong>Direct bilirubin values of the patient.
+						</p>
 					</td>
 					<td>Continuous</td>
 					<td>0,10-19,7</td>
@@ -116,8 +114,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<td>10-2000</td>
 					</tr>
 					<td>
-						<p><strong>ag_ratio - Ratio of albumin and globulins: </strong>Indicates the ratio between albumin
-							and globulins.</p>
+						<p><strong>ag_ratio - Ratio of albumin and globulins: </strong>Indicates the ratio between
+							albumin	and globulins.</p>
 					</td>
 					<td>Continous</td>
 					<td>10-4929</td>
@@ -144,63 +142,47 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					</tr>
 					</table>
 </body>
-
 </html>
-
 <strong>
 	<p style="font-size:20px ;text-align:justify">is_patient
-</strong> is the predictor variable assumes two values that represent whether the patient has a liver or not.<br><br>
+</strong> is the dependent variable and assumes two values depending wheter the patient has a liver or not.<br><br>
 
+<span class="image main"><img src="images/p3_results.png" alt="" /></span>
 
-
-<span class="image main"><img src="images/p3_results.PNG" alt="" /></span>
-
-<p style="font-size:20px ;text-align:justify"> As can be seen in this image, the 0s in the column (missing) indicate that
-	only the attribute alkphos (alkaline phosphatase) has 4 missing data. It depends on the model to use the impact
-	they may have missing data in it. <br>
+<p style="font-size:20px ;text-align:justify"> As can be seen in the image, the 0s in the column (missing) indicate
+	that only the attribute alkphos (alkaline phosphatase) has 4 missing observations. The impact
+	that missing data has over a model dependes on the model used to analyse the problem. <br>
 	Trees in general ignore missing attributes, but any distance calculation algorithm will
 	present a worse performance. <br> <br>
 	The ranges do not denote abnormal values (outliers) at least they are concentrated around the mean and the values
 	limits are not of unique instances but are generally accompanied by data groups. <br> <br>
 
-	On the other hand, this problem consists of labeled data, so we will use a supervised model of
-	learning and the dependent variable to be explained is categorical, therefore we are facing a problem of
+	This problem consists of labeled data, so we will use a supervised learning model. <br>
+	The dependent variable to be explained is categorical, therefore we are facing a problem of
 	classification. <br>
 
-	In turn, the sex variable is transformed so that it takes values 0 (Male) 1 (Fenale) and the output variable also
-	it will take values 0 and 1 in case of not having a liver and having respectively. <br>
+	Sex variable is transformed to assume values 0 (Male) 1 (Fenale) and the output variable is_patient
+	will take values 0 and 1 in case of not having a liver and having it respectively. <br>
 
-	It is decided to visualize with a ROC - Curve graph the most used classification algorithms to evaluate their
+	We visualize with a ROC - Curve graph the most used classification algorithms to evaluate their
 	performance obtaining: <br> <br>
-
-
-
 	<img src="images/p3_rocCurve.PNG" style="width:100%;height:80%;" alt="" /><br><br>
 
 	Therefore, it is possible to affirm that the decision tree shows a good performance compared to the rest of the
 	models analyzed. <br>
 
-
-
-	The ideal parameters are obtained to apply the process with different optimization methods, <br> <br>
+	The ideal parameters are obtained to apply the process with different optimization methods: <br> <br>
 	<span class="image main"><img src="images/p3_accuracy.PNG" style="width:100%;height:80%;" alt="" /><br><br>
 		The model obtains an accuracy of 73.24%, using Gain Ratio as the adjustment parameter,
 		with a maximum depth of 6 and a minimum value on each sheet of 1 <br> <br>
-		
+
 		Here it is observed that 411 cases whose prediction was Yes, are indeed patients with liver while
-		that there are 152 patients who were predicted to have a liver but actually do not have, this is why
-		that the class recall for that prediction is very low since it takes class 0 as a positive class and does not find
-		actually all the cases that should.
-		
+		152 patients who were predicted to have a liver actually do not have it, this is why the class recall 
+		for that prediction is very low since it takes class 0 as a positive class and does not
+		find actually all the cases that should.
+
 		The resulting tree after applying the model is as follows: <br>
-		
-		
-
 		<img src="images/p3_treeFinal.PNG" style="width:80%;height:60%;" alt="" />
-
-
-
-
 
 		</section>
 		</div>
